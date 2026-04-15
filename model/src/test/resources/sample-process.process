@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition
+    xmlns:pd="http://xmlns.tibco.com/bw/process/2003"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:ns1="http://www.tibco.com/pe/WriteToLogActivitySchema">
+
+    <pd:name>Processes/SampleProcess.process</pd:name>
+    <pd:description>A sample process for testing the StAX loader.</pd:description>
+
+    <pd:startName>Start</pd:startName>
+    <pd:startType>com.tibco.pe.core.None</pd:startType>
+    <pd:startX>60</pd:startX>
+    <pd:startY>64</pd:startY>
+
+    <pd:endName>End</pd:endName>
+    <pd:endType>com.tibco.pe.core.None</pd:endType>
+    <pd:endX>800</pd:endX>
+    <pd:endY>64</pd:endY>
+
+    <pd:targetNamespace>http://xmlns.example.com/1234567890</pd:targetNamespace>
+
+    <pd:returnBindings>
+        <pd:bind role="pd:returnBindings">
+            <pd:returnBindings>
+                <xsl:template match="/">
+                    <output>
+                        <xsl:value-of select="$result"/>
+                    </output>
+                </xsl:template>
+            </pd:returnBindings>
+        </pd:bind>
+    </pd:returnBindings>
+
+    <pd:errorSchemas>
+        <xsd:schema targetNamespace="http://errors.example.com">
+            <xsd:element name="ErrorReport" type="xsd:string"/>
+        </xsd:schema>
+    </pd:errorSchemas>
+
+    <pd:processVariables>
+        <Variable0>
+            <xsd:element name="counter" type="xsd:integer"/>
+        </Variable0>
+        <Variable1>
+            <xsd:element name="message" type="xsd:string"/>
+        </Variable1>
+    </pd:processVariables>
+
+    <pd:starter name="HTTP Receiver">
+        <pd:type>com.tibco.plugin.http.HTTPEventSource</pd:type>
+        <pd:resourceType>httppalette.httpEventSource</pd:resourceType>
+        <pd:x>60</pd:x>
+        <pd:y>64</pd:y>
+        <config>
+            <sharedChannel>/SharedResources/HTTP Connection.sharedhttp</sharedChannel>
+            <outputMode>String</outputMode>
+        </config>
+    </pd:starter>
+
+    <pd:activity name="WriteToLog">
+        <pd:type>com.tibco.pe.core.WriteToLogActivity</pd:type>
+        <pd:resourceType>ae.activities.log</pd:resourceType>
+        <pd:x>250</pd:x>
+        <pd:y>64</pd:y>
+        <config>
+            <role>User</role>
+        </config>
+        <pd:inputBindings>
+            <ns1:ActivityInput>
+                <message>
+                    <xsl:value-of select="'Hello World'"/>
+                </message>
+            </ns1:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+
+    <pd:activity name="MapData">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>450</pd:x>
+        <pd:y>64</pd:y>
+        <config>
+            <element ref="pfx:Output"/>
+        </config>
+        <pd:inputBindings>
+            <Output>
+                <xsl:value-of select="$WriteToLog/result"/>
+            </Output>
+        </pd:inputBindings>
+    </pd:activity>
+
+    <pd:group name="IterationLoop">
+        <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+        <pd:resourceType>ae.process.group</pd:resourceType>
+        <pd:x>150</pd:x>
+        <pd:y>200</pd:y>
+        <pd:width>400</pd:width>
+        <pd:height>250</pd:height>
+        <pd:collapsedWidth>57</pd:collapsedWidth>
+        <pd:collapsedHeight>70</pd:collapsedHeight>
+        <pd:group-expanded>true</pd:group-expanded>
+        <config>
+            <pd:groupType>repeat</pd:groupType>
+            <pd:serializable>false</pd:serializable>
+            <pd:indexSlot>index</pd:indexSlot>
+            <pd:accumulateOutput>false</pd:accumulateOutput>
+        </config>
+        <pd:inputBindings>
+            <group>
+                <xsl:value-of select="$start/input"/>
+            </group>
+        </pd:inputBindings>
+
+        <pd:activity name="InnerTask">
+            <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+            <pd:resourceType>ae.process.subprocess</pd:resourceType>
+            <pd:x>300</pd:x>
+            <pd:y>310</pd:y>
+            <config>
+                <processName>/Processes/SubProcess.process</processName>
+            </config>
+        </pd:activity>
+
+        <pd:transition>
+            <pd:from>start</pd:from>
+            <pd:to>InnerTask</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+
+        <pd:transition>
+            <pd:from>InnerTask</pd:from>
+            <pd:to>end</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+    </pd:group>
+
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>WriteToLog</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+
+    <pd:transition>
+        <pd:from>WriteToLog</pd:from>
+        <pd:to>MapData</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>expression</pd:conditionType>
+        <pd:condition>$WriteToLog/status = 'OK'</pd:condition>
+    </pd:transition>
+
+    <pd:transition>
+        <pd:from>MapData</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+
+    <pd:label>
+        <pd:name>Process Notes</pd:name>
+        <pd:description>This process logs a message and maps the result.</pd:description>
+        <pd:x>400</pd:x>
+        <pd:y>250</pd:y>
+        <pd:width>200</pd:width>
+        <pd:height>60</pd:height>
+        <pd:fontColor>-16777216</pd:fontColor>
+        <pd:color>-1</pd:color>
+        <pd:type>rectangle</pd:type>
+        <pd:thickness>1</pd:thickness>
+        <pd:fade>true</pd:fade>
+    </pd:label>
+
+</pd:ProcessDefinition>

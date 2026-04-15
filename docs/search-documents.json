@@ -1,0 +1,388 @@
+{
+  "references/eClassifiers/Transition/references/eStructuralFeatures/target/index.html": {
+    "path": "Transition/References/target",
+    "link-uuid": "d03bc723-f2b5-4dc8-9700-5c22118edae4",
+    "title": "target",
+    "content": "Type Activity Multiplicity 0..1",
+    "timestamp": 1776201330425
+  },
+  "references/eClassifiers/Call/inheritance.html": {
+    "path": "Call/Inheritance",
+    "link-uuid": "c4853da1-a7a2-41d1-a938-fd7ec5cb8281",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330140
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/inputs/index.html": {
+    "path": "Invocable/References/inputs",
+    "link-uuid": "4a707143-5ef9-4762-acf6-3e2d5446e77d",
+    "title": "inputs",
+    "content": "Type ETypedElement Multiplicity 0..*",
+    "timestamp": 1776201330277
+  },
+  "references/eClassifiers/Service/index.html": {
+    "link-uuid": "9562886d-a57a-4347-991f-33f1192f8f58",
+    "title": "Service",
+    "content": "Diagram ",
+    "timestamp": 1776201330392
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/changeable/index.html": {
+    "path": "Feature/Attributes/changeable",
+    "link-uuid": "137165de-7738-4e6e-9542-6577bb7c4a05",
+    "title": "changeable",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330177
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/bodyRef/index.html": {
+    "path": "Invocable/Attributes/bodyRef",
+    "link-uuid": "1d05f157-9dde-42b0-a817-d2c40bdfc55c",
+    "title": "bodyRef",
+    "content": "Type EString Multiplicity 0..1 * URI of invocable code body",
+    "timestamp": 1776201330273
+  },
+  "index.html": {
+    "link-uuid": "12375075-a7a8-4e4e-87dd-2b5fd4cbed40",
+    "title": "OpGraph Model",
+    "content": " Invocable GroupElement Group elements Attribute Call Process Reference keys opposite Node incomingCalls calls target source Transition Activity outgoingTransitions incomingTransitions source target start end Feature features Service entryPoint Nasdanika OpGraph",
+    "timestamp": 1776201330058
+  },
+  "references/eClassifiers/Activity/references/eStructuralFeatures/incomingTransitions/index.html": {
+    "path": "Activity/References/incomingTransitions",
+    "link-uuid": "0f398027-381b-4e58-9269-9ff13c28b01f",
+    "title": "incomingTransitions",
+    "content": "Type Transition Multiplicity 0..*",
+    "timestamp": 1776201330088
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/volatile/index.html": {
+    "path": "Feature/Attributes/volatile",
+    "link-uuid": "0b8b76ff-6a0a-482e-8da8-41735d6e415c",
+    "title": "volatile",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330188
+  },
+  "references/eClassifiers/Service/inheritance.html": {
+    "path": "Service/Inheritance",
+    "link-uuid": "43273cbb-41ad-4ebf-8b96-e4a6e8b5018b",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330393
+  },
+  "references/eClassifiers/Activity/references/eStructuralFeatures/outgoingTransitions/index.html": {
+    "path": "Activity/References/outgoingTransitions",
+    "link-uuid": "5d766f60-f595-46c8-8446-eb4ef8518812",
+    "title": "outgoingTransitions",
+    "content": "Type Transition Multiplicity 0..*",
+    "timestamp": 1776201330090
+  },
+  "references/eClassifiers/Group/references/eStructuralFeatures/elements/index.html": {
+    "path": "Group/References/elements",
+    "link-uuid": "d5271c7b-9d3b-4658-81a4-64b8ab3a37e8",
+    "title": "elements",
+    "content": "Type GroupElement Multiplicity 0..*",
+    "timestamp": 1776201330219
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/outputs/index.html": {
+    "path": "Invocable/References/outputs",
+    "link-uuid": "7d784edb-881a-49d8-af94-3cd6017dcc8a",
+    "title": "outputs",
+    "content": "Type ETypedElement Multiplicity 0..*",
+    "timestamp": 1776201330281
+  },
+  "references/eClassifiers/Reference/references/eStructuralFeatures/containment/index.html": {
+    "path": "Reference/Attributes/containment",
+    "link-uuid": "952e63c7-bb02-4651-addc-677696cc9083",
+    "title": "containment",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330365
+  },
+  "references/eClassifiers/Group/index.html": {
+    "link-uuid": "7bc11c87-778f-426c-8f8a-1f0466bc9685",
+    "title": "Group",
+    "content": "* Group is generated to EClass with elements generated either to operations or contained classes Diagram ",
+    "timestamp": 1776201330209
+  },
+  "references/eClassifiers/Service/references/eStructuralFeatures/entryPoint/index.html": {
+    "path": "Service/References/entryPoint",
+    "link-uuid": "1d58bc83-c9ec-4aa0-9ff0-fe9f6538b773",
+    "title": "entryPoint",
+    "content": "Type Node Multiplicity 0..1",
+    "timestamp": 1776201330400
+  },
+  "references/eClassifiers/Attribute/inheritance.html": {
+    "path": "Attribute/Inheritance",
+    "link-uuid": "9ceb0a80-9016-4302-bcf6-eb9a42c13b7c",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330112
+  },
+  "references/eClassifiers/Transition/inheritance.html": {
+    "path": "Transition/Inheritance",
+    "link-uuid": "ccaab3d6-2e49-4583-afbd-d9befe241cf0",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330416
+  },
+  "references/eClassifiers/Invocable/index.html": {
+    "link-uuid": "024dc3f7-09a8-4ce3-9834-f35a4f59e38b",
+    "title": "Invocable",
+    "content": "* Something that can be invoked, receive arguments and produce result or throw an exception Diagram ",
+    "timestamp": 1776201330262
+  },
+  "references/eClassifiers/Feature/index.html": {
+    "link-uuid": "1f5ee830-21a0-4e84-a58e-3300588d8f64",
+    "title": "Feature",
+    "content": "Diagram ",
+    "timestamp": 1776201330170
+  },
+  "references/eClassifiers/Node/index.html": {
+    "link-uuid": "c1233634-c9db-4cd0-a5af-8e8b7454b31a",
+    "title": "Node",
+    "content": "Diagram ",
+    "timestamp": 1776201330300
+  },
+  "references/eClassifiers/Group/references/eStructuralFeatures/features/index.html": {
+    "path": "Group/References/features",
+    "link-uuid": "18eb0e5d-f419-48ed-bfb9-55462ad1a801",
+    "title": "features",
+    "content": "Type Feature Multiplicity 0..*",
+    "timestamp": 1776201330221
+  },
+  "references/eClassifiers/Reference/references/eStructuralFeatures/opposite/index.html": {
+    "path": "Reference/References/opposite",
+    "link-uuid": "585d8649-cf78-4c8f-b63f-6229c1a001b0",
+    "title": "opposite",
+    "content": "Type Reference Multiplicity 0..1",
+    "timestamp": 1776201330373
+  },
+  "references/eClassifiers/Call/index.html": {
+    "link-uuid": "729b3bb5-b1d0-4871-aa05-78187e40db3b",
+    "title": "Call",
+    "content": "* Invokes the target invocable. May process (map) inputs and outputs as well as handle exceptions. Calls are passed to activities and other calls as additional inputs Diagram ",
+    "timestamp": 1776201330138
+  },
+  "references/eClassifiers/Node/inheritance.html": {
+    "path": "Node/Inheritance",
+    "link-uuid": "23af46de-7d1f-4f06-a54d-eb699886f653",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330302
+  },
+  "references/eClassifiers/Reference/inheritance.html": {
+    "path": "Reference/Inheritance",
+    "link-uuid": "33d5d0a6-8885-4331-850d-37082325a69f",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330358
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/unsettable/index.html": {
+    "path": "Feature/Attributes/unsettable",
+    "link-uuid": "6647969d-30e6-415d-b4e9-35aebd91fa34",
+    "title": "unsettable",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330186
+  },
+  "references/eClassifiers/Group/references/eStructuralFeatures/superTypes/index.html": {
+    "path": "Group/References/superTypes",
+    "link-uuid": "33e21de5-3fde-466a-9c95-6a11fffae75b",
+    "title": "superTypes",
+    "content": "Type EClass Multiplicity 0..*",
+    "timestamp": 1776201330223
+  },
+  "references/eClassifiers/Call/references/eStructuralFeatures/target/index.html": {
+    "path": "Call/References/target",
+    "link-uuid": "2b1f708c-c532-4a9e-8b95-7fb4a17c63db",
+    "title": "target",
+    "content": "Type Node Multiplicity 0..1",
+    "timestamp": 1776201330150
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/exceptions/index.html": {
+    "path": "Invocable/References/exceptions",
+    "link-uuid": "30191bb7-411d-41ae-8351-a9bb86f83791",
+    "title": "exceptions",
+    "content": "Type EClassifier Multiplicity 0..*",
+    "timestamp": 1776201330275
+  },
+  "references/eClassifiers/GroupElement/inheritance.html": {
+    "path": "GroupElement/Inheritance",
+    "link-uuid": "9764c31c-5378-4137-8250-1293f2bf5e5c",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330242
+  },
+  "references/eClassifiers/Activity/inheritance.html": {
+    "path": "Activity/Inheritance",
+    "link-uuid": "0f5d7643-9421-425d-86e8-cc5050872cf3",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330079
+  },
+  "references/eClassifiers/Process/inheritance.html": {
+    "path": "Process/Inheritance",
+    "link-uuid": "d701cf56-9b63-4465-b07d-237e350fc7dc",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1776201330330
+  },
+  "references/eClassifiers/Transition/index.html": {
+    "link-uuid": "80870f64-e622-43f3-8a2c-eaf210d80212",
+    "title": "Transition",
+    "content": "* Transitions pass data and control between activities. Transitions can perform data mapping. Transitions can be conditional and can be activated by thrown exceptions (error transitions) Diagram ",
+    "timestamp": 1776201330414
+  },
+  "references/eClassifiers/Process/index.html": {
+    "link-uuid": "7d0e6015-498f-45c3-9d56-8a9f727cf264",
+    "title": "Process",
+    "content": "Diagram ",
+    "timestamp": 1776201330328
+  },
+  "references/eClassifiers/Transition/references/eStructuralFeatures/source/index.html": {
+    "path": "Transition/References/source",
+    "link-uuid": "a52d4d38-a8b5-4d67-99ac-7559b677a821",
+    "title": "source",
+    "content": "Type Activity Multiplicity 0..1",
+    "timestamp": 1776201330423
+  },
+  "references/eClassifiers/Node/references/eStructuralFeatures/incomingCalls/index.html": {
+    "path": "Node/References/incomingCalls",
+    "link-uuid": "ba4db04f-ebcb-4141-93e2-f99037c177f9",
+    "title": "incomingCalls",
+    "content": "Type Call Multiplicity 0..*",
+    "timestamp": 1776201330309
+  },
+  "references/eClassifiers/Invocable/inheritance.html": {
+    "path": "Invocable/Inheritance",
+    "link-uuid": "c424a332-e145-417e-89ca-3908c4e949f6",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330264
+  },
+  "references/eClassifiers/Process/references/eStructuralFeatures/end/index.html": {
+    "path": "Process/References/end",
+    "link-uuid": "a0855733-0047-49cb-a9a8-35c7f503bbe8",
+    "title": "end",
+    "content": "Type Activity Multiplicity 0..1 * Invocations from the process end activity are passed to the process outgoing transitions",
+    "timestamp": 1776201330337
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/transient/index.html": {
+    "path": "Feature/Attributes/transient",
+    "link-uuid": "02f1dc20-6d6b-4ca6-a09b-d355d87e1a35",
+    "title": "transient",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330184
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/defaultValueLiteral/index.html": {
+    "path": "Feature/Attributes/defaultValueLiteral",
+    "link-uuid": "0ae027b4-cff4-4640-9497-29da741db94b",
+    "title": "defaultValueLiteral",
+    "content": "Type EString Multiplicity 0..1",
+    "timestamp": 1776201330180
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/body/index.html": {
+    "path": "Invocable/Attributes/body",
+    "link-uuid": "b1ccd8d8-b9cb-4ca5-9f3f-93b78754fcd6",
+    "title": "body",
+    "content": "Type EString Multiplicity 0..1 * Invocable code body",
+    "timestamp": 1776201330271
+  },
+  "references/eClassifiers/GroupElement/index.html": {
+    "link-uuid": "4d5ab925-98cd-4c8a-ab49-7d04c6be916d",
+    "title": "GroupElement",
+    "content": "Diagram ",
+    "timestamp": 1776201330239
+  },
+  "references/eClassifiers/Node/references/eStructuralFeatures/outgoingCalls/index.html": {
+    "path": "Node/References/outgoingCalls",
+    "link-uuid": "372a74aa-b04f-4ef2-8f3d-663e14f1f540",
+    "title": "outgoingCalls",
+    "content": "Type Call Multiplicity 0..* * Calls wired to this node",
+    "timestamp": 1776201330311
+  },
+  "references/eClassifiers/Activity/index.html": {
+    "link-uuid": "6962a084-464e-45b0-a07f-4bf90e82f9b5",
+    "title": "Activity",
+    "content": "* Activities can be invoked by incoming transitions with outputs passed to outgoing transitions Diagram ",
+    "timestamp": 1776201330076
+  },
+  "references/eClassifiers/Feature/references/eStructuralFeatures/derived/index.html": {
+    "path": "Feature/Attributes/derived",
+    "link-uuid": "f6359641-e897-428d-88db-931510067096",
+    "title": "derived",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330182
+  },
+  "references/eClassifiers/Feature/inheritance.html": {
+    "path": "Feature/Inheritance",
+    "link-uuid": "6e7ae0a7-f194-4bc4-9a10-bcac774b8713",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330172
+  },
+  "references/eClassifiers/Process/references/eStructuralFeatures/start/index.html": {
+    "path": "Process/References/start",
+    "link-uuid": "cdb17ab2-1f5f-40ea-90de-19ae7e8b7c2a",
+    "title": "start",
+    "content": "Type Activity Multiplicity 0..1 * Invocations from the process incoming transitions are routed to the start activity",
+    "timestamp": 1776201330339
+  },
+  "references/eClassifiers/Reference/references/eStructuralFeatures/keys/index.html": {
+    "path": "Reference/References/keys",
+    "link-uuid": "0ae05bc7-407c-4571-86b4-e36e5343d661",
+    "title": "keys",
+    "content": "Type Attribute Multiplicity 0..*",
+    "timestamp": 1776201330371
+  },
+  "references/eClassifiers/Attribute/references/eStructuralFeatures/id/index.html": {
+    "path": "Attribute/Attributes/id",
+    "link-uuid": "b315afd7-3310-42d8-a52c-8c5a0c84de12",
+    "title": "id",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330120
+  },
+  "references/eClassifiers/Invocable/references/eStructuralFeatures/language/index.html": {
+    "path": "Invocable/Attributes/language",
+    "link-uuid": "1cf1436b-018d-47ad-ac7f-78147486fe9e",
+    "title": "language",
+    "content": "Type EString Multiplicity 0..1 * body or bodyRef language",
+    "timestamp": 1776201330279
+  },
+  "references/eClassifiers/Attribute/index.html": {
+    "link-uuid": "9cc7700c-6159-4278-a1e7-d6ed004c0c0f",
+    "title": "Attribute",
+    "content": "Diagram ",
+    "timestamp": 1776201330109
+  },
+  "references/eClassifiers/Reference/index.html": {
+    "link-uuid": "1ab45cc5-844d-4187-87ef-b78a3f278b79",
+    "title": "Reference",
+    "content": "Diagram ",
+    "timestamp": 1776201330357
+  },
+  "references/eClassifiers/Reference/references/eStructuralFeatures/resolveProxies/index.html": {
+    "path": "Reference/Attributes/resolveProxies",
+    "link-uuid": "ebbfe13a-b142-49ca-a2f9-27c3d4adb779",
+    "title": "resolveProxies",
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1776201330375
+  },
+  "references/eClassifiers/Call/references/eStructuralFeatures/source/index.html": {
+    "path": "Call/References/source",
+    "link-uuid": "4ad5b004-41aa-404c-94a5-3baed5a3245b",
+    "title": "source",
+    "content": "Type Node Multiplicity 0..1",
+    "timestamp": 1776201330147
+  },
+  "references/eClassifiers/Transition/references/eStructuralFeatures/inputs/index.html": {
+    "path": "Transition/References/inputs",
+    "link-uuid": "04b6777c-1c02-4ca0-949e-458c27860042",
+    "title": "inputs",
+    "content": "Type ETypedElement Multiplicity 0..*",
+    "timestamp": 1776201330421
+  },
+  "references/eClassifiers/Group/inheritance.html": {
+    "path": "Group/Inheritance",
+    "link-uuid": "a37a8a52-0790-40a8-8c67-ca40c845acca",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1776201330212
+  }
+}

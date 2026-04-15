@@ -1,0 +1,169 @@
+@Ecore(nsURI="https://op-graph.models.nasdanika.org", nsPrefix="org.nasdanika.models.op-graph")
+@GenModel(
+    documentation="Xcore model for Nasdanika OpGraph",
+    bundleManifest="false",
+    featureDelegation="Dynamic",
+    complianceLevel="21.0",
+    suppressGenModelAnnotations="false",
+    copyrightFields="false",
+    operationReflection="true",
+    importOrganizing="true"
+)
+package org.nasdanika.models.opgraph
+
+import org.eclipse.emf.ecore.EClassifier
+import org.eclipse.emf.ecore.ENamedElement
+import org.eclipse.emf.ecore.ETypedElement
+import org.eclipse.emf.ecore.EClass
+
+
+abstract class GroupElement extends ENamedElement {
+    
+}
+
+/**
+ * Group is generated to EClass with elements generated either to
+ * operations or contained classes
+ */
+class Group extends GroupElement {
+    
+    refers EClass[] superTypes
+    
+    contains GroupElement[] elements keys name
+    
+    contains Feature[] features
+    
+}
+
+abstract class Feature extends ETypedElement {
+    
+    boolean ^transient
+    boolean ^volatile
+    boolean changeable
+    String defaultValueLiteral
+    boolean ^unsettable
+    boolean ^derived    
+    
+}
+
+class Attribute extends Feature {
+    
+    boolean ^id
+    
+}
+
+class Reference extends Feature {
+    
+    boolean resolveProxies
+    
+    boolean containment
+    
+    refers Attribute[] ^keys
+    
+    refers Reference ^opposite
+    
+}
+
+/**
+ * Something that can be invoked, receive arguments and produce result or throw an exception
+ */
+class Invocable extends ENamedElement {
+    
+    /**
+     * Invocable code body
+     */
+    String body
+    
+    /**
+     * URI of invocable code body
+     */
+    String bodyRef
+    
+    /**
+     * body or bodyRef language
+     */
+    String language = "Java"
+    
+    refers ETypedElement[] inputs
+    
+    refers ETypedElement[] outputs
+    
+    refers EClassifier[] exceptions
+
+}
+
+/**
+ * Invokes the target invocable. 
+ * May process (map) inputs and outputs as well as handle exceptions.
+ * 
+ * Calls are passed to activities and other calls as additional inputs 
+ * 
+ */
+class Call extends Invocable {
+    
+    refers Node target opposite incomingCalls
+    
+    container Node source opposite outgoingCalls
+    
+}
+
+class Node extends Invocable, GroupElement {
+            
+    refers Call[] incomingCalls opposite target
+    
+    /**
+     * Calls wired to this node
+     */
+    contains Call[] outgoingCalls opposite source keys name
+    
+}
+
+/**
+ * Activities can be invoked by incoming transitions with 
+ * outputs passed to outgoing transitions 
+ */
+class Activity extends Node {
+        
+    contains Transition[] outgoingTransitions opposite source keys name
+    
+    refers Transition[] incomingTransitions opposite target   
+    
+}
+
+/**
+ * Transitions pass data and control between activities.
+ * Transitions can perform data mapping.
+ * Transitions can be conditional and can be activated by thrown exceptions (error transitions)
+ */
+class Transition extends ENamedElement {
+    
+    refers ETypedElement[] inputs
+    
+    container Activity source opposite outgoingTransitions
+    
+    refers Activity target opposite incomingTransitions
+    
+}
+
+class Process extends Group, Activity {
+    
+    /**
+     * Invocations from the process incoming transitions are routed to the start activity
+     */
+    refers Activity start 
+    
+    /**
+     * Invocations from the process end activity are passed to the process outgoing transitions
+     */
+    refers Activity end
+    
+}
+
+class Service extends Node, Group {
+    
+    refers Node entryPoint
+    
+}
+
+
+
