@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.nasdanika.models.opgraph.Call;
-import org.nasdanika.models.opgraph.Node;
+import org.nasdanika.models.opgraph.Component;
+import org.nasdanika.models.opgraph.Function;
 import org.nasdanika.models.opgraph.OpgraphPackage;
 
 /**
@@ -25,7 +26,7 @@ import org.nasdanika.models.opgraph.OpgraphPackage;
  *
  * @generated
  */
-public class CallImpl extends InvocableImpl implements Call {
+public class CallImpl extends FunctionImpl implements Call {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,8 +52,8 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * @generated
 	 */
 	@Override
-	public Node getTarget() {
-		return (Node)eDynamicGet(OpgraphPackage.CALL__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__TARGET, true, true);
+	public Function getTarget() {
+		return (Function)eDynamicGet(OpgraphPackage.CALL__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__TARGET, true, true);
 	}
 
 	/**
@@ -60,8 +61,8 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node basicGetTarget() {
-		return (Node)eDynamicGet(OpgraphPackage.CALL__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__TARGET, false, true);
+	public Function basicGetTarget() {
+		return (Function)eDynamicGet(OpgraphPackage.CALL__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__TARGET, false, true);
 	}
 
 	/**
@@ -69,7 +70,7 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(Node newTarget, NotificationChain msgs) {
+	public NotificationChain basicSetTarget(Function newTarget, NotificationChain msgs) {
 		msgs = eDynamicInverseAdd((InternalEObject)newTarget, OpgraphPackage.CALL__TARGET, msgs);
 		return msgs;
 	}
@@ -80,7 +81,7 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * @generated
 	 */
 	@Override
-	public void setTarget(Node newTarget) {
+	public void setTarget(Function newTarget) {
 		eDynamicSet(OpgraphPackage.CALL__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__TARGET, newTarget);
 	}
 
@@ -90,8 +91,8 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * @generated
 	 */
 	@Override
-	public Node getSource() {
-		return (Node)eDynamicGet(OpgraphPackage.CALL__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__SOURCE, true, true);
+	public Component getSource() {
+		return (Component)eDynamicGet(OpgraphPackage.CALL__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__SOURCE, true, true);
 	}
 
 	/**
@@ -99,8 +100,8 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node basicGetSource() {
-		return (Node)eDynamicGet(OpgraphPackage.CALL__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__SOURCE, false, true);
+	public Component basicGetSource() {
+		return (Component)eDynamicGet(OpgraphPackage.CALL__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__SOURCE, false, true);
 	}
 
 	/**
@@ -108,7 +109,7 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(Node newSource, NotificationChain msgs) {
+	public NotificationChain basicSetSource(Component newSource, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newSource, OpgraphPackage.CALL__SOURCE, msgs);
 		return msgs;
 	}
@@ -119,7 +120,7 @@ public class CallImpl extends InvocableImpl implements Call {
 	 * @generated
 	 */
 	@Override
-	public void setSource(Node newSource) {
+	public void setSource(Component newSource) {
 		eDynamicSet(OpgraphPackage.CALL__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CALL__SOURCE, newSource);
 	}
 
@@ -132,14 +133,14 @@ public class CallImpl extends InvocableImpl implements Call {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case OpgraphPackage.CALL__TARGET:
-				Node target = basicGetTarget();
+				Function target = basicGetTarget();
 				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, OpgraphPackage.NODE__INCOMING_CALLS, Node.class, msgs);
-				return basicSetTarget((Node)otherEnd, msgs);
+					msgs = ((InternalEObject)target).eInverseRemove(this, OpgraphPackage.FUNCTION__INCOMING_CALLS, Function.class, msgs);
+				return basicSetTarget((Function)otherEnd, msgs);
 			case OpgraphPackage.CALL__SOURCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSource((Node)otherEnd, msgs);
+				return basicSetSource((Component)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -169,7 +170,7 @@ public class CallImpl extends InvocableImpl implements Call {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case OpgraphPackage.CALL__SOURCE:
-				return eInternalContainer().eInverseRemove(this, OpgraphPackage.NODE__OUTGOING_CALLS, Node.class, msgs);
+				return eInternalContainer().eInverseRemove(this, OpgraphPackage.COMPONENT__OUTGOING_CALLS, Component.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -201,10 +202,10 @@ public class CallImpl extends InvocableImpl implements Call {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case OpgraphPackage.CALL__TARGET:
-				setTarget((Node)newValue);
+				setTarget((Function)newValue);
 				return;
 			case OpgraphPackage.CALL__SOURCE:
-				setSource((Node)newValue);
+				setSource((Component)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +220,10 @@ public class CallImpl extends InvocableImpl implements Call {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case OpgraphPackage.CALL__TARGET:
-				setTarget((Node)null);
+				setTarget((Function)null);
 				return;
 			case OpgraphPackage.CALL__SOURCE:
-				setSource((Node)null);
+				setSource((Component)null);
 				return;
 		}
 		super.eUnset(featureID);

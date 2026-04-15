@@ -16,25 +16,12 @@ import org.eclipse.emf.ecore.ENamedElement
 import org.eclipse.emf.ecore.ETypedElement
 import org.eclipse.emf.ecore.EClass
 
-
-abstract class GroupElement extends ENamedElement {
-    
-}
+// Bridging Ecore constructs
 
 /**
- * Group is generated to EClass with elements generated either to
- * operations or contained classes
+ * Features hold state. It might be immutable configuration, 
+ * mutable runtime state, or a combination of thereof.  
  */
-class Group extends GroupElement {
-    
-    refers EClass[] superTypes
-    
-    contains GroupElement[] elements keys name
-    
-    contains Feature[] features
-    
-}
-
 abstract class Feature extends ETypedElement {
     
     boolean ^transient
@@ -65,17 +52,80 @@ class Reference extends Feature {
 }
 
 /**
- * Something that can be invoked, receive arguments and produce result or throw an exception
+ * A collection of features which may extend zero or more superTypes
+ * providing base functionality
  */
-class Invocable extends ENamedElement {
+interface Class extends ENamedElement {
+
+    refers EClass[] superTypes
+        
+    contains Feature[] features
+    
+}
+
+/**
+ * A collection of related classes
+ */
+class Package extends ENamedElement {
+    
+    String nsPrefix
+    
+    String nsURI
+    
+    contains Class[] classes
+    
+}
+
+// --- Life cycle management and functional programming ---
+
+/**
+ * Something that can be started and stopped
+ */
+interface Component extends Class {
     
     /**
-     * Invocable code body
+     * Starts the component. For example, establishes connections to external systems.
+     */
+    contains Operator starter
+    
+    /**
+     * Stops the component. For example, closes connections to external systems, deletes temporary files.
+     */
+    contains Operator stopper
+        
+    /**
+     * Component may call functions as part of its startup or overall functionality
+     */
+    contains Call[] outgoingCalls opposite source keys name    
+    
+}
+
+/**
+ * Calls the target function. 
+ * May process (map) inputs and outputs as well as handle exceptions.
+ * 
+ * Calls are functions themselves, so they may have their own calls.
+ */
+class Call extends Function, Component {
+    
+    refers Function target opposite incomingCalls
+    
+    container Component source opposite outgoingCalls
+    
+}
+
+/**
+ * Performs some operation
+ */
+interface Operator extends Component {
+    
+    /**
+     * Code body
      */
     String body
     
     /**
-     * URI of invocable code body
+     * URI of the code body
      */
     String bodyRef
     
@@ -84,84 +134,105 @@ class Invocable extends ENamedElement {
      */
     String language = "Java"
     
-    refers ETypedElement[] inputs
-    
-    refers ETypedElement[] outputs
-    
-    refers EClassifier[] exceptions
-
-}
-
-/**
- * Invokes the target invocable. 
- * May process (map) inputs and outputs as well as handle exceptions.
- * 
- * Calls are passed to activities and other calls as additional inputs 
- * 
- */
-class Call extends Invocable {
-    
-    refers Node target opposite incomingCalls
-    
-    container Node source opposite outgoingCalls
-    
-}
-
-class Node extends Invocable, GroupElement {
-            
-    refers Call[] incomingCalls opposite target
+    /**
+     * Allows to override the default operation name such as apply for functions or accept for consumers
+     */
+    String operationName
     
     /**
-     * Calls wired to this node
+     * Exceptions which this operator's operation may throw
      */
-    contains Call[] outgoingCalls opposite source keys name
+    refers EClassifier[] exceptions
+    
+    /** 
+     * Exception handlers are evaluated in the definition order
+     * until one of them return true or there are no more handlers.
+     * In the latter case the exception bubbles up to the caller.
+     */    
+    contains Predicate[] exceptionHandlers    
     
 }
 
 /**
- * Activities can be invoked by incoming transitions with 
- * outputs passed to outgoing transitions 
+ * Produces outputs or throws an exception
  */
-class Activity extends Node {
-        
+class Supplier extends Operator {
+    
+    refers ETypedElement[] outputs    
+
+    /**
+     * Outputs can be passed to outgoing transitions
+     */        
     contains Transition[] outgoingTransitions opposite source keys name
     
+}
+
+/**
+ * Consumes inputs and may throw an exception as a result 
+ */
+class Consumer extends Operator {
+    
+    refers ETypedElement[] inputs
+    
+    /**
+     * Inputs can be provided by incoming transitions
+     */
     refers Transition[] incomingTransitions opposite target   
     
 }
 
 /**
- * Transitions pass data and control between activities.
+ * Marker interface - consumes inputs and produces a boolean result or throws an exception.
+ * Extended by transitions
+ */
+interface Predicate extends Consumer {
+    
+}
+
+/**
+ * Transitions pass data and control from suppliers to consumers
  * Transitions can perform data mapping.
  * Transitions can be conditional and can be activated by thrown exceptions (error transitions)
  */
-class Transition extends ENamedElement {
+class Transition extends Predicate {
     
-    refers ETypedElement[] inputs
+    container Supplier source opposite outgoingTransitions
     
-    container Activity source opposite outgoingTransitions
-    
-    refers Activity target opposite incomingTransitions
+    refers Consumer target opposite incomingTransitions
     
 }
 
-class Process extends Group, Activity {
-    
+/**
+ * Takes inputs, produces outputs or throws an exception
+ */
+class Function extends Consumer, Supplier {
+
     /**
-     * Invocations from the process incoming transitions are routed to the start activity
-     */
-    refers Activity start 
-    
-    /**
-     * Invocations from the process end activity are passed to the process outgoing transitions
-     */
-    refers Activity end
+     * Function can be invoked by calls
+     */            
+    refers Call[] incomingCalls opposite target
     
 }
 
-class Service extends Node, Group {
+/**
+ * Group is generated to EClass with elements generated either to
+ * operations or contained classes
+ */
+class Composite extends Component {
     
-    refers Node entryPoint
+    contains Component[] components keys name
+    
+}
+
+class CompositeSupplier extends Supplier, Composite {
+    
+}
+
+class CompositeConsumer extends Consumer, Composite {
+    
+}
+
+class CompositeFunction extends Function, CompositeSupplier, CompositeConsumer {
     
 }
 

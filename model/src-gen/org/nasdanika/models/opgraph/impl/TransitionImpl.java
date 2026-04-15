@@ -2,20 +2,14 @@
  */
 package org.nasdanika.models.opgraph.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENamedElementImpl;
-
-import org.nasdanika.models.opgraph.Activity;
+import org.nasdanika.models.opgraph.Consumer;
 import org.nasdanika.models.opgraph.OpgraphPackage;
+import org.nasdanika.models.opgraph.Supplier;
 import org.nasdanika.models.opgraph.Transition;
 
 /**
@@ -26,14 +20,13 @@ import org.nasdanika.models.opgraph.Transition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.opgraph.impl.TransitionImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransitionImpl extends ENamedElementImpl implements Transition {
+public class TransitionImpl extends ConsumerImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,16 +51,9 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final int ESTATIC_FEATURE_COUNT = 2;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
-	protected int eStaticFeatureCount() {
-		return ESTATIC_FEATURE_COUNT;
+	public Supplier getSource() {
+		return (Supplier)eDynamicGet(OpgraphPackage.TRANSITION__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__SOURCE, true, true);
 	}
 
 	/**
@@ -75,10 +61,8 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<ETypedElement> getInputs() {
-		return (EList<ETypedElement>)eDynamicGet(OpgraphPackage.TRANSITION__INPUTS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__INPUTS, true, true);
+	public Supplier basicGetSource() {
+		return (Supplier)eDynamicGet(OpgraphPackage.TRANSITION__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__SOURCE, false, true);
 	}
 
 	/**
@@ -86,26 +70,7 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Activity getSource() {
-		return (Activity)eDynamicGet(OpgraphPackage.TRANSITION__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__SOURCE, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Activity basicGetSource() {
-		return (Activity)eDynamicGet(OpgraphPackage.TRANSITION__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__SOURCE, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSource(Activity newSource, NotificationChain msgs) {
+	public NotificationChain basicSetSource(Supplier newSource, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newSource, OpgraphPackage.TRANSITION__SOURCE, msgs);
 		return msgs;
 	}
@@ -116,7 +81,7 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * @generated
 	 */
 	@Override
-	public void setSource(Activity newSource) {
+	public void setSource(Supplier newSource) {
 		eDynamicSet(OpgraphPackage.TRANSITION__SOURCE - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__SOURCE, newSource);
 	}
 
@@ -126,8 +91,8 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * @generated
 	 */
 	@Override
-	public Activity getTarget() {
-		return (Activity)eDynamicGet(OpgraphPackage.TRANSITION__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__TARGET, true, true);
+	public Consumer getTarget() {
+		return (Consumer)eDynamicGet(OpgraphPackage.TRANSITION__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__TARGET, true, true);
 	}
 
 	/**
@@ -135,8 +100,8 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Activity basicGetTarget() {
-		return (Activity)eDynamicGet(OpgraphPackage.TRANSITION__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__TARGET, false, true);
+	public Consumer basicGetTarget() {
+		return (Consumer)eDynamicGet(OpgraphPackage.TRANSITION__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__TARGET, false, true);
 	}
 
 	/**
@@ -144,7 +109,7 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(Activity newTarget, NotificationChain msgs) {
+	public NotificationChain basicSetTarget(Consumer newTarget, NotificationChain msgs) {
 		msgs = eDynamicInverseAdd((InternalEObject)newTarget, OpgraphPackage.TRANSITION__TARGET, msgs);
 		return msgs;
 	}
@@ -155,7 +120,7 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * @generated
 	 */
 	@Override
-	public void setTarget(Activity newTarget) {
+	public void setTarget(Consumer newTarget) {
 		eDynamicSet(OpgraphPackage.TRANSITION__TARGET - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.TRANSITION__TARGET, newTarget);
 	}
 
@@ -170,12 +135,12 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 			case OpgraphPackage.TRANSITION__SOURCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSource((Activity)otherEnd, msgs);
+				return basicSetSource((Supplier)otherEnd, msgs);
 			case OpgraphPackage.TRANSITION__TARGET:
-				Activity target = basicGetTarget();
+				Consumer target = basicGetTarget();
 				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, OpgraphPackage.ACTIVITY__INCOMING_TRANSITIONS, Activity.class, msgs);
-				return basicSetTarget((Activity)otherEnd, msgs);
+					msgs = ((InternalEObject)target).eInverseRemove(this, OpgraphPackage.CONSUMER__INCOMING_TRANSITIONS, Consumer.class, msgs);
+				return basicSetTarget((Consumer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -205,7 +170,7 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case OpgraphPackage.TRANSITION__SOURCE:
-				return eInternalContainer().eInverseRemove(this, OpgraphPackage.ACTIVITY__OUTGOING_TRANSITIONS, Activity.class, msgs);
+				return eInternalContainer().eInverseRemove(this, OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS, Supplier.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -218,8 +183,6 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpgraphPackage.TRANSITION__INPUTS:
-				return getInputs();
 			case OpgraphPackage.TRANSITION__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -235,19 +198,14 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpgraphPackage.TRANSITION__INPUTS:
-				getInputs().clear();
-				getInputs().addAll((Collection<? extends ETypedElement>)newValue);
-				return;
 			case OpgraphPackage.TRANSITION__SOURCE:
-				setSource((Activity)newValue);
+				setSource((Supplier)newValue);
 				return;
 			case OpgraphPackage.TRANSITION__TARGET:
-				setTarget((Activity)newValue);
+				setTarget((Consumer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,14 +219,11 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.TRANSITION__INPUTS:
-				getInputs().clear();
-				return;
 			case OpgraphPackage.TRANSITION__SOURCE:
-				setSource((Activity)null);
+				setSource((Supplier)null);
 				return;
 			case OpgraphPackage.TRANSITION__TARGET:
-				setTarget((Activity)null);
+				setTarget((Consumer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -282,8 +237,6 @@ public class TransitionImpl extends ENamedElementImpl implements Transition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.TRANSITION__INPUTS:
-				return !getInputs().isEmpty();
 			case OpgraphPackage.TRANSITION__SOURCE:
 				return basicGetSource() != null;
 			case OpgraphPackage.TRANSITION__TARGET:

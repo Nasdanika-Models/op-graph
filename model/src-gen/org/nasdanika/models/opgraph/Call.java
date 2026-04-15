@@ -10,10 +10,10 @@ package org.nasdanika.models.opgraph;
  *
  * <!-- begin-model-doc -->
  * *
- * Invokes the target invocable.
+ * Calls the target function.
  * May process (map) inputs and outputs as well as handle exceptions.
  * 
- * Calls are passed to activities and other calls as additional inputs
+ * Calls are functions themselves, so they may have their own calls.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -28,20 +28,20 @@ package org.nasdanika.models.opgraph;
  * @model
  * @generated
  */
-public interface Call extends Invocable {
+public interface Call extends Function, Component {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.opgraph.Node#getIncomingCalls <em>Incoming Calls</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.opgraph.Function#getIncomingCalls <em>Incoming Calls</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(Node)
+	 * @see #setTarget(Function)
 	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getCall_Target()
-	 * @see org.nasdanika.models.opgraph.Node#getIncomingCalls
+	 * @see org.nasdanika.models.opgraph.Function#getIncomingCalls
 	 * @model opposite="incomingCalls"
 	 * @generated
 	 */
-	Node getTarget();
+	Function getTarget();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Call#getTarget <em>Target</em>}' reference.
@@ -51,21 +51,21 @@ public interface Call extends Invocable {
 	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTarget(Node value);
+	void setTarget(Function value);
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.opgraph.Node#getOutgoingCalls <em>Outgoing Calls</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.opgraph.Component#getOutgoingCalls <em>Outgoing Calls</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' container reference.
-	 * @see #setSource(Node)
+	 * @see #setSource(Component)
 	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getCall_Source()
-	 * @see org.nasdanika.models.opgraph.Node#getOutgoingCalls
+	 * @see org.nasdanika.models.opgraph.Component#getOutgoingCalls
 	 * @model opposite="outgoingCalls" transient="false"
 	 * @generated
 	 */
-	Node getSource();
+	Component getSource();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Call#getSource <em>Source</em>}' container reference.
@@ -75,6 +75,6 @@ public interface Call extends Invocable {
 	 * @see #getSource()
 	 * @generated
 	 */
-	void setSource(Node value);
+	void setSource(Component value);
 
 } // Call

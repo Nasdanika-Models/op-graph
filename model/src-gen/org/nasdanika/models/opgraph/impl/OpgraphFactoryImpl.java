@@ -10,16 +10,18 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.nasdanika.models.opgraph.Activity;
 import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Call;
-import org.nasdanika.models.opgraph.Group;
-import org.nasdanika.models.opgraph.Invocable;
-import org.nasdanika.models.opgraph.Node;
+import org.nasdanika.models.opgraph.Composite;
+import org.nasdanika.models.opgraph.CompositeConsumer;
+import org.nasdanika.models.opgraph.CompositeFunction;
+import org.nasdanika.models.opgraph.CompositeSupplier;
+import org.nasdanika.models.opgraph.Consumer;
+import org.nasdanika.models.opgraph.Function;
 import org.nasdanika.models.opgraph.OpgraphFactory;
 import org.nasdanika.models.opgraph.OpgraphPackage;
 import org.nasdanika.models.opgraph.Reference;
-import org.nasdanika.models.opgraph.Service;
+import org.nasdanika.models.opgraph.Supplier;
 import org.nasdanika.models.opgraph.Transition;
 
 /**
@@ -66,30 +68,21 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case OpgraphPackage.GROUP: return createGroup();
 			case OpgraphPackage.ATTRIBUTE: return createAttribute();
 			case OpgraphPackage.REFERENCE: return createReference();
-			case OpgraphPackage.INVOCABLE: return createInvocable();
+			case OpgraphPackage.PACKAGE: return createPackage();
 			case OpgraphPackage.CALL: return createCall();
-			case OpgraphPackage.NODE: return createNode();
-			case OpgraphPackage.ACTIVITY: return createActivity();
+			case OpgraphPackage.SUPPLIER: return createSupplier();
+			case OpgraphPackage.CONSUMER: return createConsumer();
 			case OpgraphPackage.TRANSITION: return createTransition();
-			case OpgraphPackage.PROCESS: return createProcess();
-			case OpgraphPackage.SERVICE: return createService();
+			case OpgraphPackage.FUNCTION: return createFunction();
+			case OpgraphPackage.COMPOSITE: return createComposite();
+			case OpgraphPackage.COMPOSITE_SUPPLIER: return createCompositeSupplier();
+			case OpgraphPackage.COMPOSITE_CONSUMER: return createCompositeConsumer();
+			case OpgraphPackage.COMPOSITE_FUNCTION: return createCompositeFunction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Group createGroup() {
-		GroupImpl group = new GroupImpl();
-		return group;
 	}
 
 	/**
@@ -120,9 +113,9 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	 * @generated
 	 */
 	@Override
-	public Invocable createInvocable() {
-		InvocableImpl invocable = new InvocableImpl();
-		return invocable;
+	public org.nasdanika.models.opgraph.Package createPackage() {
+		PackageImpl package_ = new PackageImpl();
+		return package_;
 	}
 
 	/**
@@ -142,9 +135,9 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	 * @generated
 	 */
 	@Override
-	public Node createNode() {
-		NodeImpl node = new NodeImpl();
-		return node;
+	public Supplier createSupplier() {
+		SupplierImpl supplier = new SupplierImpl();
+		return supplier;
 	}
 
 	/**
@@ -153,9 +146,9 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	 * @generated
 	 */
 	@Override
-	public Activity createActivity() {
-		ActivityImpl activity = new ActivityImpl();
-		return activity;
+	public Consumer createConsumer() {
+		ConsumerImpl consumer = new ConsumerImpl();
+		return consumer;
 	}
 
 	/**
@@ -175,9 +168,9 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	 * @generated
 	 */
 	@Override
-	public org.nasdanika.models.opgraph.Process createProcess() {
-		ProcessImpl process = new ProcessImpl();
-		return process;
+	public Function createFunction() {
+		FunctionImpl function = new FunctionImpl();
+		return function;
 	}
 
 	/**
@@ -186,9 +179,42 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	 * @generated
 	 */
 	@Override
-	public Service createService() {
-		ServiceImpl service = new ServiceImpl();
-		return service;
+	public Composite createComposite() {
+		CompositeImpl composite = new CompositeImpl();
+		return composite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeSupplier createCompositeSupplier() {
+		CompositeSupplierImpl compositeSupplier = new CompositeSupplierImpl();
+		return compositeSupplier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeConsumer createCompositeConsumer() {
+		CompositeConsumerImpl compositeConsumer = new CompositeConsumerImpl();
+		return compositeConsumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompositeFunction createCompositeFunction() {
+		CompositeFunctionImpl compositeFunction = new CompositeFunctionImpl();
+		return compositeFunction;
 	}
 
 	/**

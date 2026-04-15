@@ -10,18 +10,22 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.nasdanika.models.opgraph.Activity;
 import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Call;
+import org.nasdanika.models.opgraph.Component;
+import org.nasdanika.models.opgraph.Composite;
+import org.nasdanika.models.opgraph.CompositeConsumer;
+import org.nasdanika.models.opgraph.CompositeFunction;
+import org.nasdanika.models.opgraph.CompositeSupplier;
+import org.nasdanika.models.opgraph.Consumer;
 import org.nasdanika.models.opgraph.Feature;
-import org.nasdanika.models.opgraph.Group;
-import org.nasdanika.models.opgraph.GroupElement;
-import org.nasdanika.models.opgraph.Invocable;
-import org.nasdanika.models.opgraph.Node;
+import org.nasdanika.models.opgraph.Function;
+import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphFactory;
 import org.nasdanika.models.opgraph.OpgraphPackage;
+import org.nasdanika.models.opgraph.Predicate;
 import org.nasdanika.models.opgraph.Reference;
-import org.nasdanika.models.opgraph.Service;
+import org.nasdanika.models.opgraph.Supplier;
 import org.nasdanika.models.opgraph.Transition;
 
 /**
@@ -31,20 +35,6 @@ import org.nasdanika.models.opgraph.Transition;
  * @generated
  */
 public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass groupElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass groupEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,7 +61,21 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass invocableEClass = null;
+	private EClass classEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass packageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,14 +89,28 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass nodeEClass = null;
+	private EClass operatorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass activityEClass = null;
+	private EClass supplierEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass consumerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predicateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,14 +124,35 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass processEClass = null;
+	private EClass functionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceEClass = null;
+	private EClass compositeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeSupplierEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeConsumerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeFunctionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -176,56 +215,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(OpgraphPackage.eNS_URI, theOpgraphPackage);
 		return theOpgraphPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getGroupElement() {
-		return groupElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getGroup() {
-		return groupEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGroup_SuperTypes() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGroup_Elements() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGroup_Features() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -374,8 +363,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getInvocable() {
-		return invocableEClass;
+	public EClass getClass_() {
+		return classEClass;
 	}
 
 	/**
@@ -384,8 +373,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInvocable_Body() {
-		return (EAttribute)invocableEClass.getEStructuralFeatures().get(0);
+	public EReference getClass_SuperTypes() {
+		return (EReference)classEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -394,8 +383,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInvocable_BodyRef() {
-		return (EAttribute)invocableEClass.getEStructuralFeatures().get(1);
+	public EReference getClass_Features() {
+		return (EReference)classEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -404,8 +393,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInvocable_Language() {
-		return (EAttribute)invocableEClass.getEStructuralFeatures().get(2);
+	public EClass getPackage() {
+		return packageEClass;
 	}
 
 	/**
@@ -414,8 +403,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getInvocable_Inputs() {
-		return (EReference)invocableEClass.getEStructuralFeatures().get(3);
+	public EAttribute getPackage_NsPrefix() {
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -424,8 +413,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getInvocable_Outputs() {
-		return (EReference)invocableEClass.getEStructuralFeatures().get(4);
+	public EAttribute getPackage_NsURI() {
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -434,8 +423,48 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getInvocable_Exceptions() {
-		return (EReference)invocableEClass.getEStructuralFeatures().get(5);
+	public EReference getPackage_Classes() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getComponent() {
+		return componentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Starter() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Stopper() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_OutgoingCalls() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -474,8 +503,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNode() {
-		return nodeEClass;
+	public EClass getOperator() {
+		return operatorEClass;
 	}
 
 	/**
@@ -484,8 +513,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNode_IncomingCalls() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOperator_Body() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -494,8 +523,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNode_OutgoingCalls() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getOperator_BodyRef() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -504,8 +533,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getActivity() {
-		return activityEClass;
+	public EAttribute getOperator_Language() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -514,8 +543,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getActivity_OutgoingTransitions() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOperator_OperationName() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -524,8 +553,88 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getActivity_IncomingTransitions() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(1);
+	public EReference getOperator_Exceptions() {
+		return (EReference)operatorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getOperator_ExceptionHandlers() {
+		return (EReference)operatorEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSupplier() {
+		return supplierEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSupplier_Outputs() {
+		return (EReference)supplierEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSupplier_OutgoingTransitions() {
+		return (EReference)supplierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getConsumer() {
+		return consumerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConsumer_Inputs() {
+		return (EReference)consumerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConsumer_IncomingTransitions() {
+		return (EReference)consumerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPredicate() {
+		return predicateEClass;
 	}
 
 	/**
@@ -544,7 +653,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTransition_Inputs() {
+	public EReference getTransition_Source() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -554,7 +663,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTransition_Source() {
+	public EReference getTransition_Target() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -564,8 +673,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTransition_Target() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
+	public EClass getFunction() {
+		return functionEClass;
 	}
 
 	/**
@@ -574,8 +683,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getProcess() {
-		return processEClass;
+	public EReference getFunction_IncomingCalls() {
+		return (EReference)functionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -584,8 +693,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProcess_Start() {
-		return (EReference)processEClass.getEStructuralFeatures().get(0);
+	public EClass getComposite() {
+		return compositeEClass;
 	}
 
 	/**
@@ -594,8 +703,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProcess_End() {
-		return (EReference)processEClass.getEStructuralFeatures().get(1);
+	public EReference getComposite_Components() {
+		return (EReference)compositeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -604,8 +713,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getService() {
-		return serviceEClass;
+	public EClass getCompositeSupplier() {
+		return compositeSupplierEClass;
 	}
 
 	/**
@@ -614,8 +723,18 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getService_EntryPoint() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(0);
+	public EClass getCompositeConsumer() {
+		return compositeConsumerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCompositeFunction() {
+		return compositeFunctionEClass;
 	}
 
 	/**
@@ -647,13 +766,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		groupElementEClass = createEClass(GROUP_ELEMENT);
-
-		groupEClass = createEClass(GROUP);
-		createEReference(groupEClass, GROUP__SUPER_TYPES);
-		createEReference(groupEClass, GROUP__ELEMENTS);
-		createEReference(groupEClass, GROUP__FEATURES);
-
 		featureEClass = createEClass(FEATURE);
 		createEAttribute(featureEClass, FEATURE__TRANSIENT);
 		createEAttribute(featureEClass, FEATURE__VOLATILE);
@@ -671,37 +783,57 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		createEReference(referenceEClass, REFERENCE__KEYS);
 		createEReference(referenceEClass, REFERENCE__OPPOSITE);
 
-		invocableEClass = createEClass(INVOCABLE);
-		createEAttribute(invocableEClass, INVOCABLE__BODY);
-		createEAttribute(invocableEClass, INVOCABLE__BODY_REF);
-		createEAttribute(invocableEClass, INVOCABLE__LANGUAGE);
-		createEReference(invocableEClass, INVOCABLE__INPUTS);
-		createEReference(invocableEClass, INVOCABLE__OUTPUTS);
-		createEReference(invocableEClass, INVOCABLE__EXCEPTIONS);
+		classEClass = createEClass(CLASS);
+		createEReference(classEClass, CLASS__SUPER_TYPES);
+		createEReference(classEClass, CLASS__FEATURES);
+
+		packageEClass = createEClass(PACKAGE);
+		createEAttribute(packageEClass, PACKAGE__NS_PREFIX);
+		createEAttribute(packageEClass, PACKAGE__NS_URI);
+		createEReference(packageEClass, PACKAGE__CLASSES);
+
+		componentEClass = createEClass(COMPONENT);
+		createEReference(componentEClass, COMPONENT__STARTER);
+		createEReference(componentEClass, COMPONENT__STOPPER);
+		createEReference(componentEClass, COMPONENT__OUTGOING_CALLS);
 
 		callEClass = createEClass(CALL);
 		createEReference(callEClass, CALL__TARGET);
 		createEReference(callEClass, CALL__SOURCE);
 
-		nodeEClass = createEClass(NODE);
-		createEReference(nodeEClass, NODE__INCOMING_CALLS);
-		createEReference(nodeEClass, NODE__OUTGOING_CALLS);
+		operatorEClass = createEClass(OPERATOR);
+		createEAttribute(operatorEClass, OPERATOR__BODY);
+		createEAttribute(operatorEClass, OPERATOR__BODY_REF);
+		createEAttribute(operatorEClass, OPERATOR__LANGUAGE);
+		createEAttribute(operatorEClass, OPERATOR__OPERATION_NAME);
+		createEReference(operatorEClass, OPERATOR__EXCEPTIONS);
+		createEReference(operatorEClass, OPERATOR__EXCEPTION_HANDLERS);
 
-		activityEClass = createEClass(ACTIVITY);
-		createEReference(activityEClass, ACTIVITY__OUTGOING_TRANSITIONS);
-		createEReference(activityEClass, ACTIVITY__INCOMING_TRANSITIONS);
+		supplierEClass = createEClass(SUPPLIER);
+		createEReference(supplierEClass, SUPPLIER__OUTPUTS);
+		createEReference(supplierEClass, SUPPLIER__OUTGOING_TRANSITIONS);
+
+		consumerEClass = createEClass(CONSUMER);
+		createEReference(consumerEClass, CONSUMER__INPUTS);
+		createEReference(consumerEClass, CONSUMER__INCOMING_TRANSITIONS);
+
+		predicateEClass = createEClass(PREDICATE);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__INPUTS);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
 		createEReference(transitionEClass, TRANSITION__TARGET);
 
-		processEClass = createEClass(PROCESS);
-		createEReference(processEClass, PROCESS__START);
-		createEReference(processEClass, PROCESS__END);
+		functionEClass = createEClass(FUNCTION);
+		createEReference(functionEClass, FUNCTION__INCOMING_CALLS);
 
-		serviceEClass = createEClass(SERVICE);
-		createEReference(serviceEClass, SERVICE__ENTRY_POINT);
+		compositeEClass = createEClass(COMPOSITE);
+		createEReference(compositeEClass, COMPOSITE__COMPONENTS);
+
+		compositeSupplierEClass = createEClass(COMPOSITE_SUPPLIER);
+
+		compositeConsumerEClass = createEClass(COMPOSITE_CONSUMER);
+
+		compositeFunctionEClass = createEClass(COMPOSITE_FUNCTION);
 	}
 
 	/**
@@ -735,30 +867,31 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		groupElementEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
-		groupEClass.getESuperTypes().add(this.getGroupElement());
 		featureEClass.getESuperTypes().add(theEcorePackage.getETypedElement());
 		attributeEClass.getESuperTypes().add(this.getFeature());
 		referenceEClass.getESuperTypes().add(this.getFeature());
-		invocableEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
-		callEClass.getESuperTypes().add(this.getInvocable());
-		nodeEClass.getESuperTypes().add(this.getInvocable());
-		nodeEClass.getESuperTypes().add(this.getGroupElement());
-		activityEClass.getESuperTypes().add(this.getNode());
-		transitionEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
-		processEClass.getESuperTypes().add(this.getGroup());
-		processEClass.getESuperTypes().add(this.getActivity());
-		serviceEClass.getESuperTypes().add(this.getNode());
-		serviceEClass.getESuperTypes().add(this.getGroup());
+		classEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
+		packageEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
+		componentEClass.getESuperTypes().add(this.getClass_());
+		callEClass.getESuperTypes().add(this.getFunction());
+		callEClass.getESuperTypes().add(this.getComponent());
+		operatorEClass.getESuperTypes().add(this.getComponent());
+		supplierEClass.getESuperTypes().add(this.getOperator());
+		consumerEClass.getESuperTypes().add(this.getOperator());
+		predicateEClass.getESuperTypes().add(this.getConsumer());
+		transitionEClass.getESuperTypes().add(this.getPredicate());
+		functionEClass.getESuperTypes().add(this.getConsumer());
+		functionEClass.getESuperTypes().add(this.getSupplier());
+		compositeEClass.getESuperTypes().add(this.getComponent());
+		compositeSupplierEClass.getESuperTypes().add(this.getSupplier());
+		compositeSupplierEClass.getESuperTypes().add(this.getComposite());
+		compositeConsumerEClass.getESuperTypes().add(this.getConsumer());
+		compositeConsumerEClass.getESuperTypes().add(this.getComposite());
+		compositeFunctionEClass.getESuperTypes().add(this.getFunction());
+		compositeFunctionEClass.getESuperTypes().add(this.getCompositeSupplier());
+		compositeFunctionEClass.getESuperTypes().add(this.getCompositeConsumer());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(groupElementEClass, GroupElement.class, "GroupElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGroup_SuperTypes(), theEcorePackage.getEClass(), null, "superTypes", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGroup_Elements(), this.getGroupElement(), null, "elements", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGroup_Features(), this.getFeature(), null, "features", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeature_Transient(), theEcorePackage.getEBoolean(), "transient", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Volatile(), theEcorePackage.getEBoolean(), "volatile", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -776,37 +909,57 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEReference(getReference_Keys(), this.getAttribute(), null, "keys", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Opposite(), this.getReference(), null, "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(invocableEClass, Invocable.class, "Invocable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInvocable_Body(), theEcorePackage.getEString(), "body", null, 0, 1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInvocable_BodyRef(), theEcorePackage.getEString(), "bodyRef", null, 0, 1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInvocable_Language(), theEcorePackage.getEString(), "language", "Java", 0, 1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInvocable_Inputs(), theEcorePackage.getETypedElement(), null, "inputs", null, 0, -1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInvocable_Outputs(), theEcorePackage.getETypedElement(), null, "outputs", null, 0, -1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInvocable_Exceptions(), theEcorePackage.getEClassifier(), null, "exceptions", null, 0, -1, Invocable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(classEClass, org.nasdanika.models.opgraph.Class.class, "Class", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getClass_SuperTypes(), theEcorePackage.getEClass(), null, "superTypes", null, 0, -1, org.nasdanika.models.opgraph.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClass_Features(), this.getFeature(), null, "features", null, 0, -1, org.nasdanika.models.opgraph.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(packageEClass, org.nasdanika.models.opgraph.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPackage_NsPrefix(), theEcorePackage.getEString(), "nsPrefix", null, 0, 1, org.nasdanika.models.opgraph.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPackage_NsURI(), theEcorePackage.getEString(), "nsURI", null, 0, 1, org.nasdanika.models.opgraph.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Classes(), this.getClass_(), null, "classes", null, 0, -1, org.nasdanika.models.opgraph.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponent_Starter(), this.getOperator(), null, "starter", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Stopper(), this.getOperator(), null, "stopper", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_OutgoingCalls(), this.getCall(), this.getCall_Source(), "outgoingCalls", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCall_Target(), this.getNode(), this.getNode_IncomingCalls(), "target", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCall_Source(), this.getNode(), this.getNode_OutgoingCalls(), "source", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCall_Target(), this.getFunction(), this.getFunction_IncomingCalls(), "target", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCall_Source(), this.getComponent(), this.getComponent_OutgoingCalls(), "source", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNode_IncomingCalls(), this.getCall(), this.getCall_Target(), "incomingCalls", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNode_OutgoingCalls(), this.getCall(), this.getCall_Source(), "outgoingCalls", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operatorEClass, Operator.class, "Operator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperator_Body(), theEcorePackage.getEString(), "body", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_BodyRef(), theEcorePackage.getEString(), "bodyRef", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_Language(), theEcorePackage.getEString(), "language", "Java", 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_OperationName(), theEcorePackage.getEString(), "operationName", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperator_Exceptions(), theEcorePackage.getEClassifier(), null, "exceptions", null, 0, -1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperator_ExceptionHandlers(), this.getPredicate(), null, "exceptionHandlers", null, 0, -1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivity_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(supplierEClass, Supplier.class, "Supplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSupplier_Outputs(), theEcorePackage.getETypedElement(), null, "outputs", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplier_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(consumerEClass, Consumer.class, "Consumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConsumer_Inputs(), theEcorePackage.getETypedElement(), null, "inputs", null, 0, -1, Consumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConsumer_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Consumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predicateEClass, Predicate.class, "Predicate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_Inputs(), theEcorePackage.getETypedElement(), null, "inputs", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Source(), this.getActivity(), this.getActivity_OutgoingTransitions(), "source", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Target(), this.getActivity(), this.getActivity_IncomingTransitions(), "target", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Source(), this.getSupplier(), this.getSupplier_OutgoingTransitions(), "source", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Target(), this.getConsumer(), this.getConsumer_IncomingTransitions(), "target", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(processEClass, org.nasdanika.models.opgraph.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcess_Start(), this.getActivity(), null, "start", null, 0, 1, org.nasdanika.models.opgraph.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcess_End(), this.getActivity(), null, "end", null, 0, 1, org.nasdanika.models.opgraph.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFunction_IncomingCalls(), this.getCall(), this.getCall_Target(), "incomingCalls", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getService_EntryPoint(), this.getNode(), null, "entryPoint", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(compositeEClass, Composite.class, "Composite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComposite_Components(), this.getComponent(), null, "components", null, 0, -1, Composite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(compositeSupplierEClass, CompositeSupplier.class, "CompositeSupplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeConsumerEClass, CompositeConsumer.class, "CompositeConsumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeFunctionEClass, CompositeFunction.class, "CompositeFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -851,70 +1004,148 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
-		  (groupEClass,
+		  (featureEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nGroup is generated to EClass with elements generated either to\noperations or contained classes"
+			   "documentation", "*\nFeatures hold state. It might be immutable configuration,\nmutable runtime state, or a combination of thereof."
 		   });
 		addAnnotation
-		  (invocableEClass,
+		  (classEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nSomething that can be invoked, receive arguments and produce result or throw an exception"
+			   "documentation", "*\nA collection of features which may extend zero or more superTypes\nproviding base functionality"
 		   });
 		addAnnotation
-		  (getInvocable_Body(),
+		  (packageEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nInvocable code body"
+			   "documentation", "*\nA collection of related classes"
 		   });
 		addAnnotation
-		  (getInvocable_BodyRef(),
+		  (componentEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nURI of invocable code body"
+			   "documentation", "*\nSomething that can be started and stopped"
 		   });
 		addAnnotation
-		  (getInvocable_Language(),
+		  (getComponent_Starter(),
 		   source,
 		   new String[] {
-			   "documentation", "*\nbody or bodyRef language"
+			   "documentation", "*\nStarts the component. For example, establishes connections to external systems."
+		   });
+		addAnnotation
+		  (getComponent_Stopper(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nStops the component. For example, closes connections to external systems, deletes temporary files."
+		   });
+		addAnnotation
+		  (getComponent_OutgoingCalls(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nComponent may call functions as part of its startup or overall functionality"
 		   });
 		addAnnotation
 		  (callEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nInvokes the target invocable.\nMay process (map) inputs and outputs as well as handle exceptions.\n\nCalls are passed to activities and other calls as additional inputs"
+			   "documentation", "*\nCalls the target function.\nMay process (map) inputs and outputs as well as handle exceptions.\n\nCalls are functions themselves, so they may have their own calls."
 		   });
 		addAnnotation
-		  (getNode_OutgoingCalls(),
+		  (operatorEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nCalls wired to this node"
+			   "documentation", "*\nPerforms some operation"
 		   });
 		addAnnotation
-		  (activityEClass,
+		  (getOperator_Body(),
 		   source,
 		   new String[] {
-			   "documentation", "*\nActivities can be invoked by incoming transitions with\noutputs passed to outgoing transitions"
+			   "documentation", "*\nCode body"
+		   });
+		addAnnotation
+		  (getOperator_BodyRef(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nURI of the code body"
+		   });
+		addAnnotation
+		  (getOperator_Language(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nbody or bodyRef language"
+		   });
+		addAnnotation
+		  (getOperator_OperationName(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nAllows to override the default operation name such as apply for functions or accept for consumers"
+		   });
+		addAnnotation
+		  (getOperator_Exceptions(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nExceptions which this operator\'s operation may throw"
+		   });
+		addAnnotation
+		  (getOperator_ExceptionHandlers(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nException handlers are evaluated in the definition order\nuntil one of them return true or there are no more handlers.\nIn the latter case the exception bubbles up to the caller."
+		   });
+		addAnnotation
+		  (supplierEClass,
+		   source,
+		   new String[] {
+			   "documentation", "*\nProduces outputs or throws an exception"
+		   });
+		addAnnotation
+		  (getSupplier_OutgoingTransitions(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nOutputs can be passed to outgoing transitions"
+		   });
+		addAnnotation
+		  (consumerEClass,
+		   source,
+		   new String[] {
+			   "documentation", "*\nConsumes inputs and may throw an exception as a result"
+		   });
+		addAnnotation
+		  (getConsumer_IncomingTransitions(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nInputs can be provided by incoming transitions"
+		   });
+		addAnnotation
+		  (predicateEClass,
+		   source,
+		   new String[] {
+			   "documentation", "*\nMarker interface - consumes inputs and produces a boolean result or throws an exception.\nExtended by transitions"
 		   });
 		addAnnotation
 		  (transitionEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nTransitions pass data and control between activities.\nTransitions can perform data mapping.\nTransitions can be conditional and can be activated by thrown exceptions (error transitions)"
+			   "documentation", "*\nTransitions pass data and control from suppliers to consumers\nTransitions can perform data mapping.\nTransitions can be conditional and can be activated by thrown exceptions (error transitions)"
 		   });
 		addAnnotation
-		  (getProcess_Start(),
+		  (functionEClass,
 		   source,
 		   new String[] {
-			   "documentation", "*\nInvocations from the process incoming transitions are routed to the start activity"
+			   "documentation", "*\nTakes inputs, produces outputs or throws an exception"
 		   });
 		addAnnotation
-		  (getProcess_End(),
+		  (getFunction_IncomingCalls(),
 		   source,
 		   new String[] {
-			   "documentation", "*\nInvocations from the process end activity are passed to the process outgoing transitions"
+			   "documentation", "*\nFunction can be invoked by calls"
+		   });
+		addAnnotation
+		  (compositeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "*\nGroup is generated to EClass with elements generated either to\noperations or contained classes"
 		   });
 	}
 

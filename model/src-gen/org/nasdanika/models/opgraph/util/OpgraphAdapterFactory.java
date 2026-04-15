@@ -12,17 +12,21 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
 
-import org.nasdanika.models.opgraph.Activity;
 import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Call;
+import org.nasdanika.models.opgraph.Component;
+import org.nasdanika.models.opgraph.Composite;
+import org.nasdanika.models.opgraph.CompositeConsumer;
+import org.nasdanika.models.opgraph.CompositeFunction;
+import org.nasdanika.models.opgraph.CompositeSupplier;
+import org.nasdanika.models.opgraph.Consumer;
 import org.nasdanika.models.opgraph.Feature;
-import org.nasdanika.models.opgraph.Group;
-import org.nasdanika.models.opgraph.GroupElement;
-import org.nasdanika.models.opgraph.Invocable;
-import org.nasdanika.models.opgraph.Node;
+import org.nasdanika.models.opgraph.Function;
+import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphPackage;
+import org.nasdanika.models.opgraph.Predicate;
 import org.nasdanika.models.opgraph.Reference;
-import org.nasdanika.models.opgraph.Service;
+import org.nasdanika.models.opgraph.Supplier;
 import org.nasdanika.models.opgraph.Transition;
 
 /**
@@ -82,14 +86,6 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 	protected OpgraphSwitch<Adapter> modelSwitch =
 		new OpgraphSwitch<Adapter>() {
 			@Override
-			public Adapter caseGroupElement(GroupElement object) {
-				return createGroupElementAdapter();
-			}
-			@Override
-			public Adapter caseGroup(Group object) {
-				return createGroupAdapter();
-			}
-			@Override
 			public Adapter caseFeature(Feature object) {
 				return createFeatureAdapter();
 			}
@@ -102,32 +98,60 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 				return createReferenceAdapter();
 			}
 			@Override
-			public Adapter caseInvocable(Invocable object) {
-				return createInvocableAdapter();
+			public Adapter caseClass(org.nasdanika.models.opgraph.Class object) {
+				return createClassAdapter();
+			}
+			@Override
+			public Adapter casePackage(org.nasdanika.models.opgraph.Package object) {
+				return createPackageAdapter();
+			}
+			@Override
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter caseCall(Call object) {
 				return createCallAdapter();
 			}
 			@Override
-			public Adapter caseNode(Node object) {
-				return createNodeAdapter();
+			public Adapter caseOperator(Operator object) {
+				return createOperatorAdapter();
 			}
 			@Override
-			public Adapter caseActivity(Activity object) {
-				return createActivityAdapter();
+			public Adapter caseSupplier(Supplier object) {
+				return createSupplierAdapter();
+			}
+			@Override
+			public Adapter caseConsumer(Consumer object) {
+				return createConsumerAdapter();
+			}
+			@Override
+			public Adapter casePredicate(Predicate object) {
+				return createPredicateAdapter();
 			}
 			@Override
 			public Adapter caseTransition(Transition object) {
 				return createTransitionAdapter();
 			}
 			@Override
-			public Adapter caseProcess(org.nasdanika.models.opgraph.Process object) {
-				return createProcessAdapter();
+			public Adapter caseFunction(Function object) {
+				return createFunctionAdapter();
 			}
 			@Override
-			public Adapter caseService(Service object) {
-				return createServiceAdapter();
+			public Adapter caseComposite(Composite object) {
+				return createCompositeAdapter();
+			}
+			@Override
+			public Adapter caseCompositeSupplier(CompositeSupplier object) {
+				return createCompositeSupplierAdapter();
+			}
+			@Override
+			public Adapter caseCompositeConsumer(CompositeConsumer object) {
+				return createCompositeConsumerAdapter();
+			}
+			@Override
+			public Adapter caseCompositeFunction(CompositeFunction object) {
+				return createCompositeFunctionAdapter();
 			}
 			@Override
 			public Adapter caseEModelElement(EModelElement object) {
@@ -160,34 +184,6 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.GroupElement <em>Group Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.GroupElement
-	 * @generated
-	 */
-	public Adapter createGroupElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Group <em>Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Group
-	 * @generated
-	 */
-	public Adapter createGroupAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Feature <em>Feature</em>}'.
@@ -232,16 +228,44 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Invocable <em>Invocable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Class <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Invocable
+	 * @see org.nasdanika.models.opgraph.Class
 	 * @generated
 	 */
-	public Adapter createInvocableAdapter() {
+	public Adapter createClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Package <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.Package
+	 * @generated
+	 */
+	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.Component
+	 * @generated
+	 */
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 
@@ -260,30 +284,58 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Node <em>Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Operator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Node
+	 * @see org.nasdanika.models.opgraph.Operator
 	 * @generated
 	 */
-	public Adapter createNodeAdapter() {
+	public Adapter createOperatorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Activity <em>Activity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Supplier <em>Supplier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Activity
+	 * @see org.nasdanika.models.opgraph.Supplier
 	 * @generated
 	 */
-	public Adapter createActivityAdapter() {
+	public Adapter createSupplierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Consumer <em>Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.Consumer
+	 * @generated
+	 */
+	public Adapter createConsumerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Predicate <em>Predicate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.Predicate
+	 * @generated
+	 */
+	public Adapter createPredicateAdapter() {
 		return null;
 	}
 
@@ -302,30 +354,72 @@ public class OpgraphAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Process <em>Process</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Function <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Process
+	 * @see org.nasdanika.models.opgraph.Function
 	 * @generated
 	 */
-	public Adapter createProcessAdapter() {
+	public Adapter createFunctionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Service <em>Service</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.Composite <em>Composite</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.models.opgraph.Service
+	 * @see org.nasdanika.models.opgraph.Composite
 	 * @generated
 	 */
-	public Adapter createServiceAdapter() {
+	public Adapter createCompositeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.CompositeSupplier <em>Composite Supplier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.CompositeSupplier
+	 * @generated
+	 */
+	public Adapter createCompositeSupplierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.CompositeConsumer <em>Composite Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.CompositeConsumer
+	 * @generated
+	 */
+	public Adapter createCompositeConsumerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.opgraph.CompositeFunction <em>Composite Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.opgraph.CompositeFunction
+	 * @generated
+	 */
+	public Adapter createCompositeFunctionAdapter() {
 		return null;
 	}
 

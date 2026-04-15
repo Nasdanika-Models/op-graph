@@ -9,6 +9,12 @@ import org.eclipse.emf.ecore.ETypedElement;
  * A representation of the model object '<em><b>Feature</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * *
+ * Features hold state. It might be immutable configuration,
+ * mutable runtime state, or a combination of thereof.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

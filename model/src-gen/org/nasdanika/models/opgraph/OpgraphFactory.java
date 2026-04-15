@@ -22,15 +22,6 @@ public interface OpgraphFactory extends EFactory {
 	OpgraphFactory eINSTANCE = org.nasdanika.models.opgraph.impl.OpgraphFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Group</em>'.
-	 * @generated
-	 */
-	Group createGroup();
-
-	/**
 	 * Returns a new object of class '<em>Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,13 +40,13 @@ public interface OpgraphFactory extends EFactory {
 	Reference createReference();
 
 	/**
-	 * Returns a new object of class '<em>Invocable</em>'.
+	 * Returns a new object of class '<em>Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Invocable</em>'.
+	 * @return a new object of class '<em>Package</em>'.
 	 * @generated
 	 */
-	Invocable createInvocable();
+	Package createPackage();
 
 	/**
 	 * Returns a new object of class '<em>Call</em>'.
@@ -67,22 +58,22 @@ public interface OpgraphFactory extends EFactory {
 	Call createCall();
 
 	/**
-	 * Returns a new object of class '<em>Node</em>'.
+	 * Returns a new object of class '<em>Supplier</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Node</em>'.
+	 * @return a new object of class '<em>Supplier</em>'.
 	 * @generated
 	 */
-	Node createNode();
+	Supplier createSupplier();
 
 	/**
-	 * Returns a new object of class '<em>Activity</em>'.
+	 * Returns a new object of class '<em>Consumer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activity</em>'.
+	 * @return a new object of class '<em>Consumer</em>'.
 	 * @generated
 	 */
-	Activity createActivity();
+	Consumer createConsumer();
 
 	/**
 	 * Returns a new object of class '<em>Transition</em>'.
@@ -94,22 +85,49 @@ public interface OpgraphFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Process</em>'.
+	 * Returns a new object of class '<em>Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Process</em>'.
+	 * @return a new object of class '<em>Function</em>'.
 	 * @generated
 	 */
-	Process createProcess();
+	Function createFunction();
 
 	/**
-	 * Returns a new object of class '<em>Service</em>'.
+	 * Returns a new object of class '<em>Composite</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service</em>'.
+	 * @return a new object of class '<em>Composite</em>'.
 	 * @generated
 	 */
-	Service createService();
+	Composite createComposite();
+
+	/**
+	 * Returns a new object of class '<em>Composite Supplier</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Supplier</em>'.
+	 * @generated
+	 */
+	CompositeSupplier createCompositeSupplier();
+
+	/**
+	 * Returns a new object of class '<em>Composite Consumer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Consumer</em>'.
+	 * @generated
+	 */
+	CompositeConsumer createCompositeConsumer();
+
+	/**
+	 * Returns a new object of class '<em>Composite Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Function</em>'.
+	 * @generated
+	 */
+	CompositeFunction createCompositeFunction();
 
 	/**
 	 * Returns the package supported by this factory.
