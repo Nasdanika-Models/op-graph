@@ -19,11 +19,14 @@ import org.nasdanika.common.NasdanikaException;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.drawio.Connection;
 import org.nasdanika.drawio.Document;
+import org.nasdanika.drawio.Geometry;
 import org.nasdanika.drawio.Layer;
 import org.nasdanika.drawio.Model;
 import org.nasdanika.drawio.Node;
 import org.nasdanika.drawio.Page;
 import org.nasdanika.drawio.Root;
+import org.nasdanika.drawio.style.Arrow;
+import org.nasdanika.drawio.style.ConnectionStyle;
 import org.nasdanika.graph.emf.EObjectNode;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.models.app.Action;
@@ -159,37 +162,68 @@ public class EcoreGenOpGraphProcessorsFactory {
 					// Supertype
 					if (getTarget().getESuperTypes().contains(targetEClassifier)) {
 						// TODO - connect top center of the sub-class to the bottom center of super-class
-						Connection inheritance = layer.createConnection(diagramNode, targetNode);
-						Map<String, String> style = inheritance.getStyle();
+						Connection inheritance = layer.createConnection(
+								diagramNode.createConnectionPoint(0.5, 0), 
+								targetNode.createConnectionPoint(0.5, 1));
+						ConnectionStyle style = inheritance.getStyle();
+						style
+							.rounded(false)
+							.endArrow(Arrow.BLOCK);
+							
 						style.put("edgeStyle", "orthogonalEdgeStyle");
-						style.put("rounded", "0");
 						style.put("orthogonalLoop", "1");
 						style.put("jettySize", "auto");
 						style.put("html", "1");
-						style.put("endArrow", "block");
 						style.put("endFill", "0");
 					}
 					
 					// Reference
 					for (EReference ref: getTarget().getEReferences()) {
-						if (ref.getEType() == targetEClassifier) {
+						if (ref.getEType() == targetEClassifier && shallCreateConnection(ref)) {
 							Connection refConnection = layer.createConnection(diagramNode, targetNode);
-							refConnection.setLabel(ref.getName());
-							Map<String, String> style = refConnection.getStyle();
-							style.put("rounded", "0");
+							ConnectionStyle style = refConnection.getStyle();
+							style.rounded(false);
+							
 							style.put("orthogonalLoop", "1");
 							style.put("jettySize", "1");
 							style.put("html", "1");
 							if (ref.isMany()) {
-								style.put("startArrow", "diamondThin");
-								style.put("startFill", "1");
+								style.startArrow(Arrow.DIAMOND_THIN);
+								style.startFill(ref.isContainment());
 							}
+							
 							WidgetFactory refWidgetFactory = eReferenceWidgetFactories.get(ref.getName());
 							if (refWidgetFactory != null) {
 								Object refLink = refWidgetFactory.createLink(base, progressMonitor);
 								if (refLink instanceof org.nasdanika.models.app.Link) {
 									refConnection.setLink(((org.nasdanika.models.app.Link) refLink).getLocation());
 								}								
+							}
+							
+							EReference opposite = ref.getEOpposite();
+							if (opposite == null) {
+								refConnection.setLabel(ref.getName());								
+							} else {								
+								if (opposite != null && opposite.isMany()) {
+									style.endArrow(Arrow.DIAMOND_THIN);
+									style.endFill(ref.isContainment());
+								}
+								
+								Node startLabel = refConnection.createNode();
+								Map<String, String> edgeLabelStyle = org.nasdanika.drawio.Util.loadStyle("edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[]");
+								startLabel.getStyle().putAll(edgeLabelStyle);
+								
+								startLabel.setLabel(ref.getName());
+								Geometry slg = startLabel.getGeometry();
+								slg.setX(0.7);
+								slg.setRelative(true);
+//								
+								Node endLabel = refConnection.createNode();
+								endLabel.getStyle().putAll(edgeLabelStyle);
+								endLabel.setLabel(opposite.getName());
+								Geometry elg = endLabel.getGeometry();
+								elg.setX(0.3);
+								elg.setRelative(true);
 							}
 						}
 					}
@@ -203,6 +237,19 @@ public class EcoreGenOpGraphProcessorsFactory {
 		}
 		
 		return new EDataTypeNodeProcessor<EDataType>(config, context, prototypeProvider);		
-	}	
+	}
+	
+	protected boolean shallCreateConnection(EReference ref) {
+		EReference opposite = ref.getEOpposite();
+		if (opposite == null) {
+			return true;
+		}
+		
+		return refUri(ref).compareTo(refUri(opposite)) < 0 ;
+		}
+
+	protected String refUri(EReference ref) {
+		return ref.getEContainingClass().getEPackage().getNsURI() + "#" + ref.getEContainingClass().getName() + "." + ref.getName();
+	} 
 
 }

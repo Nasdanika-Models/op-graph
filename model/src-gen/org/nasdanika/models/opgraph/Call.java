@@ -28,7 +28,7 @@ package org.nasdanika.models.opgraph;
  * @model
  * @generated
  */
-public interface Call extends Function, Component {
+public interface Call extends Function {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.opgraph.Function#getIncomingCalls <em>Incoming Calls</em>}'.

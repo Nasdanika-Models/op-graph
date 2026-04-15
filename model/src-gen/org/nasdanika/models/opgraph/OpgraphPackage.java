@@ -20,8 +20,13 @@ import org.eclipse.emf.ecore.EcorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Xcore model for Nasdanika OpGraph
+ * <!-- end-model-doc -->
  * @see org.nasdanika.models.opgraph.OpgraphFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel bundleManifest='false' featureDelegation='Dynamic' complianceLevel='21.0' suppressGenModelAnnotations='false' copyrightFields='false' operationReflection='true' importOrganizing='true' basePackage='org.nasdanika.models'"
+ *        annotation="http://www.eclipse.org/emf/2011/Xcore Ecore='http://www.eclipse.org/emf/2002/Ecore' GenModel='http://www.eclipse.org/emf/2002/GenModel'"
  * @generated
  */
 public interface OpgraphPackage extends EPackage {

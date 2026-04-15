@@ -16,6 +16,9 @@ import org.eclipse.emf.ecore.ENamedElement
 import org.eclipse.emf.ecore.ETypedElement
 import org.eclipse.emf.ecore.EClass
 
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+
 // Bridging Ecore constructs
 
 /**
@@ -106,7 +109,7 @@ interface Component extends Class {
  * 
  * Calls are functions themselves, so they may have their own calls.
  */
-class Call extends Function, Component {
+class Call extends Function {
     
     refers Function target opposite incomingCalls
     

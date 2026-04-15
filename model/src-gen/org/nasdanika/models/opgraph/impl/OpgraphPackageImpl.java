@@ -874,7 +874,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		packageEClass.getESuperTypes().add(theEcorePackage.getENamedElement());
 		componentEClass.getESuperTypes().add(this.getClass_());
 		callEClass.getESuperTypes().add(this.getFunction());
-		callEClass.getESuperTypes().add(this.getComponent());
 		operatorEClass.getESuperTypes().add(this.getComponent());
 		supplierEClass.getESuperTypes().add(this.getOperator());
 		consumerEClass.getESuperTypes().add(this.getOperator());
@@ -965,20 +964,20 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// null
-		createNullAnnotations();
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
+		// http://www.eclipse.org/emf/2011/Xcore
+		createXcoreAnnotations();
 	}
 
 	/**
-	 * Initializes the annotations for <b>null</b>.
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createNullAnnotations() {
-		String source = null;
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
 		  (this,
 		   source,
@@ -993,16 +992,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 			   "importOrganizing", "true",
 			   "basePackage", "org.nasdanika.models"
 		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGenModelAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
 		  (featureEClass,
 		   source,
@@ -1146,6 +1135,23 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		   source,
 		   new String[] {
 			   "documentation", "*\nGroup is generated to EClass with elements generated either to\noperations or contained classes"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2011/Xcore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createXcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2011/Xcore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "Ecore", "http://www.eclipse.org/emf/2002/Ecore",
+			   "GenModel", "http://www.eclipse.org/emf/2002/GenModel"
 		   });
 	}
 

@@ -167,6 +167,7 @@
 	<modules>
 		<module>model</module>
 		<module>ecore</module>
+		<module>generator</module>
 	</modules>
 
 	 <profiles>
