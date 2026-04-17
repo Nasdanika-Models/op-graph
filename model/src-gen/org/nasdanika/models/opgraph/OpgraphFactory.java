@@ -40,6 +40,15 @@ public interface OpgraphFactory extends EFactory {
 	Reference createReference();
 
 	/**
+	 * Returns a new object of class '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Class</em>'.
+	 * @generated
+	 */
+	Class createClass();
+
+	/**
 	 * Returns a new object of class '<em>Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

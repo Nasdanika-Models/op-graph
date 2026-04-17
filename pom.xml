@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>Nasdanika OpGraph</name>
 	<description>OpGraph model and other modules</description>
-	<url>https://bw.tibco.models.nasdanika.org/</url>
+	<url>https://op-graph.models.nasdanika.org/</url>
 
 	<licenses>
 		<license>

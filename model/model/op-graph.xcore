@@ -48,6 +48,10 @@ class Reference extends Feature {
     
     boolean containment
     
+    boolean ^container
+    
+    boolean ^local
+    
     refers Attribute[] ^keys
     
     refers Reference ^opposite
@@ -58,7 +62,7 @@ class Reference extends Feature {
  * A collection of features which may extend zero or more superTypes
  * providing base functionality
  */
-interface Class extends ENamedElement {
+class Class extends ENamedElement {
 
     refers EClass[] superTypes
         

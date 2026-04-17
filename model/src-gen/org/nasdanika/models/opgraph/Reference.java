@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.Reference#isResolveProxies <em>Resolve Proxies</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Reference#isContainment <em>Containment</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Reference#isContainer <em>Container</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Reference#isLocal <em>Local</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Reference#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Reference#getOpposite <em>Opposite</em>}</li>
  * </ul>
@@ -67,6 +69,50 @@ public interface Reference extends Feature {
 	 * @generated
 	 */
 	void setContainment(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container</em>' attribute.
+	 * @see #setContainer(boolean)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getReference_Container()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isContainer();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Reference#isContainer <em>Container</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container</em>' attribute.
+	 * @see #isContainer()
+	 * @generated
+	 */
+	void setContainer(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Local</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Local</em>' attribute.
+	 * @see #setLocal(boolean)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getReference_Local()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isLocal();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Reference#isLocal <em>Local</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Local</em>' attribute.
+	 * @see #isLocal()
+	 * @generated
+	 */
+	void setLocal(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.

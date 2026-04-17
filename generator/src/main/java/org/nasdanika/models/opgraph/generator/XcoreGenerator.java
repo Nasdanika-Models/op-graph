@@ -5,21 +5,27 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
+import org.eclipse.emf.codegen.ecore.genmodel.GenClassifier;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xcore.XAnnotation;
 import org.eclipse.emf.ecore.xcore.XAnnotationDirective;
+import org.eclipse.emf.ecore.xcore.XAttribute;
 import org.eclipse.emf.ecore.xcore.XClass;
 import org.eclipse.emf.ecore.xcore.XGenericType;
 import org.eclipse.emf.ecore.xcore.XPackage;
+import org.eclipse.emf.ecore.xcore.XReference;
+import org.eclipse.emf.ecore.xcore.XStructuralFeature;
 import org.eclipse.emf.ecore.xcore.XcoreFactory;
 import org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.nasdanika.common.Util;
+import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Call;
 import org.nasdanika.models.opgraph.Class;
 import org.nasdanika.models.opgraph.Component;
@@ -28,6 +34,7 @@ import org.nasdanika.models.opgraph.CompositeConsumer;
 import org.nasdanika.models.opgraph.CompositeFunction;
 import org.nasdanika.models.opgraph.CompositeSupplier;
 import org.nasdanika.models.opgraph.Consumer;
+import org.nasdanika.models.opgraph.Feature;
 import org.nasdanika.models.opgraph.Function;
 import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphPackage;
@@ -83,7 +90,7 @@ public abstract class XcoreGenerator {
         
         xPackage.setName(opPackage.getName());
         
-        Map<Reference, EReference> referenceMap = new HashMap<>();
+        Map<Reference, XReference> referenceMap = new HashMap<>();
         
         opPackage
         	.getClasses()
@@ -96,22 +103,22 @@ public abstract class XcoreGenerator {
 	protected void generateXClass(
 			Class opClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		XClass xClass = switch (opClass) {
-		case CompositeFunction compositeFunction -> generateCompositeFunction(compositeFunction, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case CompositeSupplier compositeSupplier -> generateCompositeSupplier(compositeSupplier, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case CompositeConsumer compositeConsumer -> generateCompositeConsumer(compositeConsumer, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Call call -> generateCall(call, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Function function -> generateFunction(function, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Transition transition -> generateTransition(transition, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Predicate predicate -> generatePredicate(predicate, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Supplier supplier -> generateSupplier(supplier, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Consumer consumer -> generateConsumer(consumer, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Operator operator -> generateOperator(operator, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Composite composite -> generateComposite(composite, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Component component -> generateComponent(component, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
-		case Class clazz -> generateClass(clazz, factory.createXClass(), xPackage, referenceMap, eClassPredicate);		
+			case CompositeFunction compositeFunction -> generateCompositeFunction(compositeFunction, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case CompositeSupplier compositeSupplier -> generateCompositeSupplier(compositeSupplier, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case CompositeConsumer compositeConsumer -> generateCompositeConsumer(compositeConsumer, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Call call -> generateCall(call, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Function function -> generateFunction(function, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Transition transition -> generateTransition(transition, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Predicate predicate -> generatePredicate(predicate, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Supplier supplier -> generateSupplier(supplier, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Consumer consumer -> generateConsumer(consumer, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Operator operator -> generateOperator(operator, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Composite composite -> generateComposite(composite, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Component component -> generateComponent(component, factory.createXClass(), xPackage, referenceMap, eClassPredicate);
+			case Class clazz -> generateClass(clazz, factory.createXClass(), xPackage, referenceMap, eClassPredicate);		
 		};
 		
 		if (xClass != null) {
@@ -124,7 +131,7 @@ public abstract class XcoreGenerator {
 			Class opClass, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		if (eClassPredicate.test(OpgraphPackage.Literals.CLASS)) {
@@ -135,11 +142,60 @@ public abstract class XcoreGenerator {
 			    xSuperType.setType(genClassSuperType);				
 				xClass.getSuperTypes().add(xSuperType);
 			}
+			
+			for (Feature feature : opClass.getFeatures()) {
+				if (feature instanceof Reference reference) {
+					XReference xReference = factory.createXReference();
+					generateXStructuralFeature(reference, xReference);
+					referenceMap.put(reference, xReference);
+					xReference.setContainment(reference.isContainment());
+					xReference.setContainer(reference.isContainer());
+					xReference.setLocal(reference.isLocal());
+					xReference.setResolveProxies(reference.isResolveProxies());
+					xClass.getMembers().add(xReference);
+				} else {
+					XAttribute xAttribute = factory.createXAttribute();
+					generateXStructuralFeature(feature, xAttribute);
+					Attribute attribute = (Attribute) feature;
+					xAttribute.setID(attribute.isId());
+					xAttribute.setDefaultValueLiteral(attribute.getDefaultValueLiteral());
+					xClass.getMembers().add(xAttribute);
+				}
+				
+			}
 		}
-		
+				
 		return xClass;
 	}
 	
+	protected void generateXStructuralFeature(
+			Feature opFeature, 
+			XStructuralFeature xStructuralFeature) {
+		
+			xStructuralFeature.setType(resolveXGenericType(opFeature.getEType()));;
+		
+			xStructuralFeature.setName(opFeature.getName());
+			xStructuralFeature.setDerived(opFeature.isDerived());
+			xStructuralFeature.setReadonly(!opFeature.isChangeable());
+			xStructuralFeature.setTransient(opFeature.isTransient());
+			xStructuralFeature.setUnsettable(opFeature.isUnsettable());
+			xStructuralFeature.setVolatile(opFeature.isVolatile());			
+
+			xStructuralFeature.setUnique(opFeature.isUnique());
+			xStructuralFeature.setUnordered(!opFeature.isOrdered());
+			xStructuralFeature.setMultiplicity(new int[] { opFeature.getLowerBound(), opFeature.getUpperBound() });
+			
+			// TODO - bodies?
+
+	}
+		
+	protected XGenericType resolveXGenericType(EClassifier eType) {
+		XGenericType xGenericType = factory.createXGenericType();
+		GenBase genBase = findGenBase(eType);
+		xGenericType.setType(genBase);
+		return xGenericType;
+	}
+
 	/**
 	 * Implements by, for example, loading GenPacages using the capability framework.
 	 * @return
@@ -157,13 +213,26 @@ public abstract class XcoreGenerator {
 	        }
 	    }
 	    throw new IllegalArgumentException("No GenClass found for " + eClass.getName());
-	}	
+	}
+	
+	private GenBase findGenBase(EClassifier eClassifier) {
+	    for (GenPackage genPackage : getGenPackages()) {
+	        if (genPackage.getEcorePackage() == eClassifier.getEPackage()) {
+	            for (GenClassifier genClassifier : genPackage.getGenClassifiers()) {
+	                if (genClassifier.getEcoreClassifier() == eClassifier) {
+	                    return genClassifier;
+	                }
+	            }
+	        }
+	    }
+	    throw new IllegalArgumentException("No GenClassifier found for " + eClassifier.getName());
+	}		
 	
 	protected XClass generateComponent(
 			Component opComponent, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateClass(opComponent, xClass, xPackage, referenceMap, eClassPredicate);
@@ -179,7 +248,7 @@ public abstract class XcoreGenerator {
 			Operator opOperator, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateComponent(opOperator, xClass, xPackage, referenceMap, eClassPredicate);
@@ -192,7 +261,7 @@ public abstract class XcoreGenerator {
 			Composite opComposite, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateComponent(opComposite, xClass, xPackage, referenceMap, eClassPredicate);
@@ -205,7 +274,7 @@ public abstract class XcoreGenerator {
 			Supplier opSupplier, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateOperator(opSupplier, xClass, xPackage, referenceMap, eClassPredicate);
@@ -218,7 +287,7 @@ public abstract class XcoreGenerator {
 			Consumer opConsumer, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateOperator(opConsumer, xClass, xPackage, referenceMap, eClassPredicate);
@@ -231,7 +300,7 @@ public abstract class XcoreGenerator {
 			Predicate opPredicate, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateConsumer(opPredicate, xClass, xPackage, referenceMap, eClassPredicate);
@@ -244,7 +313,7 @@ public abstract class XcoreGenerator {
 			Transition opTransition, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generatePredicate(opTransition, xClass, xPackage, referenceMap, eClassPredicate);
@@ -257,7 +326,7 @@ public abstract class XcoreGenerator {
 			Function opFunction, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateSupplier(opFunction, xClass, xPackage, referenceMap, eClassPredicate);
@@ -272,7 +341,7 @@ public abstract class XcoreGenerator {
 			Call opCall, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 				
 		generateFunction(opCall, xClass, xPackage, referenceMap, eClassPredicate);				
@@ -286,7 +355,7 @@ public abstract class XcoreGenerator {
 			CompositeSupplier opCompositeSupplier, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateComposite(opCompositeSupplier, xClass, xPackage, referenceMap, eClassPredicate);
@@ -301,7 +370,7 @@ public abstract class XcoreGenerator {
 			CompositeConsumer opCompositeConsumer, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateComposite(opCompositeConsumer, xClass, xPackage, referenceMap, eClassPredicate);
@@ -316,7 +385,7 @@ public abstract class XcoreGenerator {
 			CompositeFunction opCompositeFunction, 
 			XClass xClass, 
 			XPackage xPackage, 
-			Map<Reference, EReference> referenceMap, 
+			Map<Reference, XReference> referenceMap, 
 			java.util.function.Predicate<EClass> eClassPredicate) {
 		
 		generateCompositeConsumer(opCompositeFunction, xClass, xPackage, referenceMap, eClassPredicate);

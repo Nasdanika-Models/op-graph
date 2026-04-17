@@ -343,8 +343,28 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getReference_Container() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getReference_Local() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getReference_Keys() {
-		return (EReference)referenceEClass.getEStructuralFeatures().get(2);
+		return (EReference)referenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -354,7 +374,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 */
 	@Override
 	public EReference getReference_Opposite() {
-		return (EReference)referenceEClass.getEStructuralFeatures().get(3);
+		return (EReference)referenceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -780,6 +800,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		referenceEClass = createEClass(REFERENCE);
 		createEAttribute(referenceEClass, REFERENCE__RESOLVE_PROXIES);
 		createEAttribute(referenceEClass, REFERENCE__CONTAINMENT);
+		createEAttribute(referenceEClass, REFERENCE__CONTAINER);
+		createEAttribute(referenceEClass, REFERENCE__LOCAL);
 		createEReference(referenceEClass, REFERENCE__KEYS);
 		createEReference(referenceEClass, REFERENCE__OPPOSITE);
 
@@ -905,10 +927,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_ResolveProxies(), theEcorePackage.getEBoolean(), "resolveProxies", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Containment(), theEcorePackage.getEBoolean(), "containment", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Container(), theEcorePackage.getEBoolean(), "container", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Local(), theEcorePackage.getEBoolean(), "local", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Keys(), this.getAttribute(), null, "keys", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Opposite(), this.getReference(), null, "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(classEClass, org.nasdanika.models.opgraph.Class.class, "Class", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(classEClass, org.nasdanika.models.opgraph.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClass_SuperTypes(), theEcorePackage.getEClass(), null, "superTypes", null, 0, -1, org.nasdanika.models.opgraph.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClass_Features(), this.getFeature(), null, "features", null, 0, -1, org.nasdanika.models.opgraph.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

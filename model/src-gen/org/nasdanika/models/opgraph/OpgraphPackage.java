@@ -606,13 +606,31 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE__CONTAINMENT = FEATURE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__CONTAINER = FEATURE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Local</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__LOCAL = FEATURE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__KEYS = FEATURE_FEATURE_COUNT + 2;
+	int REFERENCE__KEYS = FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -621,7 +639,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 3;
+	int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -630,7 +648,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 4;
+	int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -651,10 +669,10 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE_OPERATION_COUNT = FEATURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.opgraph.Class <em>Class</em>}' class.
+	 * The meta object id for the '{@link org.nasdanika.models.opgraph.impl.ClassImpl <em>Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.opgraph.Class
+	 * @see org.nasdanika.models.opgraph.impl.ClassImpl
 	 * @see org.nasdanika.models.opgraph.impl.OpgraphPackageImpl#getClass_()
 	 * @generated
 	 */
@@ -2991,6 +3009,28 @@ public interface OpgraphPackage extends EPackage {
 	EAttribute getReference_Containment();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Reference#isContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Container</em>'.
+	 * @see org.nasdanika.models.opgraph.Reference#isContainer()
+	 * @see #getReference()
+	 * @generated
+	 */
+	EAttribute getReference_Container();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Reference#isLocal <em>Local</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Local</em>'.
+	 * @see org.nasdanika.models.opgraph.Reference#isLocal()
+	 * @see #getReference()
+	 * @generated
+	 */
+	EAttribute getReference_Local();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.nasdanika.models.opgraph.Reference#getKeys <em>Keys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3542,6 +3582,22 @@ public interface OpgraphPackage extends EPackage {
 		EAttribute REFERENCE__CONTAINMENT = eINSTANCE.getReference_Containment();
 
 		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE__CONTAINER = eINSTANCE.getReference_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Local</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE__LOCAL = eINSTANCE.getReference_Local();
+
+		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3558,10 +3614,10 @@ public interface OpgraphPackage extends EPackage {
 		EReference REFERENCE__OPPOSITE = eINSTANCE.getReference_Opposite();
 
 		/**
-		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.Class <em>Class</em>}' class.
+		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.impl.ClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.models.opgraph.Class
+		 * @see org.nasdanika.models.opgraph.impl.ClassImpl
 		 * @see org.nasdanika.models.opgraph.impl.OpgraphPackageImpl#getClass_()
 		 * @generated
 		 */

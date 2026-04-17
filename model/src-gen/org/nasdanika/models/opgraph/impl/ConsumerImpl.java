@@ -13,13 +13,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENamedElementImpl;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.models.opgraph.Call;
 import org.nasdanika.models.opgraph.Consumer;
-import org.nasdanika.models.opgraph.Feature;
 import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphPackage;
 import org.nasdanika.models.opgraph.Predicate;
@@ -33,8 +30,6 @@ import org.nasdanika.models.opgraph.Transition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getSuperTypes <em>Super Types</em>}</li>
- *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getStarter <em>Starter</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getStopper <em>Stopper</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getOutgoingCalls <em>Outgoing Calls</em>}</li>
@@ -50,7 +45,7 @@ import org.nasdanika.models.opgraph.Transition;
  *
  * @generated
  */
-public class ConsumerImpl extends ENamedElementImpl implements Consumer {
+public class ConsumerImpl extends ClassImpl implements Consumer {
 	/**
 	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,45 +103,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	protected EClass eStaticClass() {
 		return OpgraphPackage.Literals.CONSUMER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final int ESTATIC_FEATURE_COUNT = 2;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return ESTATIC_FEATURE_COUNT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<EClass> getSuperTypes() {
-		return (EList<EClass>)eDynamicGet(OpgraphPackage.CONSUMER__SUPER_TYPES - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CLASS__SUPER_TYPES, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Feature> getFeatures() {
-		return (EList<Feature>)eDynamicGet(OpgraphPackage.CONSUMER__FEATURES - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.CLASS__FEATURES, true, true);
 	}
 
 	/**
@@ -369,8 +325,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__FEATURES:
-				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
 			case OpgraphPackage.CONSUMER__STARTER:
 				return basicSetStarter(null, msgs);
 			case OpgraphPackage.CONSUMER__STOPPER:
@@ -393,10 +347,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__SUPER_TYPES:
-				return getSuperTypes();
-			case OpgraphPackage.CONSUMER__FEATURES:
-				return getFeatures();
 			case OpgraphPackage.CONSUMER__STARTER:
 				return getStarter();
 			case OpgraphPackage.CONSUMER__STOPPER:
@@ -432,14 +382,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__SUPER_TYPES:
-				getSuperTypes().clear();
-				getSuperTypes().addAll((Collection<? extends EClass>)newValue);
-				return;
-			case OpgraphPackage.CONSUMER__FEATURES:
-				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends Feature>)newValue);
-				return;
 			case OpgraphPackage.CONSUMER__STARTER:
 				setStarter((Operator)newValue);
 				return;
@@ -490,12 +432,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__SUPER_TYPES:
-				getSuperTypes().clear();
-				return;
-			case OpgraphPackage.CONSUMER__FEATURES:
-				getFeatures().clear();
-				return;
 			case OpgraphPackage.CONSUMER__STARTER:
 				setStarter((Operator)null);
 				return;
@@ -541,10 +477,6 @@ public class ConsumerImpl extends ENamedElementImpl implements Consumer {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__SUPER_TYPES:
-				return !getSuperTypes().isEmpty();
-			case OpgraphPackage.CONSUMER__FEATURES:
-				return !getFeatures().isEmpty();
 			case OpgraphPackage.CONSUMER__STARTER:
 				return getStarter() != null;
 			case OpgraphPackage.CONSUMER__STOPPER:

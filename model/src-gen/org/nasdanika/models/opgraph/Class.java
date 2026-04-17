@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.ENamedElement;
  * </ul>
  *
  * @see org.nasdanika.models.opgraph.OpgraphPackage#getClass_()
- * @model interface="true" abstract="true"
+ * @model
  * @generated
  */
 public interface Class extends ENamedElement {

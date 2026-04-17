@@ -70,6 +70,7 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 		switch (eClass.getClassifierID()) {
 			case OpgraphPackage.ATTRIBUTE: return createAttribute();
 			case OpgraphPackage.REFERENCE: return createReference();
+			case OpgraphPackage.CLASS: return createClass();
 			case OpgraphPackage.PACKAGE: return createPackage();
 			case OpgraphPackage.CALL: return createCall();
 			case OpgraphPackage.SUPPLIER: return createSupplier();
@@ -105,6 +106,17 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	public Reference createReference() {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public org.nasdanika.models.opgraph.Class createClass() {
+		ClassImpl class_ = new ClassImpl();
+		return class_;
 	}
 
 	/**
