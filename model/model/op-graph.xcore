@@ -138,6 +138,19 @@ interface Operator extends Component {
     String bodyRef
     
     /**
+     * Code body for the delegate operation when this operator is 
+     * contained by a host class and there is an operation
+     * in the host delegating to this one
+     */
+    String delegateBody
+    
+    /**
+     * URI of the delegate code body
+     */
+    String delegateBodyRef
+    
+    
+    /**
      * body or bodyRef language
      */
     String language = "Java"
@@ -166,7 +179,12 @@ interface Operator extends Component {
  */
 class Supplier extends Operator {
     
-    refers ETypedElement[] outputs    
+    refers ETypedElement[] outputs  
+    
+    /**
+     * Name of the output type if there is more than one output element
+     */
+    String outputName  
 
     /**
      * Outputs can be passed to outgoing transitions

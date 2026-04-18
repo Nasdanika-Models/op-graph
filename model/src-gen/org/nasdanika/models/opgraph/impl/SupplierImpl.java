@@ -30,11 +30,14 @@ import org.nasdanika.models.opgraph.Transition;
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getBodyRef <em>Body Ref</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getDelegateBody <em>Delegate Body</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getDelegateBodyRef <em>Delegate Body Ref</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOperationName <em>Operation Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getExceptions <em>Exceptions</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getExceptionHandlers <em>Exception Handlers</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutputName <em>Output Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  * </ul>
  *
@@ -62,6 +65,26 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 	protected static final String BODY_REF_EDEFAULT = null;
 
 	/**
+	 * The default value of the '{@link #getDelegateBody() <em>Delegate Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegateBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DELEGATE_BODY_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getDelegateBodyRef() <em>Delegate Body Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegateBodyRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DELEGATE_BODY_REF_EDEFAULT = null;
+
+	/**
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,6 +103,16 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 	 * @ordered
 	 */
 	protected static final String OPERATION_NAME_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getOutputName() <em>Output Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutputName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OUTPUT_NAME_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +171,46 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 	@Override
 	public void setBodyRef(String newBodyRef) {
 		eDynamicSet(OpgraphPackage.SUPPLIER__BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__BODY_REF, newBodyRef);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDelegateBody() {
+		return (String)eDynamicGet(OpgraphPackage.SUPPLIER__DELEGATE_BODY - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDelegateBody(String newDelegateBody) {
+		eDynamicSet(OpgraphPackage.SUPPLIER__DELEGATE_BODY - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY, newDelegateBody);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDelegateBodyRef() {
+		return (String)eDynamicGet(OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY_REF, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDelegateBodyRef(String newDelegateBodyRef) {
+		eDynamicSet(OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY_REF, newDelegateBodyRef);
 	}
 
 	/**
@@ -218,6 +291,26 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getOutputName() {
+		return (String)eDynamicGet(OpgraphPackage.SUPPLIER__OUTPUT_NAME - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__OUTPUT_NAME, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOutputName(String newOutputName) {
+		eDynamicSet(OpgraphPackage.SUPPLIER__OUTPUT_NAME - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__OUTPUT_NAME, newOutputName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Transition> getOutgoingTransitions() {
@@ -267,6 +360,10 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return getBody();
 			case OpgraphPackage.SUPPLIER__BODY_REF:
 				return getBodyRef();
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY:
+				return getDelegateBody();
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF:
+				return getDelegateBodyRef();
 			case OpgraphPackage.SUPPLIER__LANGUAGE:
 				return getLanguage();
 			case OpgraphPackage.SUPPLIER__OPERATION_NAME:
@@ -277,6 +374,8 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return getExceptionHandlers();
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				return getOutputs();
+			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
+				return getOutputName();
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
 				return getOutgoingTransitions();
 		}
@@ -298,6 +397,12 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 			case OpgraphPackage.SUPPLIER__BODY_REF:
 				setBodyRef((String)newValue);
 				return;
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY:
+				setDelegateBody((String)newValue);
+				return;
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF:
+				setDelegateBodyRef((String)newValue);
+				return;
 			case OpgraphPackage.SUPPLIER__LANGUAGE:
 				setLanguage((String)newValue);
 				return;
@@ -315,6 +420,9 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				getOutputs().clear();
 				getOutputs().addAll((Collection<? extends ETypedElement>)newValue);
+				return;
+			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
+				setOutputName((String)newValue);
 				return;
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
 				getOutgoingTransitions().clear();
@@ -338,6 +446,12 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 			case OpgraphPackage.SUPPLIER__BODY_REF:
 				setBodyRef(BODY_REF_EDEFAULT);
 				return;
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY:
+				setDelegateBody(DELEGATE_BODY_EDEFAULT);
+				return;
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF:
+				setDelegateBodyRef(DELEGATE_BODY_REF_EDEFAULT);
+				return;
 			case OpgraphPackage.SUPPLIER__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
 				return;
@@ -352,6 +466,9 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return;
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				getOutputs().clear();
+				return;
+			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
+				setOutputName(OUTPUT_NAME_EDEFAULT);
 				return;
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
 				getOutgoingTransitions().clear();
@@ -372,6 +489,10 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return BODY_EDEFAULT == null ? getBody() != null : !BODY_EDEFAULT.equals(getBody());
 			case OpgraphPackage.SUPPLIER__BODY_REF:
 				return BODY_REF_EDEFAULT == null ? getBodyRef() != null : !BODY_REF_EDEFAULT.equals(getBodyRef());
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY:
+				return DELEGATE_BODY_EDEFAULT == null ? getDelegateBody() != null : !DELEGATE_BODY_EDEFAULT.equals(getDelegateBody());
+			case OpgraphPackage.SUPPLIER__DELEGATE_BODY_REF:
+				return DELEGATE_BODY_REF_EDEFAULT == null ? getDelegateBodyRef() != null : !DELEGATE_BODY_REF_EDEFAULT.equals(getDelegateBodyRef());
 			case OpgraphPackage.SUPPLIER__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null ? getLanguage() != null : !LANGUAGE_EDEFAULT.equals(getLanguage());
 			case OpgraphPackage.SUPPLIER__OPERATION_NAME:
@@ -382,6 +503,8 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return !getExceptionHandlers().isEmpty();
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				return !getOutputs().isEmpty();
+			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
+				return OUTPUT_NAME_EDEFAULT == null ? getOutputName() != null : !OUTPUT_NAME_EDEFAULT.equals(getOutputName());
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
 				return !getOutgoingTransitions().isEmpty();
 		}

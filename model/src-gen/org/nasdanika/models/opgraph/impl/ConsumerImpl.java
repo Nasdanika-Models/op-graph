@@ -30,6 +30,8 @@ import org.nasdanika.models.opgraph.Transition;
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getBodyRef <em>Body Ref</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getDelegateBody <em>Delegate Body</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getDelegateBodyRef <em>Delegate Body Ref</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getOperationName <em>Operation Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getExceptions <em>Exceptions</em>}</li>
@@ -60,6 +62,26 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 	 * @ordered
 	 */
 	protected static final String BODY_REF_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getDelegateBody() <em>Delegate Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegateBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DELEGATE_BODY_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getDelegateBodyRef() <em>Delegate Body Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegateBodyRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DELEGATE_BODY_REF_EDEFAULT = null;
 
 	/**
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
@@ -138,6 +160,46 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 	@Override
 	public void setBodyRef(String newBodyRef) {
 		eDynamicSet(OpgraphPackage.CONSUMER__BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__BODY_REF, newBodyRef);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDelegateBody() {
+		return (String)eDynamicGet(OpgraphPackage.CONSUMER__DELEGATE_BODY - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDelegateBody(String newDelegateBody) {
+		eDynamicSet(OpgraphPackage.CONSUMER__DELEGATE_BODY - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY, newDelegateBody);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDelegateBodyRef() {
+		return (String)eDynamicGet(OpgraphPackage.CONSUMER__DELEGATE_BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY_REF, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDelegateBodyRef(String newDelegateBodyRef) {
+		eDynamicSet(OpgraphPackage.CONSUMER__DELEGATE_BODY_REF - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.OPERATOR__DELEGATE_BODY_REF, newDelegateBodyRef);
 	}
 
 	/**
@@ -267,6 +329,10 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 				return getBody();
 			case OpgraphPackage.CONSUMER__BODY_REF:
 				return getBodyRef();
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY:
+				return getDelegateBody();
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY_REF:
+				return getDelegateBodyRef();
 			case OpgraphPackage.CONSUMER__LANGUAGE:
 				return getLanguage();
 			case OpgraphPackage.CONSUMER__OPERATION_NAME:
@@ -297,6 +363,12 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 				return;
 			case OpgraphPackage.CONSUMER__BODY_REF:
 				setBodyRef((String)newValue);
+				return;
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY:
+				setDelegateBody((String)newValue);
+				return;
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY_REF:
+				setDelegateBodyRef((String)newValue);
 				return;
 			case OpgraphPackage.CONSUMER__LANGUAGE:
 				setLanguage((String)newValue);
@@ -338,6 +410,12 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 			case OpgraphPackage.CONSUMER__BODY_REF:
 				setBodyRef(BODY_REF_EDEFAULT);
 				return;
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY:
+				setDelegateBody(DELEGATE_BODY_EDEFAULT);
+				return;
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY_REF:
+				setDelegateBodyRef(DELEGATE_BODY_REF_EDEFAULT);
+				return;
 			case OpgraphPackage.CONSUMER__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
 				return;
@@ -372,6 +450,10 @@ public class ConsumerImpl extends ComponentImpl implements Consumer {
 				return BODY_EDEFAULT == null ? getBody() != null : !BODY_EDEFAULT.equals(getBody());
 			case OpgraphPackage.CONSUMER__BODY_REF:
 				return BODY_REF_EDEFAULT == null ? getBodyRef() != null : !BODY_REF_EDEFAULT.equals(getBodyRef());
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY:
+				return DELEGATE_BODY_EDEFAULT == null ? getDelegateBody() != null : !DELEGATE_BODY_EDEFAULT.equals(getDelegateBody());
+			case OpgraphPackage.CONSUMER__DELEGATE_BODY_REF:
+				return DELEGATE_BODY_REF_EDEFAULT == null ? getDelegateBodyRef() != null : !DELEGATE_BODY_REF_EDEFAULT.equals(getDelegateBodyRef());
 			case OpgraphPackage.CONSUMER__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null ? getLanguage() != null : !LANGUAGE_EDEFAULT.equals(getLanguage());
 			case OpgraphPackage.CONSUMER__OPERATION_NAME:

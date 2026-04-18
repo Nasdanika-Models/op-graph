@@ -543,7 +543,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getOperator_Language() {
+	public EAttribute getOperator_DelegateBody() {
 		return (EAttribute)operatorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -553,7 +553,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getOperator_OperationName() {
+	public EAttribute getOperator_DelegateBodyRef() {
 		return (EAttribute)operatorEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -563,8 +563,28 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getOperator_Language() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOperator_OperationName() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getOperator_Exceptions() {
-		return (EReference)operatorEClass.getEStructuralFeatures().get(4);
+		return (EReference)operatorEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -574,7 +594,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 */
 	@Override
 	public EReference getOperator_ExceptionHandlers() {
-		return (EReference)operatorEClass.getEStructuralFeatures().get(5);
+		return (EReference)operatorEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -603,8 +623,18 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSupplier_OutputName() {
+		return (EAttribute)supplierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getSupplier_OutgoingTransitions() {
-		return (EReference)supplierEClass.getEStructuralFeatures().get(1);
+		return (EReference)supplierEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -825,6 +855,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		operatorEClass = createEClass(OPERATOR);
 		createEAttribute(operatorEClass, OPERATOR__BODY);
 		createEAttribute(operatorEClass, OPERATOR__BODY_REF);
+		createEAttribute(operatorEClass, OPERATOR__DELEGATE_BODY);
+		createEAttribute(operatorEClass, OPERATOR__DELEGATE_BODY_REF);
 		createEAttribute(operatorEClass, OPERATOR__LANGUAGE);
 		createEAttribute(operatorEClass, OPERATOR__OPERATION_NAME);
 		createEReference(operatorEClass, OPERATOR__EXCEPTIONS);
@@ -832,6 +864,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		supplierEClass = createEClass(SUPPLIER);
 		createEReference(supplierEClass, SUPPLIER__OUTPUTS);
+		createEAttribute(supplierEClass, SUPPLIER__OUTPUT_NAME);
 		createEReference(supplierEClass, SUPPLIER__OUTGOING_TRANSITIONS);
 
 		consumerEClass = createEClass(CONSUMER);
@@ -952,6 +985,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEClass(operatorEClass, Operator.class, "Operator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperator_Body(), theEcorePackage.getEString(), "body", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_BodyRef(), theEcorePackage.getEString(), "bodyRef", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_DelegateBody(), theEcorePackage.getEString(), "delegateBody", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_DelegateBodyRef(), theEcorePackage.getEString(), "delegateBodyRef", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Language(), theEcorePackage.getEString(), "language", "Java", 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_OperationName(), theEcorePackage.getEString(), "operationName", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperator_Exceptions(), theEcorePackage.getEClassifier(), null, "exceptions", null, 0, -1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -959,6 +994,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		initEClass(supplierEClass, Supplier.class, "Supplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSupplier_Outputs(), theEcorePackage.getETypedElement(), null, "outputs", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupplier_OutputName(), theEcorePackage.getEString(), "outputName", null, 0, 1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSupplier_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(consumerEClass, Consumer.class, "Consumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1089,6 +1125,18 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 			   "documentation", "*\nURI of the code body"
 		   });
 		addAnnotation
+		  (getOperator_DelegateBody(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nCode body for the delegate operation when this operator is\ncontained by a host class and there is an operation\nin the host delegating to this one"
+		   });
+		addAnnotation
+		  (getOperator_DelegateBodyRef(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nURI of the delegate code body"
+		   });
+		addAnnotation
 		  (getOperator_Language(),
 		   source,
 		   new String[] {
@@ -1117,6 +1165,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		   source,
 		   new String[] {
 			   "documentation", "*\nProduces outputs or throws an exception"
+		   });
+		addAnnotation
+		  (getSupplier_OutputName(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nName of the output type if there is more than one output element"
 		   });
 		addAnnotation
 		  (getSupplier_OutgoingTransitions(),

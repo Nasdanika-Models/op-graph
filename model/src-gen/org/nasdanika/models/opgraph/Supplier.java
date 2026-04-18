@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.ETypedElement;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutputName <em>Output Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  * </ul>
  *
@@ -40,6 +41,32 @@ public interface Supplier extends Operator {
 	 * @generated
 	 */
 	EList<ETypedElement> getOutputs();
+
+	/**
+	 * Returns the value of the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * Name of the output type if there is more than one output element
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Output Name</em>' attribute.
+	 * @see #setOutputName(String)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getSupplier_OutputName()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getOutputName();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Supplier#getOutputName <em>Output Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Output Name</em>' attribute.
+	 * @see #getOutputName()
+	 * @generated
+	 */
+	void setOutputName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing Transitions</b></em>' containment reference list.

@@ -1015,13 +1015,31 @@ public interface OpgraphPackage extends EPackage {
 	int OPERATOR__BODY_REF = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__DELEGATE_BODY = COMPONENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__DELEGATE_BODY_REF = COMPONENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__LANGUAGE = COMPONENT_FEATURE_COUNT + 2;
+	int OPERATOR__LANGUAGE = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Operation Name</b></em>' attribute.
@@ -1030,7 +1048,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__OPERATION_NAME = COMPONENT_FEATURE_COUNT + 3;
+	int OPERATOR__OPERATION_NAME = COMPONENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Exceptions</b></em>' reference list.
@@ -1039,7 +1057,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__EXCEPTIONS = COMPONENT_FEATURE_COUNT + 4;
+	int OPERATOR__EXCEPTIONS = COMPONENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Exception Handlers</b></em>' containment reference list.
@@ -1048,7 +1066,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__EXCEPTION_HANDLERS = COMPONENT_FEATURE_COUNT + 5;
+	int OPERATOR__EXCEPTION_HANDLERS = COMPONENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Operator</em>' class.
@@ -1057,7 +1075,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 6;
+	int OPERATOR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1176,6 +1194,24 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSUMER__BODY_REF = OPERATOR__BODY_REF;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSUMER__DELEGATE_BODY = OPERATOR__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSUMER__DELEGATE_BODY_REF = OPERATOR__DELEGATE_BODY_REF;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -1359,6 +1395,24 @@ public interface OpgraphPackage extends EPackage {
 	int FUNCTION__BODY_REF = CONSUMER__BODY_REF;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__DELEGATE_BODY = CONSUMER__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__DELEGATE_BODY_REF = CONSUMER__DELEGATE_BODY_REF;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1422,13 +1476,22 @@ public interface OpgraphPackage extends EPackage {
 	int FUNCTION__OUTPUTS = CONSUMER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__OUTPUT_NAME = CONSUMER_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__OUTGOING_TRANSITIONS = CONSUMER_FEATURE_COUNT + 1;
+	int FUNCTION__OUTGOING_TRANSITIONS = CONSUMER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Calls</b></em>' reference list.
@@ -1437,7 +1500,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__INCOMING_CALLS = CONSUMER_FEATURE_COUNT + 2;
+	int FUNCTION__INCOMING_CALLS = CONSUMER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -1446,7 +1509,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 3;
+	int FUNCTION_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1567,6 +1630,24 @@ public interface OpgraphPackage extends EPackage {
 	int CALL__BODY_REF = FUNCTION__BODY_REF;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__DELEGATE_BODY = FUNCTION__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__DELEGATE_BODY_REF = FUNCTION__DELEGATE_BODY_REF;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1628,6 +1709,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALL__OUTPUTS = FUNCTION__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__OUTPUT_NAME = FUNCTION__OUTPUT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
@@ -1793,6 +1883,24 @@ public interface OpgraphPackage extends EPackage {
 	int SUPPLIER__BODY_REF = OPERATOR__BODY_REF;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER__DELEGATE_BODY = OPERATOR__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER__DELEGATE_BODY_REF = OPERATOR__DELEGATE_BODY_REF;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1838,13 +1946,22 @@ public interface OpgraphPackage extends EPackage {
 	int SUPPLIER__OUTPUTS = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER__OUTPUT_NAME = OPERATOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER__OUTGOING_TRANSITIONS = OPERATOR_FEATURE_COUNT + 1;
+	int SUPPLIER__OUTGOING_TRANSITIONS = OPERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Supplier</em>' class.
@@ -1853,7 +1970,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 2;
+	int SUPPLIER_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1972,6 +2089,24 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDICATE__BODY_REF = CONSUMER__BODY_REF;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE__DELEGATE_BODY = CONSUMER__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE__DELEGATE_BODY_REF = CONSUMER__DELEGATE_BODY_REF;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -2153,6 +2288,24 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSITION__BODY_REF = PREDICATE__BODY_REF;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DELEGATE_BODY = PREDICATE__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DELEGATE_BODY_REF = PREDICATE__DELEGATE_BODY_REF;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -2481,6 +2634,24 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_SUPPLIER__BODY_REF = SUPPLIER__BODY_REF;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__DELEGATE_BODY = SUPPLIER__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__DELEGATE_BODY_REF = SUPPLIER__DELEGATE_BODY_REF;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2524,6 +2695,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_SUPPLIER__OUTPUTS = SUPPLIER__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__OUTPUT_NAME = SUPPLIER__OUTPUT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
@@ -2678,6 +2858,24 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_CONSUMER__BODY_REF = CONSUMER__BODY_REF;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONSUMER__DELEGATE_BODY = CONSUMER__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONSUMER__DELEGATE_BODY_REF = CONSUMER__DELEGATE_BODY_REF;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -2879,6 +3077,24 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_FUNCTION__BODY_REF = FUNCTION__BODY_REF;
 
 	/**
+	 * The feature id for the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__DELEGATE_BODY = FUNCTION__DELEGATE_BODY;
+
+	/**
+	 * The feature id for the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__DELEGATE_BODY_REF = FUNCTION__DELEGATE_BODY_REF;
+
+	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2940,6 +3156,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_FUNCTION__OUTPUTS = FUNCTION__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__OUTPUT_NAME = FUNCTION__OUTPUT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
@@ -3350,6 +3575,28 @@ public interface OpgraphPackage extends EPackage {
 	EAttribute getOperator_BodyRef();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Operator#getDelegateBody <em>Delegate Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delegate Body</em>'.
+	 * @see org.nasdanika.models.opgraph.Operator#getDelegateBody()
+	 * @see #getOperator()
+	 * @generated
+	 */
+	EAttribute getOperator_DelegateBody();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Operator#getDelegateBodyRef <em>Delegate Body Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delegate Body Ref</em>'.
+	 * @see org.nasdanika.models.opgraph.Operator#getDelegateBodyRef()
+	 * @see #getOperator()
+	 * @generated
+	 */
+	EAttribute getOperator_DelegateBodyRef();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Operator#getLanguage <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3413,6 +3660,17 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSupplier_Outputs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Supplier#getOutputName <em>Output Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Output Name</em>'.
+	 * @see org.nasdanika.models.opgraph.Supplier#getOutputName()
+	 * @see #getSupplier()
+	 * @generated
+	 */
+	EAttribute getSupplier_OutputName();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.opgraph.Supplier#getOutgoingTransitions <em>Outgoing Transitions</em>}'.
@@ -3878,6 +4136,22 @@ public interface OpgraphPackage extends EPackage {
 		EAttribute OPERATOR__BODY_REF = eINSTANCE.getOperator_BodyRef();
 
 		/**
+		 * The meta object literal for the '<em><b>Delegate Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATOR__DELEGATE_BODY = eINSTANCE.getOperator_DelegateBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Delegate Body Ref</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATOR__DELEGATE_BODY_REF = eINSTANCE.getOperator_DelegateBodyRef();
+
+		/**
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3926,6 +4200,14 @@ public interface OpgraphPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUPPLIER__OUTPUTS = eINSTANCE.getSupplier_Outputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPPLIER__OUTPUT_NAME = eINSTANCE.getSupplier_OutputName();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Transitions</b></em>' containment reference list feature.

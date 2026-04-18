@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -87,6 +86,11 @@ public class EcoreGenerator {
 	public EcoreGenerator(Package opPackage, EcoreFactory factory) {
 		this.opPackage = opPackage;
         this.factory = factory;
+        
+		ePackage = factory.createEPackage();
+        ePackage.setNsPrefix(opPackage.getNsPrefix());
+        ePackage.setNsURI(opPackage.getNsURI());
+        ePackage.setName(opPackage.getName());        
 	}	
 	    
     protected Map<Reference, EReference> referenceMap = new HashMap<>();
@@ -105,11 +109,6 @@ public class EcoreGenerator {
 	}
     
 	public EPackage generate() {
-		ePackage = factory.createEPackage();
-        ePackage.setNsPrefix(opPackage.getNsPrefix());
-        ePackage.setNsURI(opPackage.getNsURI());
-        ePackage.setName(opPackage.getName());
-        
         opPackage
         	.getClasses()
 			.stream()
@@ -119,6 +118,11 @@ public class EcoreGenerator {
 	}
 	
 	protected EClass generateEClass(Class opClass) {
+		for (EClassifier eClassifier: ePackage.getEClassifiers()) {
+			if (eClassifier instanceof EClass eClass && eClass.getName().equals(opClass.getName())) {
+				return eClass;
+			}
+		}
 		
 		java.util.function.Predicate<EClass> eClassPredicate = new HashSet<>()::add;
 		EClass eClass = switch (opClass) {
@@ -245,7 +249,7 @@ public class EcoreGenerator {
 	 * @param outputClassName Name of the output class for suppliers with more than one output 
 	 * @return
 	 */
-	protected EOperation generateOperation(Operator operator, String outputClassName) {
+	protected EOperation generateOperation(Operator operator) {
 		EOperation eOperation = factory.createEOperation();
 		String operationName = operator.getOperationName();
 		if (Util.isBlank(operationName)) {
@@ -264,27 +268,37 @@ public class EcoreGenerator {
 			if (outputs.size() == 1) {
 				eOperation.setEType(outputs.get(0).getEType());
 			} else if (outputs.size() > 1) {
-				EClass outputClass = factory.createEClass();
-				for (ETypedElement output: outputs) {
-					if (output instanceof Reference reference) {
-						outputClass.getEStructuralFeatures().add(generateReference(reference));
-					} else if (output instanceof Attribute attribute) {
-						outputClass.getEStructuralFeatures().add(generateAttribute(attribute));
-					} else {				
-						EClassifier outputType = output.getEType();
-						if (outputType instanceof EClass) {
-							EReference eReference = factory.createEReference();
-							generateTypedElement(output, eReference);
-							outputClass.getEStructuralFeatures().add(eReference);
-						} else {
-							EAttribute eAttribute = factory.createEAttribute();
-							generateTypedElement(output, eAttribute);
-							outputClass.getEStructuralFeatures().add(eAttribute);
-						}
-					}
-				}
-				ePackage.getEClassifiers().add(outputClass);
-				eOperation.setEType(outputClass);
+				String outputClassName = supplier.getOutputName();				
+				EClass oClass = ePackage.getEClassifiers()
+						.stream()
+						.filter(e -> e instanceof EClass && e.getName().equals(outputClassName))						
+						.map(EClass.class::cast)
+						.findFirst()
+						.orElseGet(() -> {
+							EClass outputClass = factory.createEClass();
+							for (ETypedElement output: outputs) {
+								if (output instanceof Reference reference) {
+									outputClass.getEStructuralFeatures().add(generateReference(reference));
+								} else if (output instanceof Attribute attribute) {
+									outputClass.getEStructuralFeatures().add(generateAttribute(attribute));
+								} else {				
+									EClassifier outputType = output.getEType();
+									if (outputType instanceof EClass) {
+										EReference eReference = factory.createEReference();
+										generateTypedElement(output, eReference);
+										outputClass.getEStructuralFeatures().add(eReference);
+									} else {
+										EAttribute eAttribute = factory.createEAttribute();
+										generateTypedElement(output, eAttribute);
+										outputClass.getEStructuralFeatures().add(eAttribute);
+									}
+								}
+							}
+							ePackage.getEClassifiers().add(outputClass);
+							return outputClass;
+						});						
+						
+				eOperation.setEType(oClass);
 			} 
 		} else if (operator instanceof Predicate) {
 			eOperation.setEType(EcorePackage.Literals.EBOOLEAN);
@@ -303,8 +317,7 @@ public class EcoreGenerator {
 		}
 		
 		copyAnnotations(operator, eOperation);
-		
-		
+				
 		String body = operator.getBody();
 		if (Util.isBlank(body) && !Util.isBlank(operator.getBodyRef())) {
 			try {
@@ -325,6 +338,18 @@ public class EcoreGenerator {
 		}		
 	
 		return eOperation;
+	}
+	
+	protected String getDelegateBody(Operator operator) {
+		String delegateBody = operator.getDelegateBody();
+		if (Util.isBlank(delegateBody) && !Util.isBlank(operator.getDelegateBodyRef())) {
+			try {
+				delegateBody = loadCode(operator, operator.getDelegateBodyRef());
+			} catch (IOException e) {
+				throw new NasdanikaException("Failed to load delegate code from " + operator.getDelegateBodyRef(), e);
+			}
+		}
+		return delegateBody;
 	}
 	
 	/**
@@ -357,39 +382,44 @@ public class EcoreGenerator {
 		if (eClassPredicate.test(OpgraphPackage.Literals.COMPONENT)) {
 			Operator starter = opComponent.getStarter();
 			if (starter != null) {
-				EOperation startOperation = generateOperation(starter, startOutputName(opComponent, eClass));
+				EOperation startOperation = generateOperation(starter);
 				eClass.getEOperations().add(startOperation);
 				advise(starter, startOperation);
 			}
 			
 			Operator stopper = opComponent.getStopper();
 			if (stopper != null) {
-				EOperation stopOperation = generateOperation(stopper, stopOutputName(opComponent, eClass));
+				EOperation stopOperation = generateOperation(stopper);
 				eClass.getEOperations().add(stopOperation);
 				advise(starter, stopOperation);
 			}			
 		}
 		
 		for (Call call: opComponent.getOutgoingCalls()) {
-			EOperation callOperation = generateOperation(call, callOutputName(opComponent, call, eClass));
+			EOperation callOperation = generateOperation(call);
 			eClass.getEOperations().add(callOperation);
+			if (!Util.isBlank(call.getRole())) {
+				generateComponentReference(eClass, call);					
+				GenModelAnnotationDetailKey.body.set(callOperation, getDelegateBody(call));
+			}				
+			
 			advise(call, callOperation);
 		}
 		
 		return eClass;
 	}
 
-	protected String callOutputName(Component opComponent, Call call, EClass eClass) {
-		return eClass.getName() + StringUtils.capitalize(call.getOperationName())  + "Output";
-	}
-
-	protected String stopOutputName(Component opComponent, EClass eClass) {
-		return eClass.getName() + "StopOutput";
-	}
-
-	protected String startOutputName(Component opComponent, EClass eClass) {
-		return eClass.getName() + "StartOutput";
-	}
+//	protected String callOutputName(Component opComponent, Call call, EClass eClass) {
+//		return eClass.getName() + StringUtils.capitalize(call.getOperationName())  + "Output";
+//	}
+//
+//	protected String stopOutputName(Component opComponent, EClass eClass) {
+//		return eClass.getName() + "StopOutput";
+//	}
+//
+//	protected String startOutputName(Component opComponent, EClass eClass) {
+//		return eClass.getName() + "StartOutput";
+//	}
 	
 	/**
 	 * Translates code from source language to Java.
@@ -429,9 +459,9 @@ public class EcoreGenerator {
 	}
 	
 
-	protected String operatorOutputName(Operator operator, EClass eClass) {
-		return eClass.getName() + "Output";
-	}	
+//	protected String operatorOutputName(Operator operator, EClass eClass) {
+//		return eClass.getName() + "Output";
+//	}	
 			
 	protected EClass generateOperator(
 			Operator opOperator, 
@@ -441,12 +471,16 @@ public class EcoreGenerator {
 		generateComponent(opOperator, eClass, eClassPredicate);
 		
 		if (eClassPredicate.test(OpgraphPackage.Literals.OPERATOR)) {
-			EOperation eOperation = generateOperation(opOperator, operatorOutputName(opOperator, eClass));
+			EOperation eOperation = generateOperation(opOperator);
 			eClass.getEOperations().add(eOperation);
 			
 			for (Predicate exceptionHandler: opOperator.getExceptionHandlers()) {
-				EOperation exceptionHandlerOperation = generateOperation(exceptionHandler, null);
+				EOperation exceptionHandlerOperation = generateOperation(exceptionHandler);
 				eClass.getEOperations().add(exceptionHandlerOperation);
+				if (!Util.isBlank(exceptionHandler.getRole())) {
+					generateComponentReference(eClass, exceptionHandler);					
+					GenModelAnnotationDetailKey.body.set(exceptionHandlerOperation, getDelegateBody(exceptionHandler));
+				}				
 				advise(exceptionHandler, exceptionHandlerOperation);
 			}
 		}
@@ -462,17 +496,21 @@ public class EcoreGenerator {
 		generateComponent(opComposite, eClass, eClassPredicate);
 		if (eClassPredicate.test(OpgraphPackage.Literals.COMPOSITE)) {
 			for (Component opComponent: opComposite.getComponents()) {
-				EClass componentClass = generateEClass(opComponent);
-				EReference componentReference = factory.createEReference();
-				componentReference.setName(opComponent.getRole());
-				componentReference.setEType(componentClass);
-				componentReference.setContainment(true);
-				componentReference.setLowerBound(1);
-				componentReference.setUpperBound(1);
-				eClass.getEStructuralFeatures().add(componentReference);
+				generateComponentReference(eClass, opComponent);
 			}			
 		}
 		return eClass;
+	}
+
+	protected void generateComponentReference(EClass eClass, Component opComponent) {
+		EClass componentClass = generateEClass(opComponent);
+		EReference componentReference = factory.createEReference();
+		componentReference.setName(opComponent.getRole());
+		componentReference.setEType(componentClass);
+		componentReference.setContainment(true);
+		componentReference.setLowerBound(1);
+		componentReference.setUpperBound(1);
+		eClass.getEStructuralFeatures().add(componentReference);
 	}
 	
 	protected EClass generateSupplier(
@@ -483,8 +521,12 @@ public class EcoreGenerator {
 		generateOperator(opSupplier, eClass, eClassPredicate);
 		if (eClassPredicate.test(OpgraphPackage.Literals.SUPPLIER)) {
 			for (Transition transition: opSupplier.getOutgoingTransitions()) {
-				EOperation transitionOperation = generateOperation(transition, null);
+				EOperation transitionOperation = generateOperation(transition);
 				eClass.getEOperations().add(transitionOperation);
+				if (!Util.isBlank(transition.getRole())) {
+					generateComponentReference(eClass, transition);					
+					GenModelAnnotationDetailKey.body.set(transitionOperation, getDelegateBody(transition));
+				}				
 				advise(transition, transitionOperation);
 			}
 		}

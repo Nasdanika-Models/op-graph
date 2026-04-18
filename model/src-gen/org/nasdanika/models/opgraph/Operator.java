@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EClassifier;
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.Operator#getBody <em>Body</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Operator#getBodyRef <em>Body Ref</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Operator#getDelegateBody <em>Delegate Body</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Operator#getDelegateBodyRef <em>Delegate Body Ref</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Operator#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Operator#getOperationName <em>Operation Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Operator#getExceptions <em>Exceptions</em>}</li>
@@ -84,6 +86,60 @@ public interface Operator extends Component {
 	 * @generated
 	 */
 	void setBodyRef(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Delegate Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * Code body for the delegate operation when this operator is
+	 * contained by a host class and there is an operation
+	 * in the host delegating to this one
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Delegate Body</em>' attribute.
+	 * @see #setDelegateBody(String)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getOperator_DelegateBody()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getDelegateBody();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Operator#getDelegateBody <em>Delegate Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delegate Body</em>' attribute.
+	 * @see #getDelegateBody()
+	 * @generated
+	 */
+	void setDelegateBody(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Delegate Body Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * URI of the delegate code body
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Delegate Body Ref</em>' attribute.
+	 * @see #setDelegateBodyRef(String)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getOperator_DelegateBodyRef()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getDelegateBodyRef();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Operator#getDelegateBodyRef <em>Delegate Body Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delegate Body Ref</em>' attribute.
+	 * @see #getDelegateBodyRef()
+	 * @generated
+	 */
+	void setDelegateBodyRef(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Language</b></em>' attribute.
