@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Call;
+import org.nasdanika.models.opgraph.Component;
 import org.nasdanika.models.opgraph.Composite;
 import org.nasdanika.models.opgraph.CompositeConsumer;
 import org.nasdanika.models.opgraph.CompositeFunction;
@@ -72,6 +73,7 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 			case OpgraphPackage.REFERENCE: return createReference();
 			case OpgraphPackage.CLASS: return createClass();
 			case OpgraphPackage.PACKAGE: return createPackage();
+			case OpgraphPackage.COMPONENT: return createComponent();
 			case OpgraphPackage.CALL: return createCall();
 			case OpgraphPackage.SUPPLIER: return createSupplier();
 			case OpgraphPackage.CONSUMER: return createConsumer();
@@ -128,6 +130,17 @@ public class OpgraphFactoryImpl extends EFactoryImpl implements OpgraphFactory {
 	public org.nasdanika.models.opgraph.Package createPackage() {
 		PackageImpl package_ = new PackageImpl();
 		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
 	}
 
 	/**

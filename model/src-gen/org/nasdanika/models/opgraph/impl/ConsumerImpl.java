@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nasdanika.models.opgraph.Call;
 import org.nasdanika.models.opgraph.Consumer;
-import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphPackage;
 import org.nasdanika.models.opgraph.Predicate;
 import org.nasdanika.models.opgraph.Transition;
@@ -30,9 +28,6 @@ import org.nasdanika.models.opgraph.Transition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getStarter <em>Starter</em>}</li>
- *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getStopper <em>Stopper</em>}</li>
- *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getOutgoingCalls <em>Outgoing Calls</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getBodyRef <em>Body Ref</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.ConsumerImpl#getLanguage <em>Language</em>}</li>
@@ -45,7 +40,7 @@ import org.nasdanika.models.opgraph.Transition;
  *
  * @generated
  */
-public class ConsumerImpl extends ClassImpl implements Consumer {
+public class ConsumerImpl extends ComponentImpl implements Consumer {
 	/**
 	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -103,77 +98,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	protected EClass eStaticClass() {
 		return OpgraphPackage.Literals.CONSUMER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operator getStarter() {
-		return (Operator)eDynamicGet(OpgraphPackage.CONSUMER__STARTER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STARTER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStarter(Operator newStarter, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newStarter, OpgraphPackage.CONSUMER__STARTER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStarter(Operator newStarter) {
-		eDynamicSet(OpgraphPackage.CONSUMER__STARTER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STARTER, newStarter);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operator getStopper() {
-		return (Operator)eDynamicGet(OpgraphPackage.CONSUMER__STOPPER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STOPPER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStopper(Operator newStopper, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newStopper, OpgraphPackage.CONSUMER__STOPPER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStopper(Operator newStopper) {
-		eDynamicSet(OpgraphPackage.CONSUMER__STOPPER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STOPPER, newStopper);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Call> getOutgoingCalls() {
-		return (EList<Call>)eDynamicGet(OpgraphPackage.CONSUMER__OUTGOING_CALLS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__OUTGOING_CALLS, true, true);
 	}
 
 	/**
@@ -309,8 +233,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingCalls()).basicAdd(otherEnd, msgs);
 			case OpgraphPackage.CONSUMER__INCOMING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransitions()).basicAdd(otherEnd, msgs);
 		}
@@ -325,12 +247,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__STARTER:
-				return basicSetStarter(null, msgs);
-			case OpgraphPackage.CONSUMER__STOPPER:
-				return basicSetStopper(null, msgs);
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				return ((InternalEList<?>)getOutgoingCalls()).basicRemove(otherEnd, msgs);
 			case OpgraphPackage.CONSUMER__EXCEPTION_HANDLERS:
 				return ((InternalEList<?>)getExceptionHandlers()).basicRemove(otherEnd, msgs);
 			case OpgraphPackage.CONSUMER__INCOMING_TRANSITIONS:
@@ -347,12 +263,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__STARTER:
-				return getStarter();
-			case OpgraphPackage.CONSUMER__STOPPER:
-				return getStopper();
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				return getOutgoingCalls();
 			case OpgraphPackage.CONSUMER__BODY:
 				return getBody();
 			case OpgraphPackage.CONSUMER__BODY_REF:
@@ -382,16 +292,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__STARTER:
-				setStarter((Operator)newValue);
-				return;
-			case OpgraphPackage.CONSUMER__STOPPER:
-				setStopper((Operator)newValue);
-				return;
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				getOutgoingCalls().clear();
-				getOutgoingCalls().addAll((Collection<? extends Call>)newValue);
-				return;
 			case OpgraphPackage.CONSUMER__BODY:
 				setBody((String)newValue);
 				return;
@@ -432,15 +332,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__STARTER:
-				setStarter((Operator)null);
-				return;
-			case OpgraphPackage.CONSUMER__STOPPER:
-				setStopper((Operator)null);
-				return;
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				getOutgoingCalls().clear();
-				return;
 			case OpgraphPackage.CONSUMER__BODY:
 				setBody(BODY_EDEFAULT);
 				return;
@@ -477,12 +368,6 @@ public class ConsumerImpl extends ClassImpl implements Consumer {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.CONSUMER__STARTER:
-				return getStarter() != null;
-			case OpgraphPackage.CONSUMER__STOPPER:
-				return getStopper() != null;
-			case OpgraphPackage.CONSUMER__OUTGOING_CALLS:
-				return !getOutgoingCalls().isEmpty();
 			case OpgraphPackage.CONSUMER__BODY:
 				return BODY_EDEFAULT == null ? getBody() != null : !BODY_EDEFAULT.equals(getBody());
 			case OpgraphPackage.CONSUMER__BODY_REF:

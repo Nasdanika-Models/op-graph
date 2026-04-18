@@ -233,7 +233,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_Transient() {
+	public EAttribute getFeature_Changeable() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -243,7 +243,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_Volatile() {
+	public EAttribute getFeature_Derived() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -253,7 +253,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_Changeable() {
+	public EAttribute getFeature_DefaultValueLiteral() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -263,7 +263,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_DefaultValueLiteral() {
+	public EAttribute getFeature_Transient() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -283,7 +283,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_Derived() {
+	public EAttribute getFeature_Volatile() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -343,28 +343,8 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReference_Container() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getReference_Local() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getReference_Keys() {
-		return (EReference)referenceEClass.getEStructuralFeatures().get(4);
+		return (EReference)referenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -374,7 +354,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 */
 	@Override
 	public EReference getReference_Opposite() {
-		return (EReference)referenceEClass.getEStructuralFeatures().get(5);
+		return (EReference)referenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -485,6 +465,16 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	@Override
 	public EReference getComponent_OutgoingCalls() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponent_Role() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -723,8 +713,18 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getComposite_PackageName() {
+		return (EAttribute)compositeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getComposite_Components() {
-		return (EReference)compositeEClass.getEStructuralFeatures().get(0);
+		return (EReference)compositeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -787,12 +787,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		// Create classes and their features
 		featureEClass = createEClass(FEATURE);
-		createEAttribute(featureEClass, FEATURE__TRANSIENT);
-		createEAttribute(featureEClass, FEATURE__VOLATILE);
 		createEAttribute(featureEClass, FEATURE__CHANGEABLE);
-		createEAttribute(featureEClass, FEATURE__DEFAULT_VALUE_LITERAL);
-		createEAttribute(featureEClass, FEATURE__UNSETTABLE);
 		createEAttribute(featureEClass, FEATURE__DERIVED);
+		createEAttribute(featureEClass, FEATURE__DEFAULT_VALUE_LITERAL);
+		createEAttribute(featureEClass, FEATURE__TRANSIENT);
+		createEAttribute(featureEClass, FEATURE__UNSETTABLE);
+		createEAttribute(featureEClass, FEATURE__VOLATILE);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__ID);
@@ -800,8 +800,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		referenceEClass = createEClass(REFERENCE);
 		createEAttribute(referenceEClass, REFERENCE__RESOLVE_PROXIES);
 		createEAttribute(referenceEClass, REFERENCE__CONTAINMENT);
-		createEAttribute(referenceEClass, REFERENCE__CONTAINER);
-		createEAttribute(referenceEClass, REFERENCE__LOCAL);
 		createEReference(referenceEClass, REFERENCE__KEYS);
 		createEReference(referenceEClass, REFERENCE__OPPOSITE);
 
@@ -818,6 +816,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		createEReference(componentEClass, COMPONENT__STARTER);
 		createEReference(componentEClass, COMPONENT__STOPPER);
 		createEReference(componentEClass, COMPONENT__OUTGOING_CALLS);
+		createEAttribute(componentEClass, COMPONENT__ROLE);
 
 		callEClass = createEClass(CALL);
 		createEReference(callEClass, CALL__TARGET);
@@ -849,6 +848,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		createEReference(functionEClass, FUNCTION__INCOMING_CALLS);
 
 		compositeEClass = createEClass(COMPOSITE);
+		createEAttribute(compositeEClass, COMPOSITE__PACKAGE_NAME);
 		createEReference(compositeEClass, COMPOSITE__COMPONENTS);
 
 		compositeSupplierEClass = createEClass(COMPOSITE_SUPPLIER);
@@ -914,12 +914,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeature_Transient(), theEcorePackage.getEBoolean(), "transient", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_Volatile(), theEcorePackage.getEBoolean(), "volatile", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Changeable(), theEcorePackage.getEBoolean(), "changeable", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_DefaultValueLiteral(), theEcorePackage.getEString(), "defaultValueLiteral", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_Unsettable(), theEcorePackage.getEBoolean(), "unsettable", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Derived(), theEcorePackage.getEBoolean(), "derived", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_DefaultValueLiteral(), theEcorePackage.getEString(), "defaultValueLiteral", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Transient(), theEcorePackage.getEBoolean(), "transient", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Unsettable(), theEcorePackage.getEBoolean(), "unsettable", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Volatile(), theEcorePackage.getEBoolean(), "volatile", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Id(), theEcorePackage.getEBoolean(), "id", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -927,8 +927,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_ResolveProxies(), theEcorePackage.getEBoolean(), "resolveProxies", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Containment(), theEcorePackage.getEBoolean(), "containment", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Container(), theEcorePackage.getEBoolean(), "container", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Local(), theEcorePackage.getEBoolean(), "local", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Keys(), this.getAttribute(), null, "keys", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Opposite(), this.getReference(), null, "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -941,10 +939,11 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEAttribute(getPackage_NsURI(), theEcorePackage.getEString(), "nsURI", null, 0, 1, org.nasdanika.models.opgraph.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Classes(), this.getClass_(), null, "classes", null, 0, -1, org.nasdanika.models.opgraph.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponent_Starter(), this.getOperator(), null, "starter", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Stopper(), this.getOperator(), null, "stopper", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OutgoingCalls(), this.getCall(), this.getCall_Source(), "outgoingCalls", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Role(), theEcorePackage.getEString(), "role", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCall_Target(), this.getFunction(), this.getFunction_IncomingCalls(), "target", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -976,6 +975,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		initEReference(getFunction_IncomingCalls(), this.getCall(), this.getCall_Target(), "incomingCalls", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeEClass, Composite.class, "Composite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComposite_PackageName(), theEcorePackage.getEString(), "packageName", null, 0, 1, Composite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComposite_Components(), this.getComponent(), null, "components", null, 0, -1, Composite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeSupplierEClass, CompositeSupplier.class, "CompositeSupplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1057,6 +1057,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		   source,
 		   new String[] {
 			   "documentation", "*\nComponent may call functions as part of its startup or overall functionality"
+		   });
+		addAnnotation
+		  (getComponent_Role(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nComponent\'s role in its container - composite for components, function for calls, ..."
 		   });
 		addAnnotation
 		  (callEClass,
@@ -1159,6 +1165,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		   source,
 		   new String[] {
 			   "documentation", "*\nGroup is generated to EClass with elements generated either to\noperations or contained classes"
+		   });
+		addAnnotation
+		  (getComposite_PackageName(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nPackage name for the composite components"
 		   });
 	}
 

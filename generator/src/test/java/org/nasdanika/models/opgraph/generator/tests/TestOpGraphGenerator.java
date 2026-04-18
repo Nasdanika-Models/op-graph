@@ -1,23 +1,22 @@
 package org.nasdanika.models.opgraph.generator.tests;
 
-import java.util.Collection;
-
-import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xcore.XPackage;
-import org.eclipse.emf.ecore.xcore.XcoreFactory;
-import org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup;
-import org.eclipse.xtext.resource.XtextResourceSet;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.jupiter.api.Test;
+import org.nasdanika.capability.CapabilityLoader;
+import org.nasdanika.capability.ServiceCapabilityFactory;
+import org.nasdanika.capability.ServiceCapabilityFactory.Requirement;
+import org.nasdanika.capability.emf.ResourceSetRequirement;
+import org.nasdanika.common.PrintStreamProgressMonitor;
+import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.opgraph.Attribute;
 import org.nasdanika.models.opgraph.Component;
 import org.nasdanika.models.opgraph.OpgraphFactory;
 import org.nasdanika.models.opgraph.Package;
-import org.nasdanika.models.opgraph.generator.XcoreGenerator;
-
-import com.google.inject.Injector;
+import org.nasdanika.models.opgraph.generator.EcoreGenerator;
 
 /**
  * Tests Ecore -> Graph -> Processor -> actions generation
@@ -25,32 +24,9 @@ import com.google.inject.Injector;
  *
  */
 public class TestOpGraphGenerator {
-	
-	@Test
-	public void testWriteXcore() throws Exception {
-        Injector injector = new XcoreStandaloneSetup().createInjectorAndDoEMFRegistration();
-        XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-        Resource resource = resourceSet.createResource(URI.createFileURI("target/text.xcore"));
-                               
-        XcoreFactory factory = XcoreFactory.eINSTANCE;
-        XPackage xPackage = factory.createXPackage();
-        xPackage.setName("test");
-        resource.getContents().add(xPackage);
-        
-        resource.save(null);
-	}
-	
-	@Test
-	public void testSaveOpGraph() throws Exception {
 		
-		XcoreGenerator generator = new XcoreGenerator() {
-
-			@Override
-			protected Collection<GenPackage> getGenPackages() {
-				throw new UnsupportedOperationException("Not implemented yet");
-			}
-			
-		};
+	@Test
+	public void testGenerateOpGraph() throws Exception {		
 		
 		OpgraphFactory factory = OpgraphFactory.eINSTANCE;
 		Package opPackage = factory.createPackage();
@@ -67,8 +43,17 @@ public class TestOpGraphGenerator {
 		opAttribute.setEType(EcorePackage.Literals.ESTRING);
 		opComponent.getFeatures().add(opAttribute);
 		
-		
-		generator.save(opPackage , URI.createFileURI("target/opgraph.xcore"));
+		CapabilityLoader capabilityLoader = new CapabilityLoader();
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		Requirement<ResourceSetRequirement, ResourceSet> requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);		
+		ResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);
+				
+		EcoreGenerator generator = new EcoreGenerator(opPackage);
+
+		EPackage ePackage = generator.generate();
+		Resource eRes = resourceSet.createResource(URI.createFileURI("target/opgraph.ecore"));
+		eRes.getContents().add(ePackage);
+		eRes.save(null);
 	}	
 				
 }

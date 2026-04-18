@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.opgraph.Composite#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Composite#getComponents <em>Components</em>}</li>
  * </ul>
  *
@@ -27,6 +28,32 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Composite extends Component {
+	/**
+	 * Returns the value of the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * Package name for the composite components
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Package Name</em>' attribute.
+	 * @see #setPackageName(String)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getComposite_PackageName()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPackageName();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Composite#getPackageName <em>Package Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Package Name</em>' attribute.
+	 * @see #getPackageName()
+	 * @generated
+	 */
+	void setPackageName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.models.opgraph.Component}.

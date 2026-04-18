@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nasdanika.models.opgraph.Call;
-import org.nasdanika.models.opgraph.Operator;
 import org.nasdanika.models.opgraph.OpgraphPackage;
 import org.nasdanika.models.opgraph.Predicate;
 import org.nasdanika.models.opgraph.Supplier;
@@ -30,9 +28,6 @@ import org.nasdanika.models.opgraph.Transition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getStarter <em>Starter</em>}</li>
- *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getStopper <em>Stopper</em>}</li>
- *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutgoingCalls <em>Outgoing Calls</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getBodyRef <em>Body Ref</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getLanguage <em>Language</em>}</li>
@@ -45,7 +40,7 @@ import org.nasdanika.models.opgraph.Transition;
  *
  * @generated
  */
-public class SupplierImpl extends ClassImpl implements Supplier {
+public class SupplierImpl extends ComponentImpl implements Supplier {
 	/**
 	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -103,77 +98,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	protected EClass eStaticClass() {
 		return OpgraphPackage.Literals.SUPPLIER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operator getStarter() {
-		return (Operator)eDynamicGet(OpgraphPackage.SUPPLIER__STARTER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STARTER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStarter(Operator newStarter, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newStarter, OpgraphPackage.SUPPLIER__STARTER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStarter(Operator newStarter) {
-		eDynamicSet(OpgraphPackage.SUPPLIER__STARTER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STARTER, newStarter);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operator getStopper() {
-		return (Operator)eDynamicGet(OpgraphPackage.SUPPLIER__STOPPER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STOPPER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStopper(Operator newStopper, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newStopper, OpgraphPackage.SUPPLIER__STOPPER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStopper(Operator newStopper) {
-		eDynamicSet(OpgraphPackage.SUPPLIER__STOPPER - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__STOPPER, newStopper);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Call> getOutgoingCalls() {
-		return (EList<Call>)eDynamicGet(OpgraphPackage.SUPPLIER__OUTGOING_CALLS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPONENT__OUTGOING_CALLS, true, true);
 	}
 
 	/**
@@ -309,8 +233,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingCalls()).basicAdd(otherEnd, msgs);
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
 		}
@@ -325,12 +247,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__STARTER:
-				return basicSetStarter(null, msgs);
-			case OpgraphPackage.SUPPLIER__STOPPER:
-				return basicSetStopper(null, msgs);
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				return ((InternalEList<?>)getOutgoingCalls()).basicRemove(otherEnd, msgs);
 			case OpgraphPackage.SUPPLIER__EXCEPTION_HANDLERS:
 				return ((InternalEList<?>)getExceptionHandlers()).basicRemove(otherEnd, msgs);
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
@@ -347,12 +263,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__STARTER:
-				return getStarter();
-			case OpgraphPackage.SUPPLIER__STOPPER:
-				return getStopper();
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				return getOutgoingCalls();
 			case OpgraphPackage.SUPPLIER__BODY:
 				return getBody();
 			case OpgraphPackage.SUPPLIER__BODY_REF:
@@ -382,16 +292,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__STARTER:
-				setStarter((Operator)newValue);
-				return;
-			case OpgraphPackage.SUPPLIER__STOPPER:
-				setStopper((Operator)newValue);
-				return;
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				getOutgoingCalls().clear();
-				getOutgoingCalls().addAll((Collection<? extends Call>)newValue);
-				return;
 			case OpgraphPackage.SUPPLIER__BODY:
 				setBody((String)newValue);
 				return;
@@ -432,15 +332,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__STARTER:
-				setStarter((Operator)null);
-				return;
-			case OpgraphPackage.SUPPLIER__STOPPER:
-				setStopper((Operator)null);
-				return;
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				getOutgoingCalls().clear();
-				return;
 			case OpgraphPackage.SUPPLIER__BODY:
 				setBody(BODY_EDEFAULT);
 				return;
@@ -477,12 +368,6 @@ public class SupplierImpl extends ClassImpl implements Supplier {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpgraphPackage.SUPPLIER__STARTER:
-				return getStarter() != null;
-			case OpgraphPackage.SUPPLIER__STOPPER:
-				return getStopper() != null;
-			case OpgraphPackage.SUPPLIER__OUTGOING_CALLS:
-				return !getOutgoingCalls().isEmpty();
 			case OpgraphPackage.SUPPLIER__BODY:
 				return BODY_EDEFAULT == null ? getBody() != null : !BODY_EDEFAULT.equals(getBody());
 			case OpgraphPackage.SUPPLIER__BODY_REF:

@@ -21,10 +21,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.models.opgraph.Component#getStarter <em>Starter</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Component#getStopper <em>Stopper</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Component#getOutgoingCalls <em>Outgoing Calls</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Component#getRole <em>Role</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.opgraph.OpgraphPackage#getComponent()
- * @model interface="true" abstract="true"
+ * @model
  * @generated
  */
 public interface Component extends org.nasdanika.models.opgraph.Class {
@@ -97,5 +98,31 @@ public interface Component extends org.nasdanika.models.opgraph.Class {
 	 * @generated
 	 */
 	EList<Call> getOutgoingCalls();
+
+	/**
+	 * Returns the value of the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * Component's role in its container - composite for components, function for calls, ...
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Role</em>' attribute.
+	 * @see #setRole(String)
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getComponent_Role()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getRole();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.opgraph.Component#getRole <em>Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role</em>' attribute.
+	 * @see #getRole()
+	 * @generated
+	 */
+	void setRole(String value);
 
 } // Component

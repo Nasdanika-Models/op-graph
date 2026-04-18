@@ -163,31 +163,22 @@ public interface OpgraphPackage extends EPackage {
 	int FEATURE__EGENERIC_TYPE = EcorePackage.ETYPED_ELEMENT__EGENERIC_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Transient</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE__TRANSIENT = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE__VOLATILE = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Changeable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__CHANGEABLE = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 2;
+	int FEATURE__CHANGEABLE = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__DERIVED = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Literal</b></em>' attribute.
@@ -196,7 +187,16 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DEFAULT_VALUE_LITERAL = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 3;
+	int FEATURE__DEFAULT_VALUE_LITERAL = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__TRANSIENT = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Unsettable</b></em>' attribute.
@@ -208,13 +208,13 @@ public interface OpgraphPackage extends EPackage {
 	int FEATURE__UNSETTABLE = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DERIVED = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 5;
+	int FEATURE__VOLATILE = EcorePackage.ETYPED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -344,24 +344,6 @@ public interface OpgraphPackage extends EPackage {
 	int ATTRIBUTE__EGENERIC_TYPE = FEATURE__EGENERIC_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Transient</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__TRANSIENT = FEATURE__TRANSIENT;
-
-	/**
-	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__VOLATILE = FEATURE__VOLATILE;
-
-	/**
 	 * The feature id for the '<em><b>Changeable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,6 +351,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__CHANGEABLE = FEATURE__CHANGEABLE;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__DERIVED = FEATURE__DERIVED;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Literal</b></em>' attribute.
@@ -380,6 +371,15 @@ public interface OpgraphPackage extends EPackage {
 	int ATTRIBUTE__DEFAULT_VALUE_LITERAL = FEATURE__DEFAULT_VALUE_LITERAL;
 
 	/**
+	 * The feature id for the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__TRANSIENT = FEATURE__TRANSIENT;
+
+	/**
 	 * The feature id for the '<em><b>Unsettable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,13 +389,13 @@ public interface OpgraphPackage extends EPackage {
 	int ATTRIBUTE__UNSETTABLE = FEATURE__UNSETTABLE;
 
 	/**
-	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DERIVED = FEATURE__DERIVED;
+	int ATTRIBUTE__VOLATILE = FEATURE__VOLATILE;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -534,24 +534,6 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE__EGENERIC_TYPE = FEATURE__EGENERIC_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Transient</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__TRANSIENT = FEATURE__TRANSIENT;
-
-	/**
-	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__VOLATILE = FEATURE__VOLATILE;
-
-	/**
 	 * The feature id for the '<em><b>Changeable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -559,6 +541,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int REFERENCE__CHANGEABLE = FEATURE__CHANGEABLE;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__DERIVED = FEATURE__DERIVED;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Literal</b></em>' attribute.
@@ -570,6 +561,15 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE__DEFAULT_VALUE_LITERAL = FEATURE__DEFAULT_VALUE_LITERAL;
 
 	/**
+	 * The feature id for the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__TRANSIENT = FEATURE__TRANSIENT;
+
+	/**
 	 * The feature id for the '<em><b>Unsettable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,13 +579,13 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE__UNSETTABLE = FEATURE__UNSETTABLE;
 
 	/**
-	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__DERIVED = FEATURE__DERIVED;
+	int REFERENCE__VOLATILE = FEATURE__VOLATILE;
 
 	/**
 	 * The feature id for the '<em><b>Resolve Proxies</b></em>' attribute.
@@ -606,31 +606,13 @@ public interface OpgraphPackage extends EPackage {
 	int REFERENCE__CONTAINMENT = FEATURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__CONTAINER = FEATURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Local</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__LOCAL = FEATURE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__KEYS = FEATURE_FEATURE_COUNT + 4;
+	int REFERENCE__KEYS = FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -639,7 +621,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 5;
+	int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -648,7 +630,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 6;
+	int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -824,10 +806,10 @@ public interface OpgraphPackage extends EPackage {
 	int PACKAGE_OPERATION_COUNT = EcorePackage.ENAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.opgraph.Component <em>Component</em>}' class.
+	 * The meta object id for the '{@link org.nasdanika.models.opgraph.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.opgraph.Component
+	 * @see org.nasdanika.models.opgraph.impl.ComponentImpl
 	 * @see org.nasdanika.models.opgraph.impl.OpgraphPackageImpl#getComponent()
 	 * @generated
 	 */
@@ -897,13 +879,22 @@ public interface OpgraphPackage extends EPackage {
 	int COMPONENT__OUTGOING_CALLS = CLASS_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__ROLE = CLASS_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = CLASS_FEATURE_COUNT + 3;
+	int COMPONENT_FEATURE_COUNT = CLASS_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -995,6 +986,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATOR__OUTGOING_CALLS = COMPONENT__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__ROLE = COMPONENT__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -1149,6 +1149,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSUMER__OUTGOING_CALLS = OPERATOR__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSUMER__ROLE = OPERATOR__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -1321,6 +1330,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTION__OUTGOING_CALLS = CONSUMER__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__ROLE = CONSUMER__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -1520,6 +1538,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALL__OUTGOING_CALLS = FUNCTION__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__ROLE = FUNCTION__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -1739,6 +1766,15 @@ public interface OpgraphPackage extends EPackage {
 	int SUPPLIER__OUTGOING_CALLS = OPERATOR__OUTGOING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER__ROLE = OPERATOR__ROLE;
+
+	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1911,6 +1947,15 @@ public interface OpgraphPackage extends EPackage {
 	int PREDICATE__OUTGOING_CALLS = CONSUMER__OUTGOING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE__ROLE = CONSUMER__ROLE;
+
+	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2081,6 +2126,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSITION__OUTGOING_CALLS = PREDICATE__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__ROLE = PREDICATE__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -2273,13 +2327,31 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE__OUTGOING_CALLS = COMPONENT__OUTGOING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE__ROLE = COMPONENT__ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE__PACKAGE_NAME = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE__COMPONENTS = COMPONENT_FEATURE_COUNT + 0;
+	int COMPOSITE__COMPONENTS = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite</em>' class.
@@ -2288,7 +2360,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+	int COMPOSITE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2382,6 +2454,15 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_SUPPLIER__OUTGOING_CALLS = SUPPLIER__OUTGOING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__ROLE = SUPPLIER__ROLE;
+
+	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2454,13 +2535,22 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_SUPPLIER__OUTGOING_TRANSITIONS = SUPPLIER__OUTGOING_TRANSITIONS;
 
 	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__PACKAGE_NAME = SUPPLIER_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_SUPPLIER__COMPONENTS = SUPPLIER_FEATURE_COUNT + 0;
+	int COMPOSITE_SUPPLIER__COMPONENTS = SUPPLIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite Supplier</em>' class.
@@ -2469,7 +2559,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_SUPPLIER_FEATURE_COUNT = SUPPLIER_FEATURE_COUNT + 1;
+	int COMPOSITE_SUPPLIER_FEATURE_COUNT = SUPPLIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2563,6 +2653,15 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_CONSUMER__OUTGOING_CALLS = CONSUMER__OUTGOING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONSUMER__ROLE = CONSUMER__ROLE;
+
+	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2635,13 +2734,22 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_CONSUMER__INCOMING_TRANSITIONS = CONSUMER__INCOMING_TRANSITIONS;
 
 	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONSUMER__PACKAGE_NAME = CONSUMER_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_CONSUMER__COMPONENTS = CONSUMER_FEATURE_COUNT + 0;
+	int COMPOSITE_CONSUMER__COMPONENTS = CONSUMER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite Consumer</em>' class.
@@ -2650,7 +2758,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_CONSUMER_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 1;
+	int COMPOSITE_CONSUMER_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2742,6 +2850,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_FUNCTION__OUTGOING_CALLS = FUNCTION__OUTGOING_CALLS;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__ROLE = FUNCTION__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -2843,13 +2960,22 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_FUNCTION__INCOMING_CALLS = FUNCTION__INCOMING_CALLS;
 
 	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__PACKAGE_NAME = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_FUNCTION__COMPONENTS = FUNCTION_FEATURE_COUNT + 0;
+	int COMPOSITE_FUNCTION__COMPONENTS = FUNCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite Function</em>' class.
@@ -2858,7 +2984,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_FUNCTION_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 1;
+	int COMPOSITE_FUNCTION_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2890,28 +3016,6 @@ public interface OpgraphPackage extends EPackage {
 	EClass getFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isTransient <em>Transient</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transient</em>'.
-	 * @see org.nasdanika.models.opgraph.Feature#isTransient()
-	 * @see #getFeature()
-	 * @generated
-	 */
-	EAttribute getFeature_Transient();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isVolatile <em>Volatile</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Volatile</em>'.
-	 * @see org.nasdanika.models.opgraph.Feature#isVolatile()
-	 * @see #getFeature()
-	 * @generated
-	 */
-	EAttribute getFeature_Volatile();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isChangeable <em>Changeable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2921,6 +3025,17 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFeature_Changeable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isDerived <em>Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Derived</em>'.
+	 * @see org.nasdanika.models.opgraph.Feature#isDerived()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_Derived();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#getDefaultValueLiteral <em>Default Value Literal</em>}'.
@@ -2934,6 +3049,17 @@ public interface OpgraphPackage extends EPackage {
 	EAttribute getFeature_DefaultValueLiteral();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isTransient <em>Transient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transient</em>'.
+	 * @see org.nasdanika.models.opgraph.Feature#isTransient()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_Transient();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isUnsettable <em>Unsettable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2945,15 +3071,15 @@ public interface OpgraphPackage extends EPackage {
 	EAttribute getFeature_Unsettable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isDerived <em>Derived</em>}'.
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Feature#isVolatile <em>Volatile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Derived</em>'.
-	 * @see org.nasdanika.models.opgraph.Feature#isDerived()
+	 * @return the meta object for the attribute '<em>Volatile</em>'.
+	 * @see org.nasdanika.models.opgraph.Feature#isVolatile()
 	 * @see #getFeature()
 	 * @generated
 	 */
-	EAttribute getFeature_Derived();
+	EAttribute getFeature_Volatile();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.opgraph.Attribute <em>Attribute</em>}'.
@@ -3007,28 +3133,6 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReference_Containment();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Reference#isContainer <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Container</em>'.
-	 * @see org.nasdanika.models.opgraph.Reference#isContainer()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Container();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Reference#isLocal <em>Local</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Local</em>'.
-	 * @see org.nasdanika.models.opgraph.Reference#isLocal()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Local();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.nasdanika.models.opgraph.Reference#getKeys <em>Keys</em>}'.
@@ -3169,6 +3273,17 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_OutgoingCalls();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Component#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Role</em>'.
+	 * @see org.nasdanika.models.opgraph.Component#getRole()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Role();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.opgraph.Call <em>Call</em>}'.
@@ -3416,6 +3531,17 @@ public interface OpgraphPackage extends EPackage {
 	EClass getComposite();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Composite#getPackageName <em>Package Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package Name</em>'.
+	 * @see org.nasdanika.models.opgraph.Composite#getPackageName()
+	 * @see #getComposite()
+	 * @generated
+	 */
+	EAttribute getComposite_PackageName();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.opgraph.Composite#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3490,28 +3616,20 @@ public interface OpgraphPackage extends EPackage {
 		EClass FEATURE = eINSTANCE.getFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Transient</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE__TRANSIENT = eINSTANCE.getFeature_Transient();
-
-		/**
-		 * The meta object literal for the '<em><b>Volatile</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE__VOLATILE = eINSTANCE.getFeature_Volatile();
-
-		/**
 		 * The meta object literal for the '<em><b>Changeable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute FEATURE__CHANGEABLE = eINSTANCE.getFeature_Changeable();
+
+		/**
+		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__DERIVED = eINSTANCE.getFeature_Derived();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Value Literal</b></em>' attribute feature.
@@ -3522,6 +3640,14 @@ public interface OpgraphPackage extends EPackage {
 		EAttribute FEATURE__DEFAULT_VALUE_LITERAL = eINSTANCE.getFeature_DefaultValueLiteral();
 
 		/**
+		 * The meta object literal for the '<em><b>Transient</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__TRANSIENT = eINSTANCE.getFeature_Transient();
+
+		/**
 		 * The meta object literal for the '<em><b>Unsettable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3530,12 +3656,12 @@ public interface OpgraphPackage extends EPackage {
 		EAttribute FEATURE__UNSETTABLE = eINSTANCE.getFeature_Unsettable();
 
 		/**
-		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Volatile</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE__DERIVED = eINSTANCE.getFeature_Derived();
+		EAttribute FEATURE__VOLATILE = eINSTANCE.getFeature_Volatile();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -3580,22 +3706,6 @@ public interface OpgraphPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REFERENCE__CONTAINMENT = eINSTANCE.getReference_Containment();
-
-		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__CONTAINER = eINSTANCE.getReference_Container();
-
-		/**
-		 * The meta object literal for the '<em><b>Local</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__LOCAL = eINSTANCE.getReference_Local();
 
 		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.
@@ -3674,10 +3784,10 @@ public interface OpgraphPackage extends EPackage {
 		EReference PACKAGE__CLASSES = eINSTANCE.getPackage_Classes();
 
 		/**
-		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.Component <em>Component</em>}' class.
+		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.models.opgraph.Component
+		 * @see org.nasdanika.models.opgraph.impl.ComponentImpl
 		 * @see org.nasdanika.models.opgraph.impl.OpgraphPackageImpl#getComponent()
 		 * @generated
 		 */
@@ -3706,6 +3816,14 @@ public interface OpgraphPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__OUTGOING_CALLS = eINSTANCE.getComponent_OutgoingCalls();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__ROLE = eINSTANCE.getComponent_Role();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.opgraph.impl.CallImpl <em>Call</em>}' class.
@@ -3906,6 +4024,14 @@ public interface OpgraphPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPOSITE = eINSTANCE.getComposite();
+
+		/**
+		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPOSITE__PACKAGE_NAME = eINSTANCE.getComposite_PackageName();
 
 		/**
 		 * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.

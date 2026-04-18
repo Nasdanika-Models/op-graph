@@ -26,12 +26,23 @@ import org.nasdanika.models.opgraph.OpgraphPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.CompositeConsumerImpl#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.CompositeConsumerImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CompositeConsumerImpl extends ConsumerImpl implements CompositeConsumer {
+	/**
+	 * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackageName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PACKAGE_NAME_EDEFAULT = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,6 +60,26 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	@Override
 	protected EClass eStaticClass() {
 		return OpgraphPackage.Literals.COMPOSITE_CONSUMER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPackageName() {
+		return (String)eDynamicGet(OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPOSITE__PACKAGE_NAME, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPackageName(String newPackageName) {
+		eDynamicSet(OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.COMPOSITE__PACKAGE_NAME, newPackageName);
 	}
 
 	/**
@@ -84,6 +115,8 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME:
+				return getPackageName();
 			case OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS:
 				return getComponents();
 		}
@@ -99,6 +132,9 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME:
+				setPackageName((String)newValue);
+				return;
 			case OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS:
 				getComponents().clear();
 				getComponents().addAll((Collection<? extends Component>)newValue);
@@ -115,6 +151,9 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME:
+				setPackageName(PACKAGE_NAME_EDEFAULT);
+				return;
 			case OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS:
 				getComponents().clear();
 				return;
@@ -130,6 +169,8 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME:
+				return PACKAGE_NAME_EDEFAULT == null ? getPackageName() != null : !PACKAGE_NAME_EDEFAULT.equals(getPackageName());
 			case OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS:
 				return !getComponents().isEmpty();
 		}
@@ -145,6 +186,7 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Composite.class) {
 			switch (derivedFeatureID) {
+				case OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME: return OpgraphPackage.COMPOSITE__PACKAGE_NAME;
 				case OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS: return OpgraphPackage.COMPOSITE__COMPONENTS;
 				default: return -1;
 			}
@@ -161,6 +203,7 @@ public class CompositeConsumerImpl extends ConsumerImpl implements CompositeCons
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Composite.class) {
 			switch (baseFeatureID) {
+				case OpgraphPackage.COMPOSITE__PACKAGE_NAME: return OpgraphPackage.COMPOSITE_CONSUMER__PACKAGE_NAME;
 				case OpgraphPackage.COMPOSITE__COMPONENTS: return OpgraphPackage.COMPOSITE_CONSUMER__COMPONENTS;
 				default: return -1;
 			}
