@@ -623,8 +623,18 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getSupplier_Faults() {
+		return (EReference)supplierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSupplier_OutputName() {
-		return (EAttribute)supplierEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)supplierEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -634,7 +644,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 	 */
 	@Override
 	public EReference getSupplier_OutgoingTransitions() {
-		return (EReference)supplierEClass.getEStructuralFeatures().get(2);
+		return (EReference)supplierEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -864,6 +874,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		supplierEClass = createEClass(SUPPLIER);
 		createEReference(supplierEClass, SUPPLIER__OUTPUTS);
+		createEReference(supplierEClass, SUPPLIER__FAULTS);
 		createEAttribute(supplierEClass, SUPPLIER__OUTPUT_NAME);
 		createEReference(supplierEClass, SUPPLIER__OUTGOING_TRANSITIONS);
 
@@ -994,6 +1005,7 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 
 		initEClass(supplierEClass, Supplier.class, "Supplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSupplier_Outputs(), theEcorePackage.getETypedElement(), null, "outputs", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplier_Faults(), theEcorePackage.getEClass(), null, "faults", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplier_OutputName(), theEcorePackage.getEString(), "outputName", null, 0, 1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSupplier_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1165,6 +1177,12 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		   source,
 		   new String[] {
 			   "documentation", "*\nProduces outputs or throws an exception"
+		   });
+		addAnnotation
+		  (getSupplier_Faults(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nA fault is an observable, expected business outcome - the operation succeeded in determining that a business condition prevents the happy path\n(account closed, payment rejected, account not found). The system is working correctly; the business answer is \"no.\"\nA fault is different from an exception - an unexpected technical failure - the operation could not determine anything definitive\n(database connection lost, malformed input, timeout).\nThe system is not working correctly."
 		   });
 		addAnnotation
 		  (getSupplier_OutputName(),

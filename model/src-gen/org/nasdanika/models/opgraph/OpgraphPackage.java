@@ -1476,13 +1476,22 @@ public interface OpgraphPackage extends EPackage {
 	int FUNCTION__OUTPUTS = CONSUMER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Faults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__FAULTS = CONSUMER_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__OUTPUT_NAME = CONSUMER_FEATURE_COUNT + 1;
+	int FUNCTION__OUTPUT_NAME = CONSUMER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
@@ -1491,7 +1500,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__OUTGOING_TRANSITIONS = CONSUMER_FEATURE_COUNT + 2;
+	int FUNCTION__OUTGOING_TRANSITIONS = CONSUMER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Calls</b></em>' reference list.
@@ -1500,7 +1509,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__INCOMING_CALLS = CONSUMER_FEATURE_COUNT + 3;
+	int FUNCTION__INCOMING_CALLS = CONSUMER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -1509,7 +1518,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 4;
+	int FUNCTION_FEATURE_COUNT = CONSUMER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1709,6 +1718,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALL__OUTPUTS = FUNCTION__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Faults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__FAULTS = FUNCTION__FAULTS;
 
 	/**
 	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
@@ -1946,13 +1964,22 @@ public interface OpgraphPackage extends EPackage {
 	int SUPPLIER__OUTPUTS = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Faults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER__FAULTS = OPERATOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER__OUTPUT_NAME = OPERATOR_FEATURE_COUNT + 1;
+	int SUPPLIER__OUTPUT_NAME = OPERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Transitions</b></em>' containment reference list.
@@ -1961,7 +1988,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER__OUTGOING_TRANSITIONS = OPERATOR_FEATURE_COUNT + 2;
+	int SUPPLIER__OUTGOING_TRANSITIONS = OPERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Supplier</em>' class.
@@ -1970,7 +1997,7 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 3;
+	int SUPPLIER_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2697,6 +2724,15 @@ public interface OpgraphPackage extends EPackage {
 	int COMPOSITE_SUPPLIER__OUTPUTS = SUPPLIER__OUTPUTS;
 
 	/**
+	 * The feature id for the '<em><b>Faults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_SUPPLIER__FAULTS = SUPPLIER__FAULTS;
+
+	/**
 	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3156,6 +3192,15 @@ public interface OpgraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_FUNCTION__OUTPUTS = FUNCTION__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Faults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_FUNCTION__FAULTS = FUNCTION__FAULTS;
 
 	/**
 	 * The feature id for the '<em><b>Output Name</b></em>' attribute.
@@ -3660,6 +3705,17 @@ public interface OpgraphPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSupplier_Outputs();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.opgraph.Supplier#getFaults <em>Faults</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Faults</em>'.
+	 * @see org.nasdanika.models.opgraph.Supplier#getFaults()
+	 * @see #getSupplier()
+	 * @generated
+	 */
+	EReference getSupplier_Faults();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.models.opgraph.Supplier#getOutputName <em>Output Name</em>}'.
@@ -4200,6 +4256,14 @@ public interface OpgraphPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUPPLIER__OUTPUTS = eINSTANCE.getSupplier_Outputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Faults</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLIER__FAULTS = eINSTANCE.getSupplier_Faults();
 
 		/**
 		 * The meta object literal for the '<em><b>Output Name</b></em>' attribute feature.

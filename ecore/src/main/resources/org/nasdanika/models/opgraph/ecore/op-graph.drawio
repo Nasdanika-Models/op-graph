@@ -1,6 +1,6 @@
-<mxfile compressed="false" host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+<mxfile compressed="false" host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram id="23af58aa-a429-4b5e-b458-e5b80da6425f" name="Nasdanika OpGraph">
-    <mxGraphModel dx="3346" dy="1921" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1412" dy="1770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -154,6 +154,18 @@
         <mxCell id="35086cf9-9f00-4b84-b96e-d11b3f34af2a" edge="1" parent="1" source="0cbeb0a5-d94e-4699-8d30-66709ff57d54" style="exitX=0.5;exitDx=0;exitY=0;exitDy=0;entryX=0.5;entryDx=0.0;entryY=1.0;entryDy=0;rounded=0;endArrow=block;edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endFill=0" target="3fb1ce62-f814-4d96-8846-974f7878c26b">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <UserObject label="faults" link="references/eClassifiers/Supplier/references/eStructuralFeatures/faults/index.html" id="C_FwnE_t2lNUiaPvwR3a-1">
+          <mxCell edge="1" parent="1" source="6e3e9837-3680-495f-ad33-634c0cdc45b0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="2e724991-75f7-49eb-b68a-dd7bf5c681af">
+            <mxGeometry relative="1" x="-0.4515" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="20" y="505" />
+                <mxPoint x="20" y="145" />
+                <mxPoint x="410" y="145" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
         <object label="Supplier" link="references/eClassifiers/Supplier/index.html" id="6e3e9837-3680-495f-ad33-634c0cdc45b0">
           <mxCell parent="1" vertex="1">
             <mxGeometry height="30" width="120" x="70.00066390690176" y="489.9989399524071" as="geometry" />

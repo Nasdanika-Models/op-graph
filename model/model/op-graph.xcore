@@ -64,6 +64,8 @@ class Class extends ENamedElement {
         
     contains Feature[] features
     
+    // TODO - Operations (not operators)
+    
 }
 
 /**
@@ -180,6 +182,15 @@ interface Operator extends Component {
 class Supplier extends Operator {
     
     refers ETypedElement[] outputs  
+           
+    /**
+     * A fault is an observable, expected business outcome - the operation succeeded in determining that a business condition prevents the happy path
+     * (account closed, payment rejected, account not found). The system is working correctly; the business answer is "no." 
+     * A fault is different from an exception - an unexpected technical failure - the operation could not determine anything definitive
+     * (database connection lost, malformed input, timeout). 
+     * The system is not working correctly.
+     */       
+    refers EClass[] faults    
     
     /**
      * Name of the output type if there is more than one output element

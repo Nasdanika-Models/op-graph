@@ -37,6 +37,7 @@ import org.nasdanika.models.opgraph.Transition;
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getExceptions <em>Exceptions</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getExceptionHandlers <em>Exception Handlers</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getFaults <em>Faults</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutputName <em>Output Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.SupplierImpl#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  * </ul>
@@ -291,6 +292,17 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<EClass> getFaults() {
+		return (EList<EClass>)eDynamicGet(OpgraphPackage.SUPPLIER__FAULTS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__FAULTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getOutputName() {
 		return (String)eDynamicGet(OpgraphPackage.SUPPLIER__OUTPUT_NAME - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__OUTPUT_NAME, true, true);
@@ -374,6 +386,8 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return getExceptionHandlers();
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				return getOutputs();
+			case OpgraphPackage.SUPPLIER__FAULTS:
+				return getFaults();
 			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
 				return getOutputName();
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:
@@ -421,6 +435,10 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				getOutputs().clear();
 				getOutputs().addAll((Collection<? extends ETypedElement>)newValue);
 				return;
+			case OpgraphPackage.SUPPLIER__FAULTS:
+				getFaults().clear();
+				getFaults().addAll((Collection<? extends EClass>)newValue);
+				return;
 			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
 				setOutputName((String)newValue);
 				return;
@@ -467,6 +485,9 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				getOutputs().clear();
 				return;
+			case OpgraphPackage.SUPPLIER__FAULTS:
+				getFaults().clear();
+				return;
 			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
 				setOutputName(OUTPUT_NAME_EDEFAULT);
 				return;
@@ -503,6 +524,8 @@ public class SupplierImpl extends ComponentImpl implements Supplier {
 				return !getExceptionHandlers().isEmpty();
 			case OpgraphPackage.SUPPLIER__OUTPUTS:
 				return !getOutputs().isEmpty();
+			case OpgraphPackage.SUPPLIER__FAULTS:
+				return !getFaults().isEmpty();
 			case OpgraphPackage.SUPPLIER__OUTPUT_NAME:
 				return OUTPUT_NAME_EDEFAULT == null ? getOutputName() != null : !OUTPUT_NAME_EDEFAULT.equals(getOutputName());
 			case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS:

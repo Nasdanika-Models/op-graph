@@ -29,6 +29,7 @@ import org.nasdanika.models.opgraph.Transition;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.impl.FunctionImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.impl.FunctionImpl#getFaults <em>Faults</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.FunctionImpl#getOutputName <em>Output Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.FunctionImpl#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.impl.FunctionImpl#getIncomingCalls <em>Incoming Calls</em>}</li>
@@ -75,6 +76,17 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 	@Override
 	public EList<ETypedElement> getOutputs() {
 		return (EList<ETypedElement>)eDynamicGet(OpgraphPackage.FUNCTION__OUTPUTS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__OUTPUTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<EClass> getFaults() {
+		return (EList<EClass>)eDynamicGet(OpgraphPackage.FUNCTION__FAULTS - ESTATIC_FEATURE_COUNT, OpgraphPackage.Literals.SUPPLIER__FAULTS, true, true);
 	}
 
 	/**
@@ -162,6 +174,8 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 		switch (featureID) {
 			case OpgraphPackage.FUNCTION__OUTPUTS:
 				return getOutputs();
+			case OpgraphPackage.FUNCTION__FAULTS:
+				return getFaults();
 			case OpgraphPackage.FUNCTION__OUTPUT_NAME:
 				return getOutputName();
 			case OpgraphPackage.FUNCTION__OUTGOING_TRANSITIONS:
@@ -184,6 +198,10 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 			case OpgraphPackage.FUNCTION__OUTPUTS:
 				getOutputs().clear();
 				getOutputs().addAll((Collection<? extends ETypedElement>)newValue);
+				return;
+			case OpgraphPackage.FUNCTION__FAULTS:
+				getFaults().clear();
+				getFaults().addAll((Collection<? extends EClass>)newValue);
 				return;
 			case OpgraphPackage.FUNCTION__OUTPUT_NAME:
 				setOutputName((String)newValue);
@@ -211,6 +229,9 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 			case OpgraphPackage.FUNCTION__OUTPUTS:
 				getOutputs().clear();
 				return;
+			case OpgraphPackage.FUNCTION__FAULTS:
+				getFaults().clear();
+				return;
 			case OpgraphPackage.FUNCTION__OUTPUT_NAME:
 				setOutputName(OUTPUT_NAME_EDEFAULT);
 				return;
@@ -234,6 +255,8 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 		switch (featureID) {
 			case OpgraphPackage.FUNCTION__OUTPUTS:
 				return !getOutputs().isEmpty();
+			case OpgraphPackage.FUNCTION__FAULTS:
+				return !getFaults().isEmpty();
 			case OpgraphPackage.FUNCTION__OUTPUT_NAME:
 				return OUTPUT_NAME_EDEFAULT == null ? getOutputName() != null : !OUTPUT_NAME_EDEFAULT.equals(getOutputName());
 			case OpgraphPackage.FUNCTION__OUTGOING_TRANSITIONS:
@@ -254,6 +277,7 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 		if (baseClass == Supplier.class) {
 			switch (derivedFeatureID) {
 				case OpgraphPackage.FUNCTION__OUTPUTS: return OpgraphPackage.SUPPLIER__OUTPUTS;
+				case OpgraphPackage.FUNCTION__FAULTS: return OpgraphPackage.SUPPLIER__FAULTS;
 				case OpgraphPackage.FUNCTION__OUTPUT_NAME: return OpgraphPackage.SUPPLIER__OUTPUT_NAME;
 				case OpgraphPackage.FUNCTION__OUTGOING_TRANSITIONS: return OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS;
 				default: return -1;
@@ -272,6 +296,7 @@ public class FunctionImpl extends ConsumerImpl implements Function {
 		if (baseClass == Supplier.class) {
 			switch (baseFeatureID) {
 				case OpgraphPackage.SUPPLIER__OUTPUTS: return OpgraphPackage.FUNCTION__OUTPUTS;
+				case OpgraphPackage.SUPPLIER__FAULTS: return OpgraphPackage.FUNCTION__FAULTS;
 				case OpgraphPackage.SUPPLIER__OUTPUT_NAME: return OpgraphPackage.FUNCTION__OUTPUT_NAME;
 				case OpgraphPackage.SUPPLIER__OUTGOING_TRANSITIONS: return OpgraphPackage.FUNCTION__OUTGOING_TRANSITIONS;
 				default: return -1;

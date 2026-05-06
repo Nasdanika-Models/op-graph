@@ -1,0 +1,33 @@
+Yes — and the three-way distinction is meaningfully sharper than what most modern execution metamodels capture. This is the right path; the work is in the details.
+
+The conceptual basis worth articulating clearly: faults and exceptions aren't just two categories of "non-happy-path." They're fundamentally different kinds of things. **A fault is an observable, expected business outcome** — the operation succeeded in determining that a business condition prevents the happy path (account closed, payment rejected, account not found). The system is working correctly; the business answer is "no." **An exception is an unexpected technical failure** — the operation could not determine anything definitive (database connection lost, malformed input, timeout). The system is not working correctly. Conflating these into one mechanism — what Java did with exceptions, what most modern result-type designs do — loses the routing semantics that workflow execution actually requires.
+
+The precedents are good. BPMN distinguishes Error Events from Escalation Events explicitly, with different routing semantics and different visual symbols. SOAP/WS-* distinguish faults from underlying transport errors. gRPC handles application-level outcomes in the response type and only uses status codes for technical failures. Each of these is solving a piece of what you're putting together. None of them have all three categories cleanly first-class in a metamodel for general workflow execution. That's the positioning gap OpGraph occupies cleanly with this addition.
+
+Several design considerations worth thinking through before implementation:
+
+**Faults should be declared, not implicit.** The signature value of the fault concept is that callers can statically reason about which business outcomes they need to handle. Undeclared faults are just exceptions. This matches BPMN's escalation-event semantics — the escalating event is part of the activity's contract, not a side effect.
+
+**A fault type hierarchy.** Most likely you want faults to form a hierarchy: a generic Fault base type, with specific subtypes carrying specific payload schemas. Callers can handle generic faults at composite boundaries and specific faults at operation boundaries, the same way exception hierarchies work. This also gives you a natural place for the payload typing — each fault subtype declares its own payload structure.
+
+**Composition and propagation.** When a composite operation contains a sub-operation that can fault, what does the composite declare? Three reasonable models, all defensible in different contexts:
+
+- *Transparent propagation* — composite declares the union of all sub-faults. Right for in-language workflow composition where the composite is just a structural grouping.
+- *Explicit re-declaration* — composite must declare faults it propagates; sub-faults not declared are wrapped as exceptions. Right for service boundaries where the composite is a contract surface.
+- *Encapsulation* — composite handles all sub-faults internally; faults the composite emits are its own. Right when the composite is acting as an abstraction layer.
+
+You probably want all three to be expressible per composite, with a sensible default (probably transparent). This is also the place where most workflow frameworks make a confused choice and live with the consequences forever, so it's worth thinking through carefully now.
+
+**Visual routing in diagrams.** Fault transitions need to be visually distinct from normal transitions and exception transitions. BPMN's pattern (different line styles for different routing categories) is a reasonable precedent. Whatever convention OpGraph picks, make sure it composes with the existing transition types rather than contending with them.
+
+**Target-runtime mapping for Phase 2.** This is what makes the design portable. The fault concept must translate cleanly to target-runtime idioms: typed exception hierarchies (Java), sealed result types (Kotlin/Scala), Either/sum types (functional languages), explicit return discriminants (Go-style). Each target language picks its idiom; the mapping from OpGraph fault declarations to that idiom should be mechanical. The concept design should be deliberate about not assuming any one target idiom — that's what makes OpGraph stay portable across the modernization landscape.
+
+**A subtle concept-level question worth deciding early.** Are exceptions also declared, or only faults? Java went both ways (checked vs runtime) and people generally consider it a mistake. Modern languages mostly treat exceptions as undeclared (Kotlin, C#, Rust's panics). I'd suggest faults are declared (their value is the contract); exceptions are undeclared (the engine handles them through the error-handling layer regardless). This keeps the declaration burden focused on the things that callers actually need to know about.
+
+**Timing.** None of this needs to land in the immediate runtime work for Tibco BW. Tibco's existing fault semantics can be handled at the BW model layer for now — the BW model says "this transition is a fault transition," and the runtime executes it as such. The OpGraph metamodel change is a parallel track that can be designed now, captured as a documented planned change, and implemented when the immediate priorities (Hello World, Paul meeting, the team's SpringBoot detour) settle.
+
+When you do implement, this addition strengthens several other parts of the practice: the Phase 2 transformation page already discusses target idioms for fault preservation; the DSE page already covers fault handling; the analysis page already distinguishes faults from errors. Promoting fault to first-class in OpGraph completes the loop — the metamodel reflects the same distinction the practice prescribes, which makes the practice provable rather than aspirational.
+
+**One positioning observation.** *"OpGraph treats expected business outcomes as first-class, distinct from unexpected technical failures"* is a one-line differentiator against every framework currently in the space. LangGraph, Temporal, Camunda, Spring Integration — none of them treat this distinction at the metamodel level. They handle it through patterns layered on top of unified exception machinery. You'd be the only one with it baked into the substrate. Worth capturing as a positioning point in the manifesto and the writing series — it's a small idea with disproportionate explanatory power for why model-driven workflows belong above unified exception models.
+
+The path is right. The design considerations above are where the actual work lives. Get them straight in writing now, even if the implementation comes later.

@@ -4,6 +4,7 @@ package org.nasdanika.models.opgraph;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.ETypedElement;
 
 /**
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.ETypedElement;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link org.nasdanika.models.opgraph.Supplier#getFaults <em>Faults</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutputName <em>Output Name</em>}</li>
  *   <li>{@link org.nasdanika.models.opgraph.Supplier#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  * </ul>
@@ -41,6 +43,26 @@ public interface Supplier extends Operator {
 	 * @generated
 	 */
 	EList<ETypedElement> getOutputs();
+
+	/**
+	 * Returns the value of the '<em><b>Faults</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * A fault is an observable, expected business outcome - the operation succeeded in determining that a business condition prevents the happy path
+	 * (account closed, payment rejected, account not found). The system is working correctly; the business answer is "no."
+	 * A fault is different from an exception - an unexpected technical failure - the operation could not determine anything definitive
+	 * (database connection lost, malformed input, timeout).
+	 * The system is not working correctly.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Faults</em>' reference list.
+	 * @see org.nasdanika.models.opgraph.OpgraphPackage#getSupplier_Faults()
+	 * @model
+	 * @generated
+	 */
+	EList<EClass> getFaults();
 
 	/**
 	 * Returns the value of the '<em><b>Output Name</b></em>' attribute.

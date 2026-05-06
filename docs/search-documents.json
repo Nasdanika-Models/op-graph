@@ -1,474 +1,516 @@
 {
   "references/eClassifiers/Function/index.html": {
-    "link-uuid": "f6e55b77-4e2f-406e-9479-ef72f66aed39",
+    "link-uuid": "d5f621cf-b22a-4736-8b13-6ff48e9b934a",
     "title": "Function",
     "content": "* Takes inputs, produces outputs or throws an exception Diagram ",
-    "timestamp": 1776368010477
+    "timestamp": 1778055907349
   },
   "references/eClassifiers/Transition/references/eStructuralFeatures/target/index.html": {
     "path": "Transition/References/target",
-    "link-uuid": "d0a28622-ea2a-4ca8-b379-539bbeb646e0",
+    "link-uuid": "e10da18e-72ca-4aae-9e58-c99deba4c012",
     "title": "target",
     "content": "Type Consumer Multiplicity 0..1",
-    "timestamp": 1776368010668
+    "timestamp": 1778055907551
   },
   "references/eClassifiers/Call/inheritance.html": {
     "path": "Call/Inheritance",
-    "link-uuid": "e10f7876-abe4-4999-b8e6-a57a9ad3b245",
+    "link-uuid": "e59cdad8-26bf-4c61-8e56-578016eba890",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010195
+    "timestamp": 1778055907023
   },
   "references/eClassifiers/Class/index.html": {
-    "link-uuid": "74760e3d-f86a-469e-8d17-d3530ba04ad5",
+    "link-uuid": "9fffc51e-407f-4833-a723-b2edca1b9459",
     "title": "Class",
     "content": "* A collection of features which may extend zero or more superTypes providing base functionality Diagram ",
-    "timestamp": 1776368010233
+    "timestamp": 1778055907061
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/language/index.html": {
     "path": "Operator/Attributes/language",
-    "link-uuid": "940b32de-b4cb-454d-b776-89f9c4d62091",
+    "link-uuid": "32e2a803-4567-4e28-9cc6-453696da4dd0",
     "title": "language",
     "content": "Type EString Multiplicity 0..1 * body or bodyRef language",
-    "timestamp": 1776368010526
+    "timestamp": 1778055907403
   },
   "references/eClassifiers/Consumer/index.html": {
-    "link-uuid": "74eedb05-a0ce-4f60-b20b-ffc2271e89f4",
+    "link-uuid": "1e94e10c-972c-4910-a156-1a035226c837",
     "title": "Consumer",
     "content": "* Consumes inputs and may throw an exception as a result Diagram ",
-    "timestamp": 1776368010403
+    "timestamp": 1778055907273
   },
   "references/eClassifiers/Operator/index.html": {
-    "link-uuid": "feafe00b-2b51-4451-a8f4-9fc8e9ee3f02",
+    "link-uuid": "2601d27b-1e9c-4bf3-b969-0781aa098e1d",
     "title": "Operator",
     "content": "* Performs some operation Diagram ",
-    "timestamp": 1776368010507
+    "timestamp": 1778055907380
   },
   "references/eClassifiers/Predicate/inheritance.html": {
     "path": "Predicate/Inheritance",
-    "link-uuid": "14c2896c-5fce-4ff2-9ea9-ecc0fda064c3",
+    "link-uuid": "a3db26e5-dd4e-4c92-b289-cf4feb4eaec9",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010577
+    "timestamp": 1778055907453
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/changeable/index.html": {
     "path": "Feature/Attributes/changeable",
-    "link-uuid": "3fa9174a-1fae-45be-891f-bc4e608b63fa",
+    "link-uuid": "7dc5c785-ef76-4866-8bc2-47031189671c",
     "title": "changeable",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010448
+    "timestamp": 1778055907316
   },
   "references/eClassifiers/Package/inheritance.html": {
     "path": "Package/Inheritance",
-    "link-uuid": "cff250d0-279a-4d93-a97e-d4b21b898cd9",
+    "link-uuid": "b33a80d0-ac4c-4bae-995a-92c88ad4dfcc",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010548
+    "timestamp": 1778055907423
   },
   "references/eClassifiers/Composite/index.html": {
-    "link-uuid": "1dec046d-7633-471f-92da-0a76bf3edf0d",
+    "link-uuid": "8683d4c5-0907-4e04-9061-606af8c28e56",
     "title": "Composite",
     "content": "* Group is generated to EClass with elements generated either to operations or contained classes Diagram ",
-    "timestamp": 1776368010296
+    "timestamp": 1778055907147
   },
   "index.html": {
-    "link-uuid": "0dec094c-dee1-4d31-b12b-d8a040c89231",
+    "link-uuid": "1c6958d2-34e2-4283-8938-c3ec0e8bc195",
     "title": "OpGraph Model",
-    "content": "Xcore model for Nasdanika OpGraph Function Transition Call target incomingCalls CompositeConsumer Attribute Operator Reference keys opposite Package CompositeFunction Composite Consumer incomingTransitions target Supplier Class classes Feature features Predicate exceptionHandlers CompositeSupplier Component starter stopper components source outgoingCalls outgoingTransitions source Nasdanika OpGraph",
-    "timestamp": 1776368010140
+    "content": "Xcore model for Nasdanika OpGraph Function Transition Call target incomingCalls CompositeConsumer Attribute Operator Reference keys opposite Package CompositeFunction Composite Consumer incomingTransitions target faults Supplier Class classes Feature features Predicate exceptionHandlers CompositeSupplier Component starter stopper components source outgoingCalls outgoingTransitions source Nasdanika OpGraph",
+    "timestamp": 1778055906964
+  },
+  "references/eClassifiers/Component/references/eStructuralFeatures/role/index.html": {
+    "path": "Component/Attributes/role",
+    "link-uuid": "8f348664-50d0-44e8-9960-fcf88d7b80e3",
+    "title": "role",
+    "content": "Type EString Multiplicity 0..1 * Component&rsquo;s role in its container - composite for components, function for calls, &hellip;",
+    "timestamp": 1778055907118
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/volatile/index.html": {
     "path": "Feature/Attributes/volatile",
-    "link-uuid": "9b339edb-2f63-4c8b-aebd-67e8787fac2d",
+    "link-uuid": "57c27d39-0515-49b4-9264-a01ac8fb90bb",
     "title": "volatile",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010459
+    "timestamp": 1778055907330
+  },
+  "references/eClassifiers/Operator/references/eStructuralFeatures/delegateBodyRef/index.html": {
+    "path": "Operator/Attributes/delegateBodyRef",
+    "link-uuid": "0b38f13f-f111-4526-8e20-3df23503cd41",
+    "title": "delegateBodyRef",
+    "content": "Type EString Multiplicity 0..1 * URI of the delegate code body",
+    "timestamp": 1778055907396
   },
   "references/eClassifiers/CompositeSupplier/index.html": {
-    "link-uuid": "7032ef43-0afd-4b97-95cf-d15f7081bb7e",
+    "link-uuid": "1cadb1cd-71db-45da-bfd6-bffc3ee1782f",
     "title": "CompositeSupplier",
     "content": "Diagram ",
-    "timestamp": 1776368010374
+    "timestamp": 1778055907240
   },
   "references/eClassifiers/Function/inheritance.html": {
     "path": "Function/Inheritance",
-    "link-uuid": "afe610f5-c0bf-4afe-91f5-0beace1bcc00",
+    "link-uuid": "45e6d046-5818-4520-84eb-6142f630af57",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010480
+    "timestamp": 1778055907351
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/exceptionHandlers/index.html": {
     "path": "Operator/References/exceptionHandlers",
-    "link-uuid": "1c0f952f-d88d-4dd4-8bf1-61ec00732124",
+    "link-uuid": "b0af8f0c-bf52-41e4-b8d8-4fb44622d67a",
     "title": "exceptionHandlers",
     "content": "Type Predicate Multiplicity 0..* * Exception handlers are evaluated in the definition order until one of them return true or there are no more handlers. In the latter case the exception bubbles up to the caller.",
-    "timestamp": 1776368010519
+    "timestamp": 1778055907399
   },
   "references/eClassifiers/CompositeFunction/inheritance.html": {
     "path": "CompositeFunction/Inheritance",
-    "link-uuid": "a287cb71-b9cd-4718-9f60-0876ad8d222f",
+    "link-uuid": "99339587-bad2-49bf-9796-f5955e8e5989",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010351
+    "timestamp": 1778055907212
   },
   "references/eClassifiers/Predicate/index.html": {
-    "link-uuid": "edf46df4-8705-4f2e-b11e-30aae753edb0",
+    "link-uuid": "ff8dd2eb-ba1e-466b-9ed3-2fdc723a13d3",
     "title": "Predicate",
     "content": "* Marker interface - consumes inputs and produces a boolean result or throws an exception. Extended by transitions Diagram ",
-    "timestamp": 1776368010575
+    "timestamp": 1778055907451
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/containment/index.html": {
     "path": "Reference/Attributes/containment",
-    "link-uuid": "6724c5d3-9ad8-4ff3-9ed1-fddee8012c98",
+    "link-uuid": "8205b9bc-61fe-411c-9f95-c9efb8b1baa4",
     "title": "containment",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010605
+    "timestamp": 1778055907481
   },
   "references/eClassifiers/Component/index.html": {
-    "link-uuid": "bc75cb5c-a853-47fe-827e-9ebbe5fe7759",
+    "link-uuid": "aad49db0-2806-4136-adf3-b845fe4bff76",
     "title": "Component",
     "content": "* Something that can be started and stopped Diagram ",
-    "timestamp": 1776368010263
+    "timestamp": 1778055907102
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/outputs/index.html": {
     "path": "Supplier/References/outputs",
-    "link-uuid": "9329989d-d154-4318-81aa-4a08cb11b2e1",
+    "link-uuid": "e3c51208-bfd0-424d-921b-ac7a3651d82c",
     "title": "outputs",
     "content": "Type ETypedElement Multiplicity 0..*",
-    "timestamp": 1776368010641
+    "timestamp": 1778055907524
   },
   "references/eClassifiers/Composite/inheritance.html": {
     "path": "Composite/Inheritance",
-    "link-uuid": "6451442b-03da-46fd-b8bf-84dcf92f2c51",
+    "link-uuid": "39a69851-f7b2-481e-b6f9-a9f19a0c43e6",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010298
+    "timestamp": 1778055907150
   },
   "references/eClassifiers/Attribute/inheritance.html": {
     "path": "Attribute/Inheritance",
-    "link-uuid": "b3c753c0-f396-4f1f-8e07-532a09469ac3",
+    "link-uuid": "1418ed2c-6ae2-4682-8f6d-e7e82bd0980f",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010162
+    "timestamp": 1778055906990
   },
   "references/eClassifiers/Consumer/references/eStructuralFeatures/inputs/index.html": {
     "path": "Consumer/References/inputs",
-    "link-uuid": "b69c1ea1-114a-4f4e-8eb2-cbc13cafaf09",
+    "link-uuid": "6dffc5c7-dcc0-42dd-88cd-4920d67d6ca3",
     "title": "inputs",
     "content": "Type ETypedElement Multiplicity 0..*",
-    "timestamp": 1776368010416
+    "timestamp": 1778055907286
   },
   "references/eClassifiers/Transition/inheritance.html": {
     "path": "Transition/Inheritance",
-    "link-uuid": "371c7ff4-2897-4181-8d4c-e57d8d42c0ef",
+    "link-uuid": "18362a37-40f3-46b3-8607-ac90f8b2acab",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010659
+    "timestamp": 1778055907542
+  },
+  "references/eClassifiers/Supplier/references/eStructuralFeatures/outputName/index.html": {
+    "path": "Supplier/Attributes/outputName",
+    "link-uuid": "de11e096-a331-465e-990b-f85a9a572f54",
+    "title": "outputName",
+    "content": "Type EString Multiplicity 0..1 * Name of the output type if there is more than one output element",
+    "timestamp": 1778055907521
   },
   "references/eClassifiers/Supplier/inheritance.html": {
     "path": "Supplier/Inheritance",
-    "link-uuid": "57151947-3265-4e53-a229-097c3148ed61",
+    "link-uuid": "3ea8ea3b-62f7-4b30-8d5c-4c4316d4833d",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010633
+    "timestamp": 1778055907510
   },
   "references/eClassifiers/Feature/index.html": {
-    "link-uuid": "b714091f-6503-468b-8706-1597e58cfe59",
+    "link-uuid": "a0ab34a6-e3ac-4ce2-9e21-a01f343e4b8b",
     "title": "Feature",
     "content": "* Features hold state. It might be immutable configuration, mutable runtime state, or a combination of thereof. Diagram ",
-    "timestamp": 1776368010437
+    "timestamp": 1778055907309
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/classes/index.html": {
     "path": "Package/References/classes",
-    "link-uuid": "cd840160-c5d6-4353-bf20-87624f9ee6b1",
+    "link-uuid": "35f73a2e-b29f-44a5-9afe-5ecae9c5ecf9",
     "title": "classes",
     "content": "Type Class Multiplicity 0..*",
-    "timestamp": 1776368010554
+    "timestamp": 1778055907429
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/opposite/index.html": {
     "path": "Reference/References/opposite",
-    "link-uuid": "44171783-c22c-4dc1-985c-0f8b143b7c6d",
+    "link-uuid": "fcd8d370-773c-4d55-8d19-98660632d732",
     "title": "opposite",
     "content": "Type Reference Multiplicity 0..1",
-    "timestamp": 1776368010609
+    "timestamp": 1778055907484
   },
   "references/eClassifiers/Call/index.html": {
-    "link-uuid": "4b61bd4f-deea-4fca-80a3-0fafebbfab89",
+    "link-uuid": "a20b67ed-f545-4bad-878b-00b96feae116",
     "title": "Call",
     "content": "* Calls the target function. May process (map) inputs and outputs as well as handle exceptions. Calls are functions themselves, so they may have their own calls. Diagram ",
-    "timestamp": 1776368010192
+    "timestamp": 1778055907020
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/body/index.html": {
     "path": "Operator/Attributes/body",
-    "link-uuid": "5beab580-fbb5-4a13-8437-eefce05e6707",
+    "link-uuid": "503fc975-a47e-4bbf-b323-3beb06f3715d",
     "title": "body",
     "content": "Type EString Multiplicity 0..1 * Code body",
-    "timestamp": 1776368010514
+    "timestamp": 1778055907387
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/operationName/index.html": {
     "path": "Operator/Attributes/operationName",
-    "link-uuid": "50c556c4-29e9-4110-8242-dbddb0ab74ce",
+    "link-uuid": "21d58506-1560-47c3-a0d0-b9064b136740",
     "title": "operationName",
     "content": "Type EString Multiplicity 0..1 * Allows to override the default operation name such as apply for functions or accept for consumers",
-    "timestamp": 1776368010530
+    "timestamp": 1778055907406
+  },
+  "references/eClassifiers/Operator/references/eStructuralFeatures/delegateBody/index.html": {
+    "path": "Operator/Attributes/delegateBody",
+    "link-uuid": "9326b632-780a-44a3-b98f-460e406177c2",
+    "title": "delegateBody",
+    "content": "Type EString Multiplicity 0..1 * Code body for the delegate operation when this operator is contained by a host class and there is an operation in the host delegating to this one",
+    "timestamp": 1778055907393
   },
   "references/eClassifiers/Reference/inheritance.html": {
     "path": "Reference/Inheritance",
-    "link-uuid": "e476ebac-5ebf-4ed0-b272-348cdf360778",
+    "link-uuid": "6946f72c-e4f2-4cea-8298-09532471ae23",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1776368010598
+    "timestamp": 1778055907475
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/outgoingTransitions/index.html": {
     "path": "Supplier/References/outgoingTransitions",
-    "link-uuid": "4e9731d8-574b-40b6-9e0e-f72aeba8c623",
+    "link-uuid": "7d918e40-09cc-4dcb-9979-c79f990568c0",
     "title": "outgoingTransitions",
     "content": "Type Transition Multiplicity 0..* * Outputs can be passed to outgoing transitions",
-    "timestamp": 1776368010639
+    "timestamp": 1778055907519
   },
   "references/eClassifiers/Class/references/eStructuralFeatures/features/index.html": {
     "path": "Class/References/features",
-    "link-uuid": "4de023eb-d7eb-42b0-b254-615ae7db6adb",
+    "link-uuid": "258d43b8-bcba-4185-be89-320088c7778e",
     "title": "features",
     "content": "Type Feature Multiplicity 0..*",
-    "timestamp": 1776368010241
+    "timestamp": 1778055907076
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/unsettable/index.html": {
     "path": "Feature/Attributes/unsettable",
-    "link-uuid": "6d1acc2b-9390-4220-b2e9-737ff1c5ae72",
+    "link-uuid": "258bd9ad-e67e-4d1d-8b1f-1af24db07faf",
     "title": "unsettable",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010457
+    "timestamp": 1778055907327
   },
   "references/eClassifiers/Call/references/eStructuralFeatures/target/index.html": {
     "path": "Call/References/target",
-    "link-uuid": "21323738-8008-44f8-ade9-d0fd872f5d46",
+    "link-uuid": "77cb055f-297c-49d5-8794-faa77eccd8c1",
     "title": "target",
     "content": "Type Function Multiplicity 0..1",
-    "timestamp": 1776368010207
+    "timestamp": 1778055907035
   },
   "references/eClassifiers/Class/inheritance.html": {
     "path": "Class/Inheritance",
-    "link-uuid": "53aca0fe-6d4e-4280-b1ac-a02b650620f6",
+    "link-uuid": "e487dc81-729e-4a22-ad12-14cf09dd4d00",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010236
+    "timestamp": 1778055907064
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/nsPrefix/index.html": {
     "path": "Package/Attributes/nsPrefix",
-    "link-uuid": "38d77f6f-030c-4407-b2d7-1fcfd7b51eaf",
+    "link-uuid": "228412ef-9105-476a-b3d9-b7179b01a759",
     "title": "nsPrefix",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1776368010556
+    "timestamp": 1778055907431
   },
   "references/eClassifiers/Consumer/inheritance.html": {
     "path": "Consumer/Inheritance",
-    "link-uuid": "68ef4d60-84d9-4ce2-98a4-c3e0df3af2de",
+    "link-uuid": "f9baaaf8-a631-40c6-acca-d3e4727d24da",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010407
+    "timestamp": 1778055907276
   },
   "references/eClassifiers/Transition/index.html": {
-    "link-uuid": "e1865d77-d416-43f6-833e-547ae2346134",
+    "link-uuid": "5742a661-d2b5-48e2-9096-a2b0387f039c",
     "title": "Transition",
     "content": "* Transitions pass data and control from suppliers to consumers Transitions can perform data mapping. Transitions can be conditional and can be activated by thrown exceptions (error transitions) Diagram ",
-    "timestamp": 1776368010657
+    "timestamp": 1778055907540
   },
   "references/eClassifiers/Transition/references/eStructuralFeatures/source/index.html": {
     "path": "Transition/References/source",
-    "link-uuid": "10bea015-f599-4fc4-bb9c-af7dab3e3ac6",
+    "link-uuid": "1c645ab6-ea53-4f89-a008-97029a1246fa",
     "title": "source",
     "content": "Type Supplier Multiplicity 0..1",
-    "timestamp": 1776368010666
+    "timestamp": 1778055907548
   },
   "references/eClassifiers/CompositeConsumer/index.html": {
-    "link-uuid": "a7288e2f-925f-4035-bf2a-aaac81f63ab1",
+    "link-uuid": "b23f9c93-957d-4c50-a576-327d316a67ce",
     "title": "CompositeConsumer",
     "content": "Diagram ",
-    "timestamp": 1776368010325
+    "timestamp": 1778055907180
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/transient/index.html": {
     "path": "Feature/Attributes/transient",
-    "link-uuid": "ec86b95f-8744-4471-aed8-970db17e4c55",
+    "link-uuid": "24bae29d-7074-48db-8952-7f0f12e3a51f",
     "title": "transient",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010455
+    "timestamp": 1778055907324
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/defaultValueLiteral/index.html": {
     "path": "Feature/Attributes/defaultValueLiteral",
-    "link-uuid": "fbfcd05e-9709-401c-8262-bd045b4263bb",
+    "link-uuid": "e743e2e5-979f-4c3d-8051-b1409a4ebff1",
     "title": "defaultValueLiteral",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1776368010451
+    "timestamp": 1778055907319
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/starter/index.html": {
     "path": "Component/References/starter",
-    "link-uuid": "3293641d-bc54-4017-a87b-59f70f00296e",
+    "link-uuid": "575448b1-5bc1-41a9-ae21-06df03437a66",
     "title": "starter",
     "content": "Type Operator Multiplicity 0..1 * Starts the component. For example, establishes connections to external systems.",
-    "timestamp": 1776368010276
+    "timestamp": 1778055907122
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/stopper/index.html": {
     "path": "Component/References/stopper",
-    "link-uuid": "1223e2e8-3896-4aa6-8f01-a0302b76b6ea",
+    "link-uuid": "52408bed-a2c4-4e77-b41e-9321fc547e8f",
     "title": "stopper",
     "content": "Type Operator Multiplicity 0..1 * Stops the component. For example, closes connections to external systems, deletes temporary files.",
-    "timestamp": 1776368010278
+    "timestamp": 1778055907125
   },
   "references/eClassifiers/Component/inheritance.html": {
     "path": "Component/Inheritance",
-    "link-uuid": "8428b50a-52d4-4792-bb04-668d3b762c40",
+    "link-uuid": "a34f7d60-47ce-4a55-97da-d6c1bef7d729",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010265
+    "timestamp": 1778055907105
   },
   "references/eClassifiers/CompositeFunction/index.html": {
-    "link-uuid": "3f802709-60a5-4716-a3ea-ff4873292b65",
+    "link-uuid": "02422c24-2736-419e-a71a-0ec93dbeb9db",
     "title": "CompositeFunction",
     "content": "Diagram ",
-    "timestamp": 1776368010349
+    "timestamp": 1778055907209
   },
   "references/eClassifiers/CompositeSupplier/inheritance.html": {
     "path": "CompositeSupplier/Inheritance",
-    "link-uuid": "ec1700ca-721a-494b-96a1-23cc0a953c6f",
+    "link-uuid": "20500f4d-f1c9-41d8-9b6a-d6bb52b97775",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010377
+    "timestamp": 1778055907244
   },
   "references/eClassifiers/Class/references/eStructuralFeatures/superTypes/index.html": {
     "path": "Class/References/superTypes",
-    "link-uuid": "97fe66e9-b906-460f-8727-548bf174bfaf",
+    "link-uuid": "1685463d-3574-45af-9196-38fa6dc643d0",
     "title": "superTypes",
     "content": "Type EClass Multiplicity 0..*",
-    "timestamp": 1776368010243
+    "timestamp": 1778055907079
   },
   "references/eClassifiers/Package/index.html": {
-    "link-uuid": "663e6c72-ec9e-4e68-9e45-f697d03987f6",
+    "link-uuid": "de32a4e1-33af-4a89-bdbd-1670f7802063",
     "title": "Package",
     "content": "* A collection of related classes Diagram ",
-    "timestamp": 1776368010547
+    "timestamp": 1778055907421
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/derived/index.html": {
     "path": "Feature/Attributes/derived",
-    "link-uuid": "54a8eba3-a750-4ce3-b1a5-6473cee4c1aa",
+    "link-uuid": "55c89816-15db-47a5-8cba-b8508bb50938",
     "title": "derived",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010453
+    "timestamp": 1778055907321
   },
   "references/eClassifiers/Feature/inheritance.html": {
     "path": "Feature/Inheritance",
-    "link-uuid": "3a12160b-9037-4205-b251-86134dd0395c",
+    "link-uuid": "ce720712-5522-4f95-86fa-c5ca5801d015",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010443
+    "timestamp": 1778055907312
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/keys/index.html": {
     "path": "Reference/References/keys",
-    "link-uuid": "59568772-d796-49cd-b9cf-e2cb410f5c5d",
+    "link-uuid": "0b8e9d1d-a3ec-4fce-bdd7-9cf955c0ed00",
     "title": "keys",
     "content": "Type Attribute Multiplicity 0..*",
-    "timestamp": 1776368010607
+    "timestamp": 1778055907482
+  },
+  "references/eClassifiers/Supplier/references/eStructuralFeatures/faults/index.html": {
+    "path": "Supplier/References/faults",
+    "link-uuid": "ca4d3847-045e-4755-bee1-727521c05104",
+    "title": "faults",
+    "content": "Type EClass Multiplicity 0..* * A fault is an observable, expected business outcome - the operation succeeded in determining that a business condition prevents the happy path (account closed, payment rejected, account not found). The system is working correctly; the business answer is &ldquo;no.&rdquo; A fault is different from an exception - an unexpected technical failure - the operation could not determine anything definitive (database connection lost, malformed input, timeout). The system is not working correctly.",
+    "timestamp": 1778055907517
   },
   "references/eClassifiers/Attribute/references/eStructuralFeatures/id/index.html": {
     "path": "Attribute/Attributes/id",
-    "link-uuid": "d149cf81-1af6-44ba-9225-f96e3f102d88",
+    "link-uuid": "f6825132-5f20-48de-ba17-b7641e8d2584",
     "title": "id",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010172
+    "timestamp": 1778055907000
   },
   "references/eClassifiers/Consumer/references/eStructuralFeatures/incomingTransitions/index.html": {
     "path": "Consumer/References/incomingTransitions",
-    "link-uuid": "3bb94930-7902-49ba-87c2-99dfed770eda",
+    "link-uuid": "c73beb32-ff3d-42ae-9a73-c2bb532bcfb6",
     "title": "incomingTransitions",
     "content": "Type Transition Multiplicity 0..* * Inputs can be provided by incoming transitions",
-    "timestamp": 1776368010414
+    "timestamp": 1778055907284
   },
   "references/eClassifiers/Attribute/index.html": {
-    "link-uuid": "88800150-92ce-4f26-b8fc-0bad9d6eba86",
+    "link-uuid": "346191d9-922b-4349-873e-7471aec5a614",
     "title": "Attribute",
     "content": "Diagram ",
-    "timestamp": 1776368010160
+    "timestamp": 1778055906986
   },
   "references/eClassifiers/Operator/inheritance.html": {
     "path": "Operator/Inheritance",
-    "link-uuid": "4bf9122b-2ef0-4f3f-a125-9ff9f2ce518c",
+    "link-uuid": "36218357-b44c-417f-b18f-2701f32432a3",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010509
+    "timestamp": 1778055907382
   },
   "references/eClassifiers/Composite/references/eStructuralFeatures/components/index.html": {
     "path": "Composite/References/components",
-    "link-uuid": "fd03d546-1688-4275-894c-d82186e22a83",
+    "link-uuid": "7c735da5-04df-4d0a-8cdd-2a06e3823eb3",
     "title": "components",
     "content": "Type Component Multiplicity 0..*",
-    "timestamp": 1776368010306
+    "timestamp": 1778055907157
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/nsURI/index.html": {
     "path": "Package/Attributes/nsURI",
-    "link-uuid": "89241031-4a3a-4e33-a3b2-5850c0dc8439",
+    "link-uuid": "2195f764-7b2c-4f61-b3d4-86d5623122c9",
     "title": "nsURI",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1776368010558
+    "timestamp": 1778055907433
+  },
+  "references/eClassifiers/Composite/references/eStructuralFeatures/packageName/index.html": {
+    "path": "Composite/Attributes/packageName",
+    "link-uuid": "3473f3c4-065e-4725-8828-0065695617c7",
+    "title": "packageName",
+    "content": "Type EString Multiplicity 0..1 * Package name for the composite components",
+    "timestamp": 1778055907160
   },
   "references/eClassifiers/Function/references/eStructuralFeatures/incomingCalls/index.html": {
     "path": "Function/References/incomingCalls",
-    "link-uuid": "97ef64ca-97fb-40dd-8ae9-2da8b31c634c",
+    "link-uuid": "41a44e39-d4b0-4f71-b8d2-71c1401624fa",
     "title": "incomingCalls",
     "content": "Type Call Multiplicity 0..* * Function can be invoked by calls",
-    "timestamp": 1776368010487
+    "timestamp": 1778055907359
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/exceptions/index.html": {
     "path": "Operator/References/exceptions",
-    "link-uuid": "b90b557e-79bc-4536-86db-9126d9f21cbe",
+    "link-uuid": "6ca8838a-0201-4ba8-ac4d-63890dbf21b5",
     "title": "exceptions",
     "content": "Type EClassifier Multiplicity 0..* * Exceptions which this operator&rsquo;s operation may throw",
-    "timestamp": 1776368010523
+    "timestamp": 1778055907401
   },
   "references/eClassifiers/Reference/index.html": {
-    "link-uuid": "5ba2ca67-f1b0-466d-ab60-ecaa2057aed1",
+    "link-uuid": "b097bf54-020b-44ff-b7fa-59a985fa204f",
     "title": "Reference",
     "content": "Diagram ",
-    "timestamp": 1776368010596
+    "timestamp": 1778055907473
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/resolveProxies/index.html": {
     "path": "Reference/Attributes/resolveProxies",
-    "link-uuid": "3c4916f3-3b89-49f8-bb7e-a70b19b04aa9",
+    "link-uuid": "ab435b55-7b67-4f14-a9d7-8c766401901d",
     "title": "resolveProxies",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1776368010611
+    "timestamp": 1778055907486
   },
   "references/eClassifiers/Call/references/eStructuralFeatures/source/index.html": {
     "path": "Call/References/source",
-    "link-uuid": "fc727006-a82e-4770-8b13-6fb88cca417a",
+    "link-uuid": "5e1dedbc-d1b7-4123-9b15-9c61efcc7c54",
     "title": "source",
     "content": "Type Component Multiplicity 0..1",
-    "timestamp": 1776368010204
+    "timestamp": 1778055907032
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/outgoingCalls/index.html": {
     "path": "Component/References/outgoingCalls",
-    "link-uuid": "2652f46d-4109-4f21-978c-fcc8937941d9",
+    "link-uuid": "1de17f07-28f3-4f3a-9bde-6ea2f2e41685",
     "title": "outgoingCalls",
     "content": "Type Call Multiplicity 0..* * Component may call functions as part of its startup or overall functionality",
-    "timestamp": 1776368010273
+    "timestamp": 1778055907113
   },
   "references/eClassifiers/CompositeConsumer/inheritance.html": {
     "path": "CompositeConsumer/Inheritance",
-    "link-uuid": "3cae108c-8db9-4491-9495-87d098e7832d",
+    "link-uuid": "f6a01bb4-8dd1-4d68-aede-9aa0f690e79b",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1776368010327
+    "timestamp": 1778055907183
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/bodyRef/index.html": {
     "path": "Operator/Attributes/bodyRef",
-    "link-uuid": "71770591-ee35-4a6e-8302-7d45162af2c1",
+    "link-uuid": "af0e1eaa-c801-4e3c-aa8c-fde3efac0210",
     "title": "bodyRef",
     "content": "Type EString Multiplicity 0..1 * URI of the code body",
-    "timestamp": 1776368010517
+    "timestamp": 1778055907390
   },
   "references/eClassifiers/Supplier/index.html": {
-    "link-uuid": "550e7b08-5d42-4d58-a101-182883fdb1be",
+    "link-uuid": "d825ef11-ecf4-42f9-a433-528305d325e8",
     "title": "Supplier",
     "content": "* Produces outputs or throws an exception Diagram ",
-    "timestamp": 1776368010630
+    "timestamp": 1778055907507
   }
 }
