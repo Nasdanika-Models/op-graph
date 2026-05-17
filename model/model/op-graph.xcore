@@ -1,6 +1,5 @@
 @Ecore(nsURI="https://op-graph.models.nasdanika.org", nsPrefix="org.nasdanika.models.op-graph")
 @GenModel(
-    documentation="Xcore model for Nasdanika OpGraph",
     bundleManifest="false",
     featureDelegation="Dynamic",
     complianceLevel="21.0",

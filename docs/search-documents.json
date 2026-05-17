@@ -1,516 +1,516 @@
 {
   "references/eClassifiers/Function/index.html": {
-    "link-uuid": "d5f621cf-b22a-4736-8b13-6ff48e9b934a",
+    "link-uuid": "32206b35-3e10-4e6f-a73a-66ee68bc59ec",
     "title": "Function",
     "content": "* Takes inputs, produces outputs or throws an exception Diagram ",
-    "timestamp": 1778055907349
+    "timestamp": 1779050767366
   },
   "references/eClassifiers/Transition/references/eStructuralFeatures/target/index.html": {
     "path": "Transition/References/target",
-    "link-uuid": "e10da18e-72ca-4aae-9e58-c99deba4c012",
+    "link-uuid": "07138de1-18fa-4ba5-ac25-e5374877d29c",
     "title": "target",
     "content": "Type Consumer Multiplicity 0..1",
-    "timestamp": 1778055907551
+    "timestamp": 1779050767550
   },
   "references/eClassifiers/Call/inheritance.html": {
     "path": "Call/Inheritance",
-    "link-uuid": "e59cdad8-26bf-4c61-8e56-578016eba890",
+    "link-uuid": "a70014eb-84f7-4e80-a625-09fd6cbf8fbc",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055907023
+    "timestamp": 1779050767094
   },
   "references/eClassifiers/Class/index.html": {
-    "link-uuid": "9fffc51e-407f-4833-a723-b2edca1b9459",
+    "link-uuid": "bfe80dca-7ddb-4e9b-8270-21cfe75367b6",
     "title": "Class",
     "content": "* A collection of features which may extend zero or more superTypes providing base functionality Diagram ",
-    "timestamp": 1778055907061
+    "timestamp": 1779050767130
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/language/index.html": {
     "path": "Operator/Attributes/language",
-    "link-uuid": "32e2a803-4567-4e28-9cc6-453696da4dd0",
+    "link-uuid": "94d7b041-c212-4aa9-bbe8-4e94a85c4e31",
     "title": "language",
     "content": "Type EString Multiplicity 0..1 * body or bodyRef language",
-    "timestamp": 1778055907403
+    "timestamp": 1779050767411
   },
   "references/eClassifiers/Consumer/index.html": {
-    "link-uuid": "1e94e10c-972c-4910-a156-1a035226c837",
+    "link-uuid": "4ec8d9d7-277e-4f98-969b-aa16e3d3df3e",
     "title": "Consumer",
     "content": "* Consumes inputs and may throw an exception as a result Diagram ",
-    "timestamp": 1778055907273
+    "timestamp": 1779050767307
   },
   "references/eClassifiers/Operator/index.html": {
-    "link-uuid": "2601d27b-1e9c-4bf3-b969-0781aa098e1d",
+    "link-uuid": "7f13756a-64c4-4e62-b430-6f3ebaee5350",
     "title": "Operator",
     "content": "* Performs some operation Diagram ",
-    "timestamp": 1778055907380
+    "timestamp": 1779050767393
   },
   "references/eClassifiers/Predicate/inheritance.html": {
     "path": "Predicate/Inheritance",
-    "link-uuid": "a3db26e5-dd4e-4c92-b289-cf4feb4eaec9",
+    "link-uuid": "b38453ca-e05b-4c12-a400-cdb169dadbac",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907453
+    "timestamp": 1779050767457
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/changeable/index.html": {
     "path": "Feature/Attributes/changeable",
-    "link-uuid": "7dc5c785-ef76-4866-8bc2-47031189671c",
+    "link-uuid": "8d963b60-1000-40da-8f5f-3581aedbd48d",
     "title": "changeable",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907316
+    "timestamp": 1779050767339
   },
   "references/eClassifiers/Package/inheritance.html": {
     "path": "Package/Inheritance",
-    "link-uuid": "b33a80d0-ac4c-4bae-995a-92c88ad4dfcc",
+    "link-uuid": "1eee61a1-2f72-4bb6-bd8c-32604cbcb594",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055907423
+    "timestamp": 1779050767430
   },
   "references/eClassifiers/Composite/index.html": {
-    "link-uuid": "8683d4c5-0907-4e04-9061-606af8c28e56",
+    "link-uuid": "e88058d1-6930-4cb6-85a7-338fe70c9624",
     "title": "Composite",
     "content": "* Group is generated to EClass with elements generated either to operations or contained classes Diagram ",
-    "timestamp": 1778055907147
+    "timestamp": 1779050767202
   },
   "index.html": {
-    "link-uuid": "1c6958d2-34e2-4283-8938-c3ec0e8bc195",
+    "link-uuid": "cef5898c-9f0a-4722-8172-e26799bb7622",
     "title": "OpGraph Model",
-    "content": "Xcore model for Nasdanika OpGraph Function Transition Call target incomingCalls CompositeConsumer Attribute Operator Reference keys opposite Package CompositeFunction Composite Consumer incomingTransitions target faults Supplier Class classes Feature features Predicate exceptionHandlers CompositeSupplier Component starter stopper components source outgoingCalls outgoingTransitions source Nasdanika OpGraph",
-    "timestamp": 1778055906964
+    "content": "This is a design document for OpGraph - it is written in the present tense, but not all stated capabilities are implemented. OpGraph (op-graph.models.nasdanika.org) is a strongly-typed, model-driven workflow engine drawing on patterns from several established workflow engines, designed to overcome the limitations of map-based process state while preserving their execution semantics and extending them with Java-native patterns, workflow inheritance, simulation support, synchronous and reactive execution modes, and a collaborative multi-role authoring model. Core Design Principles 1. Dual &ldquo;This&rdquo; - Configuration vs. Execution Context Control Plane vs. Data Plane 2. Strongly-Typed Workflow State 3. Token Lifecycle and State Recording Checkpoint Strategy Compilation Pipeline Workflow Inheritance Inheritance Abstract Activities Final Activities Suppression Multiple inheritance and diamond inheritance Collaborative Authoring Model Operation Model Execution Modes Synchronous Execution Asynchronous Execution - CompletionStage Reactive Execution - Mono / Flux Mode Selection at Compile Time Context Mapping - map and flatMap Signatures Typed Contexts via Metamodel Subsetting Use Cases Iteration Semantics Parallelism Policy (Initial Implementation) Composition and Nesting Write Modes Relationship to Stream and Reactive map / flatMap State Access and Critical Sections The Asymmetry Problem Critical Sections Long-Running Operators in Critical Sections Realms and Non-Model Resources Reactive Execution and Thread Confinement Integration with Token Recording Summary of the Discipline Diagram Merge Strategy Approach Properties Relationship to Prior Workflow Engines Distribution - Maven as Workflow Registry Module Structure Discovery and Composition Publishing Model Diagram Generation Inheritance Visualization Simulation Use Cases for Simulation Use Cases UC-1: Generic SDLC Workflow - Publish and Extend UC-2: Regulatory Compliance Enforcement via Final Activities UC-3: SDLC Process Documentation and Simulation UC-4: Cross-Team Workflow Composition via Maven UC-5: Test Environment Workflow via Suppression UC-6: AI-Assisted Workflow Implementation UC-7: AI-Assisted Workflow Definition Model-Based Telemetry Telemetry as a Durable Artifact What a Span Captures Generation From the Existing Token Log Telemetry Context on the Execution Context Inbound Context Propagation - Starter Activities Outbound Context Propagation Implication for Distributed Tracing Telemetry-to-Diagram Linkage Live Replay With Diagram Visualization Replay Mechanics Live Modification During Replay Replay Modes Use Cases Telemetry Volume Management Optional Forwarding to Traditional Backends Summary Open Design Questions Core Design Principles 1. Dual &ldquo;This&rdquo; - Configuration vs. Execution Context Every workflow operation has two distinct &ldquo;self&rdquo; references, mirroring how the JVM works at the bytecode level: Java this (configuration context): The model element (EObject) holding model configuration and runtime infrastructure - connections, caches, service clients. Stable across workflow instances. Not part of the workflow state. First operation parameter (execution context): The workflow state passed explicitly through the operation call chain. This duality is not an architectural convention imposed on developers - it reflects how Java methods actually work. Every instance method call passes this as an implicit first argument at the bytecode level. OpGraph makes the execution context explicit as the first declared parameter, which is the natural Java pattern. Result: Activities can either write state into the execution context object (&ldquo;everything through state&rdquo; - common in some workflow engines) or pass values directly to the next operation (idiomatic Java pass-through). Both patterns are valid and can coexist in the same workflow. Control Plane vs. Data Plane The dual-this design maps cleanly onto the control plane / data plane distinction familiar from networking and distributed systems: Java this First parameter (execution context) Plane Control plane Data plane Lifetime Workflow definition lifetime Workflow instance lifetime Mutability Effectively immutable per instance Mutable, change-recorded Sharing Shared across all executions Owned by one execution Contents Connections, config, policies State, arguments, intermediate results What it answers &ldquo;How do we execute?&rdquo; &ldquo;What are we executing on?&rdquo; Important qualification: &ldquo;Control plane&rdquo; here refers to configuration and infrastructure - connection pools, retry policies, security context, service clients - not to runtime routing decisions. Branching and looping are determined by the graph structure (which lives in Java this) evaluated against the execution context (the data plane). The graph encodes the routing rules; the data plane supplies the values those rules act on. 2. Strongly-Typed Workflow State In some workflow engines, the process state is essentially a map - a key-value store. This makes refactoring painful and errors late-binding. OpGraph replaces this with Ecore-modeled workflow state: The execution context is an EMF model instance, not a generic map. State is schema-validated, navigable, and refactorable. Schema evolution is handled at the model level. Tooling (editors, validators, code generators) can be derived from the model. 3. Token Lifecycle and State Recording Each activity invocation is associated with a token that records: Input arguments at the point of invocation. State changes during execution, captured via the EMF ChangeRecorder. Execution outcome (success, failure, compensation needed). This enables: Rollback: Replay recorded changes in reverse to restore prior state. Replay: Re-execute from any checkpoint by replaying forward from a saved token. Audit: Full history of state transitions per workflow instance. Event sourcing semantics: Tokens are the event log; state is derived. Checkpoint Strategy Token materialization is configurable: Lightweight mode: No token persistence for non-durable, in-memory activities. Checkpointed mode: Full token lifecycle with persistence at designated points. Commit points: Configurable - every activity, explicit annotations, or named groups. Persistence backends are pluggable. One supported strategy: Git commits per checkpoint, providing a human-readable, diffable audit trail. Granularity is configurable to avoid excessive history in long-running workflows. Compilation Pipeline OpGraph workflows follow a progressive elaboration path: Draw.io diagram\n    &darr;\nElaborate (annotate, connect, type)\n    &darr;  CLI command\nCompile to Ecore (OpGraph model)\n    &darr;\nCompile to Java (if all operations have implementations)\n    &darr;\nDeploy\n YAML/JSON serialization is available out of the box via EMF JSON. XText DSL (planned): A textual syntax with IDE support - syntax highlighting, activity type lookup from a registry of published activities, content assist. Ecore as IR: The compiled Ecore model is the canonical intermediate representation. Java code generation is an optional final step when all operations are implemented. Partial implementation is valid: A workflow where some operations have Java implementations and others are stubs is a legitimate intermediate state, supporting incremental elaboration and testing. Workflow Inheritance OpGraph supports workflow inheritance modeled after Java class inheritance, with extensions suited to workflow semantics. Inheritance A derived workflow extends a parent workflow, inheriting its activity graph, operation signatures, and default implementations. Derived workflows may override any non-final operation implementation and customize connections - calls and transitions. Workflow graphs compose via inheritance similarly to how container layers compose (e.g., Docker layers, Eclipse extension points). The original motivation for this model came from modeling Software Development Lifecycle (SDLC) processes, where a generic SDLC workflow is specialized per technology, team, or regulatory context. Abstract Activities An activity may be declared abstract - it defines a named step with a typed signature but provides no implementation. Derived workflows must provide a concrete implementation before the workflow can be executed (or compiled to Java). Example: An SDLC workflow defines an abstract Develop Code activity. Derived workflows JavaSDLC and PythonSDLC each provide a concrete implementation appropriate to their language toolchain. The parent workflow defines the shape of the process; the children define how each step is actually done. Abstract activities are first-class citizens in the model - they appear in diagrams, documentation, and simulations with their name and signature even before implementation exists. Final Activities An activity may be declared final - it cannot be overridden or suppressed in any derived workflow. This is the mechanism for enforcing non-negotiable steps. Examples of final activities: A regulatory audit log entry that must execute in every compliant workflow instance. A security checkpoint that must not be bypassed in any derived workflow. A billing event that must fire regardless of how the workflow is specialized. The compiler and runtime both enforce finality - a derived workflow that attempts to override or suppress a final activity is rejected at compile time. Suppression Unlike Java, where you cannot delete an inherited method, OpGraph supports suppression: a derived workflow may remove a non-final activity or connection inherited from a parent. Use cases for suppression: Removing a notification step in a test-environment workflow. Stripping an approval gate in a derived workflow for a low-risk deployment context. Simplifying a parent workflow template for a specific deployment scenario. Multiple inheritance and diamond inheritance The base SDLC workflow defines abstract &ldquo;Development&rdquo; and &ldquo;Deployment&rdquo; activities. Java and Python SDLC workflows extend the base workflow and provide provide concrete &ldquo;Development&rdquo; activities for their respective languages. On-prem and Cloud SDLC workflows extend the base workflow and provide provide concrete &ldquo;Deployment&rdquo; activities for their respective runtimes. Java Cloud SDLC is a concrete workflow extending Java and Cloud SDLC. Similarly there is a Java On-Prem SDLC, Python Cloud, &hellip; Collaborative Authoring Model OpGraph is designed to support a multi-role, multi-phase authoring pipeline: Phase Role Tool Output Draw Business analyst Diagram editor (Draw.io or similar) Workflow diagram Elaborate Developer / architect Diagram annotations, type assignments Typed, connected diagram Compile Developer / CI CLI command OpGraph Ecore model Implement Developer / AI Java, generated stubs Operation implementations Deploy DevOps / runtime OpGraph runtime Running workflow The CLI compile step is the formal contract between the business-facing and engineering-facing layers. It validates that the elaborated diagram is structurally sound before any implementation work begins. AI integration point: AI agents can generate operation implementations from operation signatures and operation/parameter documentation. Operation Model Operations in OpGraph follow this signature convention: ReturnType operationName(ExecutionContext ctx, Param1Type param1, ...);\n ExecutionContext ctx - the workflow state, passed explicitly as the first argument. Corresponds to the process instance in workflow engine terms. Additional parameters - typed inputs, either mapped from the execution context (state-driven style) or passed directly from the preceding operation&rsquo;s output (Java-style pass-through). One way to implement mapping is to use a YAML map of parameter names to SpEL expressions. ReturnType - may be mapped into the execution context, passed forward, or both. The default behavior is to map features to parameters of the next activity. Mapping between types can be done at the transition/call level. Execution Modes OpGraph generates multiple execution flavors from the same workflow model, following patterns established in modern AI and integration libraries A workflow author writes one definition; the generator produces multiple execution surfaces. Synchronous Execution The simplest and most familiar mode. Operations are invoked as direct Java method calls, the execution context flows through the call stack, and the workflow returns when the final activity completes. ResultType result = workflow.execute(ctx, input);\n Use cases: Unit tests, batch jobs, short-running workflows where blocking is acceptable, and contexts where simplicity outweighs concurrency benefits. Asynchronous Execution - CompletionStage For workflows where lifecycle events (start, stop, individual activity completion) need to be observed without blocking, OpGraph generates CompletionStage-based methods. CompletionStage&lt;ResultType&gt; stage = workflow.executeAsync(ctx, input);\nstage.thenAccept(result -&gt; ...);\n Use cases: Integration with thread pools and executors, lifecycle coordination (start one workflow when another finishes), interop with CompletableFuture-based APIs. Reactive Execution - Mono / Flux For streaming workflows, long-running workflows with intermediate events, and workflows where back-pressure matters, OpGraph generates Reactor-based methods using Mono (single result) and Flux (stream of results or events). Mono&lt;ResultType&gt; mono = workflow.executeReactive(ctx, input);\nFlux&lt;TokenEvent&gt; events = workflow.executeStreaming(ctx, input);\n Use cases: Back-pressure: Activities producing more output than downstream consumers can handle are throttled automatically by the reactive framework. Streaming output: Workflows producing a stream of results (e.g., a search workflow yielding results progressively) emit each result as it becomes available. Event observation: A Flux&lt;TokenEvent&gt; surface exposes the token lifecycle to external observers - activity start, activity complete, state change, checkpoint - enabling live monitoring, progress indicators, and audit streaming without coupling the workflow logic to monitoring infrastructure. Long-running workflows: Reactive composition naturally handles workflows that span minutes, hours, or days, integrating with reactive persistence and messaging. Mode Selection at Compile Time The execution mode is a compile-time concern, not a runtime one. The generator produces the synchronous, async, and reactive variants side-by-side as separate methods on the generated workflow class. Callers choose the mode appropriate to their context. Operation implementations are mode-agnostic where possible - the same operation implementation can participate in synchronous and reactive execution, with the generator handling the wrapping. Operations that are inherently asynchronous (e.g., a remote API call) can be implemented as Mono-returning methods, and the synchronous variant blocks on completion at the call site. Context Mapping - map and flatMap Operators may optionally declare a map or flatMap function that transforms the parent execution context into a narrowed or transformed downstream context before the operator&rsquo;s body executes. These functions adapt the data plane flowing into the operator without affecting the control plane. The naming is deliberate: these are the same map and flatMap operations familiar from Stream and reactive libraries (Mono, Flux). The semantic correspondence is exact: map transforms one parent context into one downstream context (possibly of a different type). flatMap transforms one parent context into zero, one, or many downstream contexts. Conceptually, a workflow is a stream of execution contexts flowing through operators, and map / flatMap shape that stream the same way they shape value streams in Reactor. Signatures DownstreamContext map(ParentContext ctx);                       // one-to-one transform\nIterator&lt;DownstreamContext&gt; flatMap(ParentContext ctx);         // one-to-many, sequential\nFlux&lt;DownstreamContext&gt; flatMap(ParentContext ctx);             // one-to-many, reactive\n The operator&rsquo;s body receives DownstreamContext as its first parameter (the data plane); Java this (the control plane) is unchanged. From the operator&rsquo;s perspective, the downstream context is the execution context - there is no distinction between &ldquo;a mapped context&rdquo; and &ldquo;a regular context.&rdquo; Typed Contexts via Metamodel Subsetting For each map or flatMap declaration, the compiler generates: A subset Ecore metamodel containing only the EClasses, EStructuralFeatures, and EOperations reachable in the downstream context. Generated Java interfaces and implementations for the subset, with implementations delegating to the parent model through EMF adapters. Compile-time enforcement - the operator cannot reference features outside the downstream context because they don&rsquo;t exist in the downstream type. This is stronger than runtime permission checks: out-of-context access is a compilation error. This is particularly valuable for agent definitions: an agent operating on a mapped context literally cannot see or modify state outside its mapped view, by virtue of the type system. Use Cases Reusable operators with adapted state. A generic operator (e.g., ProcessTickets) can be invoked from multiple parent workflows, each providing a map that adapts its local state to the operator&rsquo;s expected input. The operator is reused without modification; the map handles the adaptation. Agent focus. An agent operator is given a map that narrows the workflow state to a specific subject - a Jira issue, a customer record, a product management persona - and to the subset of operations that agent is allowed to invoke. The agent&rsquo;s reachability is defined declaratively, enforced by the type system, and inspectable in the model. Iteration via flatMap. When an operator should run once per element of some collection in the parent state, flatMap produces one downstream context per element. This collapses context establishment and iteration into one well-understood construct. Persona switching. Different map functions over the same parent state present the same underlying data through different lenses - a &ldquo;product manager&rdquo; mapping exposing prioritization features, an &ldquo;engineer&rdquo; mapping exposing technical details, a &ldquo;compliance&rdquo; mapping exposing audit trails. Iteration Semantics When flatMap returns multiple contexts, the return type determines processing semantics: Iterator&lt;DownstreamContext&gt; - sequential, ordered processing. One operator invocation completes before the next begins. Natural fit for synchronous and async execution modes. Flux&lt;DownstreamContext&gt; - reactive streaming with back-pressure. Operator invocations proceed subject to back-pressure constraints. Natural fit for the reactive execution mode. Parallelism Policy (Initial Implementation) To keep early implementation tractable and debuggable, the initial parallelism rules are: Synchronous mode: All flatMap iteration is sequential, regardless of return type. A Flux is consumed serially. Async / reactive mode: Execution follows standard reactive semantics - sequential by default, with concurrency emerging from explicit reactive operators downstream. A future addition: a parallel flag on flatMap that, in synchronous mode, uses parallel streams for independent iteration. This is deferred until the sequential model is solid and the implications for token ordering, change-recorder concurrency, and rollback are designed. Composition and Nesting map and flatMap declarations compose naturally. An operator with a mapped context can invoke another operator with its own map or flatMap, and the mappings compose: workflow context -&gt; activity context -&gt; sub-activity context -&gt; agent context\n Each level narrows or adapts further. The change recorder records changes at the appropriate level, with merge-on-exit semantics similar to nested transactions - when a mapped operator completes successfully, its recorded changes are merged into the parent&rsquo;s change record; on failure, the mapped changes are discarded. Write Modes map and flatMap support multiple write-back modes: Read-write (default): Writes to the downstream context propagate to the parent through the adapter layer. Read-only: Writes are prohibited at compile time (the generated downstream interfaces have no setters or mutating operations). Suitable for agents that should only observe. Copy-on-write (sandbox): The downstream context is a deep copy of the relevant subset. Writes affect only the copy. Suitable for simulation, what-if analysis, and experimental agent execution where the parent state must remain untouched until explicit commit. The write mode is a declarative property of the map or flatMap declaration, not a runtime decision. Relationship to Stream and Reactive map / flatMap The naming is intentional, and the semantic correspondence is close - but the analogy should not be pushed past its useful limits. OpGraph&rsquo;s map / flatMap operate on execution contexts flowing through workflow operators, and their behavior integrates with token recording, change recording, and rollback in ways that Stream and Reactor operators do not. The names communicate the shape of the transformation (one-to-one or one-to-many), not a literal contract with java.util.stream or Reactor APIs. State Access and Critical Sections Operators do not access workflow state directly. Instead, state access flows through read and write/exclusive commands dispatched to a coordinator - implemented on top of EMF Transaction&rsquo;s TransactionalEditingDomain and realms. This design decouples state access from operator execution duration, which is essential because operator durations are wildly asymmetric: a model read or write completes in microseconds, while an LLM call or remote API invocation may take seconds or minutes. Commands can be wrapped into reactive constructs like Mono or async constructs as CompetionStage - they will be executed by a thread pool or some other means and subsequent actions will be triggered upon execution. The Asymmetry Problem If operators held locks directly during their full execution, a single operator wrapped around a slow remote call would serialize the entire workflow - defeating the purpose of reactive execution and back-pressure. By pushing state access through short commands, the engine can: Hold locks only for the duration of actual state operations. Release locks across long-running operator bodies (LLM calls, HTTP requests, file I/O). Permit concurrent reads where appropriate. Schedule writes serially without blocking the operator&rsquo;s overall progress. Critical Sections A critical section operator is a composite operator that executes its children within a single transaction. The semantics: All child operators execute as one atomic unit with respect to state changes. A child failure rolls back the entire critical section&rsquo;s state changes. The transaction is held for the duration of the critical section&rsquo;s execution. Critical sections are the right abstraction for &ldquo;this group of operators must see a consistent snapshot of state and either all succeed or all roll back together.&rdquo; They compose naturally with map and flatMap - a critical section may map the parent context to a narrowed downstream context, and its children operate within both the mapping and the transaction. Long-Running Operators in Critical Sections A critical section holds its transaction for the duration of its children. Wrapping a long-running operator (LLM call, remote API, file upload) inside a critical section holds the transaction for the duration of that long operation - which is almost always wrong and should be hard to do accidentally. The model addresses this with operator duration annotations: Operators are annotated (declaratively or by inference from their type) as fast (model operations only, microseconds), bounded (local I/O, milliseconds), or unbounded (remote calls, LLMs, user interactions). The compiler rejects critical sections that contain unbounded operators, or emits a strong warning, depending on configuration. Authors who genuinely need to hold state across a long operation must do so explicitly, e.g., by snapshotting state into a copy-on-write mapped context and committing back later - making the long-held boundary visible in the model. This is the strongly-typed-workflow philosophy applied to concurrency: the model knows which operators are long-running, and the compiler enforces concurrency discipline. Realms and Non-Model Resources EMF Transaction&rsquo;s realm concept generalizes beyond models - a realm can guard any shared resource, not just an EMF model. OpGraph exploits this by allowing critical sections to declare the resource they protect: The default resource is the workflow state&rsquo;s editing domain. Other declarable resources: connection pools, external service clients, in-memory caches, or any object exposing a realm. A critical section over a connection pool serializes access to that pool while permitting concurrent state access elsewhere. This is a more granular concurrency model than a single global state lock. Reactive Execution and Thread Confinement EMF realms are thread-confined by design - operations on a realm must execute on the realm&rsquo;s thread, accessed via Realm.syncExec / Realm.asyncExec. Reactive execution poses an integration challenge: operators may resume on arbitrary scheduler threads. The bridge is Reactor scheduler interop: A realm is exposed as a Reactor Scheduler - operations dispatched to that scheduler execute on the realm&rsquo;s thread. State access commands (read, write) return Mono / Flux that are subscribed on the realm scheduler. Operator bodies subscribe back to whatever scheduler is appropriate for their work (an I/O scheduler for remote calls, a compute scheduler for CPU-bound work). This keeps the realm&rsquo;s thread-confinement invariant intact while letting the rest of the workflow execute reactively. Integration with Token Recording The token&rsquo;s change recorder aligns with transaction boundaries: Changes made within a transaction are recorded against the transaction&rsquo;s token. On commit, the changes are merged into the parent token&rsquo;s record. On rollback, the transaction&rsquo;s changes are discarded from the audit log (or marked as rolled-back, depending on audit policy). For nested critical sections, change records nest correspondingly. This gives consistent audit semantics: the token log reflects what actually persisted, not what was attempted-and-rolled-back, while preserving the ability to inspect failed attempts if needed. Summary of the Discipline Concern Default Mechanism Short state access Commands dispatched to the realm EMF Transaction read/write transactions Atomic multi-operator groups Critical section operator One transaction wraps all children Long operations Outside any transaction Compiler rejects unbounded operators in critical sections Concurrent reads Permitted Read-only transactions on the same realm Concurrent writes Serialized per realm Write transaction queue Non-state resources Declarable as realm-protected Critical section names the resource Reactive integration Realm exposed as scheduler Realm.asyncExec wrapped as Reactor scheduler Diagram Merge Strategy The diagram round-trip problem - keeping manual layout in sync with a model that may evolve through inheritance, suppression, or direct editing - is resolved through three-way EMF Compare-based merging. Approach Diagram as Ecore: The Draw.io diagram is converted to an Ecore model representation. Geometry (positions, sizes, routing waypoints) is stored as model attributes. Three-way compare: When the workflow model changes (parent workflow updated, activities added or suppressed, structure refactored), EMF Compare performs a three-way merge between: The base - the diagram corresponding to the previous workflow state. The left - the diagram with the user&rsquo;s manual layout adjustments. The right - the freshly generated diagram from the new workflow state. Conflict annotation: Where the three-way merge cannot resolve automatically, conflicts are surfaced as labels directly on the diagram, allowing the author to resolve them visually rather than in a separate merge UI. Auto-layout for additions: New activities introduced by the workflow change are placed using ELK auto-layout, integrated into the existing manually-adjusted layout. Manual layout for unchanged elements is preserved. Manual refinement: The author reviews the merged diagram and adjusts the layout of newly added elements as desired. Properties Geometry preservation: Manual layout work is never lost as long as the corresponding activities still exist in the model. Inheritance-aware: When a parent workflow is updated, the merge propagates through to derived workflow diagrams using the same mechanism - derived diagrams inherit layout changes where structure aligns, and re-layout incrementally where it does not. Diagram as documentation: Because the diagram is a first-class artifact maintained in sync with the model, it is reliable enough to use as primary documentation, not just a rendered view. This strategy effectively makes the diagram a versioned, mergeable artifact alongside the workflow definition itself - solving the long-standing problem of &ldquo;the diagram and the model are out of sync&rdquo; that plagues many model-driven tools. Relationship to Prior Workflow Engines OpGraph synthesizes patterns from multiple workflow engines (process-state-centric ESB workflow products, case management workflow engines, and others). The table below contrasts the typical patterns found in those engines with OpGraph&rsquo;s approach. Concept Typical prior-art approach OpGraph Process state XML document, map, or untyped property bag Strongly-typed EMF model Activity I/O XPath/expression mappings over state Typed parameters + optional state mapping Rollback Engine-managed, opaque EMF ChangeRecorder, inspectable Checkpointing Binary checkpoint store Pluggable; Git, DB, object store Process definition Proprietary XML or DSL Ecore model; YAML/JSON/XText DSL Inheritance Generally absent, or limited templating Java-style + abstract + final + suppression Execution model Engine-driven, often synchronous-only Compiled code. Sync (CompletionStage) + reactive (Mono/Flux) Authoring Monolithic vendor IDE Multi-role, multi-tool, CLI integration Distribution - Maven as Workflow Registry OpGraph workflows are distributed as standard Maven modules. This gives workflow publishing, versioning, and dependency resolution for free using the existing Maven ecosystem. Module Structure A workflow Maven module contains: The workflow definition in YAML/JSON/XText DSL source form. The compiled Ecore model. Optionally, compiled Java classes when all operations are implemented. A module-info.java / META-INF/services registration so the workflow is discoverable as a Java ServiceLoader service or Nasdanika Capability. Discovery and Composition Workflows are executed as classes when compiled to Java - no special runtime container is required beyond the JVM. Workflows are discovered as services via the standard Java ServiceLoader mechanism or nasdanika capabilities, enabling runtime composition without hard-wiring dependencies. Maven version ranges and BOMs manage compatibility between workflow versions, the same way they manage library compatibility. Publishing Model Any team can publish a workflow module to any Maven repository (Maven Central, GitHub Packages, a private Nexus/Artifactory instance). Consumers declare a dependency, inherit the workflow, and extend or specialize it. Source form distribution allows consumers to inspect, understand, and document the workflow before compilation - the YAML/JSON/XText source is part of the published artifact, not just the compiled output. Diagram Generation Complex workflows - especially deeply inherited ones - can be difficult to author from scratch as diagrams. OpGraph supports a text-first, diagram-derived authoring path: Author the workflow in YAML/JSON or the XText DSL. Run the CLI to generate a Draw.io diagram with automatic layout via the ELK (Eclipse Layout Kernel) algorithm. Manually adjust the generated diagram for clarity, grouping, or presentation. The adjusted diagram is saved alongside the model as documentation. When the underlying workflow changes, the three-way merge strategy (see Diagram Merge Strategy above) preserves manual layout while integrating new elements with auto-layout. Inheritance Visualization When a workflow inherits from a parent, the generated diagram can optionally annotate each activity with its origin - whether it is inherited as-is, overridden, abstract, final, or suppressed. This makes the effective workflow immediately readable without tracing the inheritance chain manually. Simulation When not all activities have real implementations, OpGraph supports a simulation flavor of code generation. Instead of generating stubs that throw UnsupportedOperationException, the simulator generates: Timed stubs: Activities execute with a configurable or statistically modeled delay, representing realistic duration distributions (constant, uniform, normal, log-normal). Probabilistic branching: Conditional paths are taken with configurable probabilities, enabling Monte Carlo simulation of workflow outcomes. State placeholders: Output values are generated as synthetic but type-valid data, allowing downstream activities to execute without real inputs. Use Cases for Simulation Documentation: A fully abstract SDLC workflow with simulated activities produces an executable model of the process that can be run, observed, and explained to stakeholders without any real tooling integration. Bottleneck identification: Running the simulation at scale reveals which activities dominate elapsed time or resource contention, allowing teams to prioritize optimization efforts before committing to implementation. Long-running workflow modeling: An SDLC workflow spanning weeks or months can be simulated in compressed time (seconds or minutes) to explore scheduling, parallelism, and critical path questions. Capacity planning: Varying concurrency parameters and delay distributions produces throughput and latency estimates for infrastructure sizing. &ldquo;What-if&rdquo; analysis: Suppressing or replacing specific activities in a derived simulation workflow models the effect of proposed process improvements before implementing them. Simulation output integrates with the token/checkpoint infrastructure - a simulated run produces the same token log as a real run, making simulation traces inspectable in the same tooling. Use Cases UC-1: Generic SDLC Workflow - Publish and Extend Context: A platform engineering team wants to standardize software delivery across multiple technology stacks. Actors: Platform team (publisher), Java team, Python team, Data Science team (consumers). Flow: The platform team authors a generic SDLC workflow module defining abstract activities: Plan, Develop Code, Write Tests, Code Review, Build, Deploy to Staging, Acceptance Test, Deploy to Production. Deploy to Production is marked final - no derived workflow may skip or override it, enforcing the deployment gate. Code Review is marked final - the review step is non-negotiable. Develop Code, Build, and Write Tests are marked abstract - technology-specific. The module is published to the organization&rsquo;s Maven repository. The Java team creates a java-sdlc module that depends on sdlc, extends the workflow, and provides concrete implementations of Develop Code (Maven build), Write Tests (JUnit), and Build (Docker image build). The Python team creates a python-sdlc module with implementations using pip, pytest, and a Python-appropriate build step. The Data Science team creates a ds-sdlc module that additionally suppresses the Deploy to Staging activity (models go to a model registry, not a staging environment) and overrides Acceptance Test with a model evaluation step. Result: All three teams share governance structure, audit steps, and deployment gates from the parent, while implementing technology-appropriate details independently. Changes to the parent (e.g., adding a security scan step) propagate automatically when consumers update their dependency. UC-2: Regulatory Compliance Enforcement via Final Activities Context: A financial services firm runs multiple workflow variants across business units, all of which must satisfy audit requirements. Actors: Compliance team (publishes base workflow), individual business unit teams (extend it). Flow: The compliance team publishes a trade-workflow module with a final Audit Log Entry activity and a final Regulatory Report Submission activity. Business unit teams extend the workflow, overriding pricing logic, notification steps, and routing - but cannot suppress or modify the final activities. The compiler enforces this: any derived workflow that attempts to suppress a final activity fails at compile time with a clear error. The compliance team can audit all deployed workflows by inspecting Maven dependency trees - any workflow claiming to extend trade-workflow is guaranteed to include the required steps. UC-3: SDLC Process Documentation and Simulation Context: An engineering manager wants to document the team&rsquo;s SDLC, identify bottlenecks, and present the process to non-technical stakeholders - before any tooling integration is built. Flow: The manager authors the SDLC workflow in YAML using abstract activities with duration estimates expressed as statistical distributions (e.g., Code Review averages 4 hours, std dev 2 hours). The CLI generates a Draw.io diagram with ELK auto-layout. The manager adjusts swim lanes and groupings for clarity. The simulation generator produces a runnable Java module with timed stubs. The simulation is run 1,000 times. Output shows that Code Review and Deploy to Staging are the dominant bottlenecks - not Build as assumed. The manager uses this to justify prioritizing a self-service review tooling investment over build optimization. The same workflow model is published as documentation - a web site generated from YAML and Draw.io. UC-4: Cross-Team Workflow Composition via Maven Context: A platform team publishes a generic data-pipeline workflow. A product team wants to use it with custom ingestion and transformation logic. Flow: The platform team publishes data-pipeline:1.3.0 to Maven Central with abstract Ingest, Transform, and Validate activities and a final Audit Trail activity. The product team adds a Maven dependency on data-pipeline:1.3.0, extends the workflow, and implements the three abstract activities. The product team&rsquo;s workflow is compiled to Java and registered as a ServiceLoader capability. A workflow orchestrator discovers and instantiates the workflow at runtime without any configuration changes - it is found on the classpath like any other service. When data-pipeline:1.4.0 is released (adding a Data Quality Check activity), the product team updates their dependency, reviews the diff in their inherited workflow diagram, and decides whether to override the new activity or accept the default implementation. UC-5: Test Environment Workflow via Suppression Context: A team wants a fast-running test variant of their production workflow that skips slow external notification and reporting steps. Flow: The production order-fulfillment workflow includes Send Confirmation Email, Update CRM, and Generate Invoice activities. None are marked final. The team creates a test-order-fulfillment module that extends the production workflow and suppresses all three activities using no-op pass-through suppression. The test workflow executes the same core fulfillment logic at full speed, with token recording intact, but without triggering real external systems. Token logs from test runs are structurally identical to production logs, making them useful for validating the audit infrastructure itself. UC-6: AI-Assisted Workflow Implementation Context: A developer has an elaborated workflow model with typed operation signatures but no implementations yet. Flow: The developer runs the CLI to generate a stub module with empty operation implementations and full Javadoc derived from the workflow model and activity metadata. An AI agent is pointed at the stub module. The activity signatures, parameter types (from Ecore), and documentation are sufficient context for the agent to generate plausible implementations for standard activities (HTTP calls, DB reads, transformations). The developer reviews, corrects, and merges the AI-generated implementations. Non-standard activities requiring domain expertise are implemented manually. The completed module is published to Maven and made available for inheritance by other teams. UC-7: AI-Assisted Workflow Definition Context: There is an existing body of documentation about a specific process. A workflow definition shall be constructed from this documentation. An AI agent is provided access to the documentation and OpGraph or diagram metamodel in the prompt. It generates either OpGraph model (more complex) or diagram model (simpler). The model is validated for correctness, validation errors are used to refine the prompt. The agent may also be provided tools to query the metamodel and access other context - perform web searches, query internal knowledge sources. The agent either produces a valid model or exceeds the maximum number of attempts. A more advanced scenario may involve multiple stages of elaboration. Once a model (diagram or OpGraph) is available it goes through the elaboration pipeline elaborated above. Model-Based Telemetry OpGraph treats telemetry as a first-class artifact of workflow execution, not as a side-channel emitted to an external backend. Every workflow execution produces a telemetry model - an Ecore model that captures spans, events, and the model changes they caused - stored alongside the workflow definition and the workflow state. This builds directly on the token and change-recorder infrastructure already described above. The token log is, in effect, an unrefined form of telemetry; the telemetry model is its structured, queryable, navigable expression. Telemetry as a Durable Artifact In OpGraph, telemetry is: Local-first. Telemetry is produced and stored where the workflow runs. Forwarding to traditional observability backends (Jaeger, Honeycomb, Grafana, Loki, Prometheus) is an optional, additional export - not the primary store. Durable. Telemetry is an Ecore model serialized in standard EMF XMI (or JSON via EMF JSON). It outlives the runtime, the tooling, and the observability vendor. Semantically rich. Every span is linked to the workflow model elements it executed (operator, activity, critical section, mapping) and to the state changes it caused (feature-level diffs with before/after values via ChangeRecorder). Versionable. Telemetry is text-serializable and can be committed to Git alongside the workflow definition - a longitudinal record of workflow execution at the semantic level. What a Span Captures In a traditional observability stack, a span captures duration, operation name, and attributes. OpGraph spans capture additionally: The operator that produced the span (a typed reference to the workflow model element, not a string name). The execution context at span start, and the mapped context if the operator declared a map or flatMap. The state changes the span produced, as a structured change record - every feature modification with old and new values. The child spans corresponding to invoked operators, critical sections, or iterations of flatMap. The transaction boundary the span participated in (if any), enabling reconstruction of which changes were committed vs. rolled back. The result is a span that doesn&rsquo;t just say &ldquo;this operator ran&rdquo; - it says exactly which model element ran, what data it saw, and what data it changed. Generation From the Existing Token Log The token infrastructure described earlier already records arguments, state changes, and execution outcomes per activity invocation. The telemetry model is a projection of that information into the OpenTelemetry-shaped schema: tokens become spans, change records become structured change events linked to spans, and the workflow execution graph becomes the parent-child span hierarchy. This means telemetry is not an additional cost - it is a structured view of data the runtime already produces. The configurable token granularity (lightweight, checkpointed, per-commit-point) directly controls the resolution of the resulting telemetry. Telemetry Context on the Execution Context The telemetry context - the currently-active span, trace identifiers, and the OpenTelemetry context for propagation - is exposed as part of the execution context (the first operator parameter, the data plane). It flows with the work, not with the configuration. This placement is deliberate: A span is created per operator invocation and exists for the duration of that invocation. Each operator&rsquo;s execution context carries its own active span. When an operator invokes a child operator, the engine creates a child span under the parent&rsquo;s span before passing the downstream execution context. The parent-child span relationship mirrors the operator invocation hierarchy automatically. When an operator&rsquo;s map or flatMap produces a downstream context, the telemetry context propagates into it - the mapped operator&rsquo;s spans become children of the mapping operator&rsquo;s span. Iteration via flatMap produces one child span per element, all under the same parent span, enabling concise visualization of &ldquo;this operator processed N items.&rdquo; Operator authors do not manually manage span lifecycles. The engine starts and ends spans around each operator invocation as part of the same machinery that manages tokens and change recording. Operators may, however, read the telemetry context to add attributes, events, or links - e.g., recording an LLM model name, the size of a processed batch, or a correlation identifier from an external system. Inbound Context Propagation - Starter Activities Starter activities - operators that initiate workflow execution in response to an external event - receive the inbound telemetry context from that event and seed the workflow&rsquo;s root span with it. The OpenTelemetry W3C trace context propagation format is the baseline. Examples: JMS listener: Extracts traceparent and tracestate from incoming JMS message properties. The workflow&rsquo;s root span becomes a child of the upstream producer&rsquo;s span, preserving end-to-end trace continuity across systems. HTTP listener: Extracts trace context from incoming request headers (W3C, B3, or configurable propagator format). The workflow root span links to the calling client&rsquo;s trace. Scheduled trigger: Creates a fresh root span with no upstream parent, optionally attaching the schedule definition as a span attribute for correlation. Workflow-invokes-workflow: When a workflow operator invokes another workflow (discovered via ServiceLoader or referenced directly), the engine propagates the current telemetry context into the child workflow&rsquo;s execution context. The two workflows&rsquo; telemetry models cross-link via the trace context. Outbound Context Propagation Conversely, operators that call external systems propagate the current telemetry context outbound: HTTP client operators inject traceparent into outgoing request headers. JMS producer operators attach the trace context as message properties. LLM client operators may include trace identifiers in request metadata where the provider supports it. The propagation is automatic for built-in client operators. Custom operators access the telemetry context from their execution context parameter and propagate as needed for their specific protocol. Implication for Distributed Tracing Because the telemetry context flows on the data plane and is automatically propagated at workflow boundaries, OpGraph workflows participate in distributed tracing as first-class citizens. A trace originating in an upstream microservice, passing through an OpGraph workflow that invokes child workflows and external services, and continuing downstream, produces one continuous trace - viewable in traditional observability backends and, with the cross-workflow correlation discussed below, also navigable as linked telemetry models. Telemetry-to-Diagram Linkage Because OpGraph workflows have generated diagrams (see Diagram Generation and Diagram Merge Strategy above), and because each span references the workflow model element it executed, spans can be linked to diagram elements through the model. This linkage is bidirectional: Span &rarr; diagram element: Selecting a span in a telemetry viewer highlights the corresponding activity, mapping, or critical section on the diagram. Diagram element &rarr; spans: Selecting an activity on the diagram surfaces all spans where that activity executed - across the current run or across the full longitudinal telemetry history. The mechanism is straightforward because the diagram is itself an Ecore model with explicit references to the workflow model elements, and spans hold typed references to those same elements. No string-matching or convention-based linkage is required - the references are direct. Live Replay With Diagram Visualization The combination of (a) durable, structured telemetry, (b) full state change records, and (c) diagram-to-model linkage enables a powerful debugging and analysis capability: live replay of a workflow execution on the diagram. Replay Mechanics The telemetry model contains the complete span tree of a past workflow execution. The state change records linked to each span describe every model modification with before/after values. A replay tool walks the span tree chronologically, and at each step: Highlights the currently-executing activity on the diagram (a moving marker traversing the activity graph). Applies the recorded state changes to a reconstructed state model, displayed alongside the diagram. Shows the span&rsquo;s input context, output, and any errors. The marker traversing the diagram during replay gives a direct visual narrative of the execution - the equivalent of a debugger&rsquo;s program counter, but at the workflow level and operating on durable historical data rather than only live execution. Live Modification During Replay Because the workflow model, the diagram, and the telemetry model are all EMF models in the same resource set, the diagram can be modified during replay and the modifications are reflected immediately: Rearranging activities for clarity while watching execution flow. Adding annotations to record observations as the replay progresses. Marking activities for further investigation, which becomes persistent metadata. Toggling visibility of branches to focus on specific paths. The replay is a view over the telemetry model; the underlying execution history is immutable, but the presentation is live and editable. Replay Modes Step: Manual advancement through spans, one at a time. Suitable for detailed debugging. Play with speed control: Continuous traversal at configurable speed, including real-time (matching original durations) and compressed time (long-running workflows replayable in seconds). Filtered replay: Restrict to spans matching a predicate (only LLM calls, only state modifications to a specific feature, only spans within a critical section). Comparative replay: Two telemetry models side by side - e.g., a known-good run and a failing run - with synchronized markers on the same diagram, highlighting divergence points. Use Cases Debugging. A failed production workflow is loaded from its telemetry artifact and replayed on the diagram. The point of failure, the input that caused it, and the sequence of state changes leading up to it are all directly visible without log spelunking. Audit. A regulator reviewing a compliance-sensitive workflow can replay any past execution, see exactly which activities ran, what data they saw, and what they changed. The audit trail is the telemetry model, in a durable, vendor-independent format. Optimization. Replaying a long-running workflow at compressed time reveals where time was actually spent - not from synthetic simulation, but from real production telemetry. The diagram visualization makes bottlenecks immediately obvious. Training and documentation. A workflow&rsquo;s behavior can be demonstrated by replaying representative telemetry traces on its diagram. New team members watch how the workflow actually executes rather than reading static documentation. Test failure analysis. A failing CI test produces a telemetry artifact alongside its failure output. The developer replays the telemetry against the workflow diagram to understand the failure before touching the code. Long-horizon analysis. Telemetry artifacts from many executions over weeks or months are aggregated to reveal patterns - activities whose duration is drifting, branches whose probabilities have shifted, critical sections experiencing growing contention. Because the telemetry format is durable and tool-independent, this longitudinal view remains accessible even as runtime and tooling evolve. Telemetry Volume Management Telemetry can be voluminous. OpGraph adopts the &ldquo;just right&rdquo; curation philosophy described in the prior model-based telemetry work: capture what is semantically valuable, drop what is operational noise. Configurable curation policies include: Drop spans that don&rsquo;t modify state. Read-only operator invocations without state changes and without child spans of interest can be elided. Aggregate fine-grained spans. A sequence of related model operations within one critical section can be summarized as one span with a structured summary. Drop spans below a duration threshold. Activities completing in microseconds may not warrant individual span records. LLM call aggregation. A multi-turn LLM interaction can be aggregated into a single &ldquo;conversation&rdquo; span with the turn count, total tokens, and total duration. State change filtering. Changes to features marked as &ldquo;noise&rdquo; (e.g., timestamp updates, cache fields) can be excluded from change records. Curation policies are declarative properties of the workflow or the runtime configuration - not procedural code embedded in operators. Optional Forwarding to Traditional Backends OpGraph can additionally forward telemetry to traditional observability backends via the standard OpenTelemetry export protocol. This is appropriate for: Operational monitoring of workflow runtime health. Alerting on workflow failures, latency anomalies, or error rates. Cross-system trace correlation when workflows participate in larger distributed request flows. The forwarded telemetry is the standard span/metric/log surface - flattened from the rich model-based representation. The full semantic detail (typed model references, structured change records, diagram linkages) stays in the local telemetry model. Operational backends handle the operational dimension; the local telemetry model handles the strategic dimension. Summary Aspect Traditional telemetry OpGraph model-based telemetry Storage External backend Local Ecore model, optionally forwarded Retention Hours to days Indefinite, versionable in Git Span semantics String operation name + attributes Typed reference to workflow model element State changes Not captured Feature-level diffs with before/after values Replay Reconstructed from logs, lossy Direct from durable artifact, lossless Diagram linkage Manual, by naming convention Automatic, by model reference Long-horizon analysis Limited by retention and vendor lock-in Native, tool-independent Format durability Vendor-specific Open EMF XMI / JSON Open Design Questions Suppression semantics: Remove-and-rewire vs. no-op pass-through - or both as modes? Argument recording scope: Are operation arguments part of the token state or transition metadata? This determines replay correctness for side-effectful activities. Idempotency contract: How does the runtime distinguish &ldquo;not yet executed&rdquo; from &ldquo;executed, result lost&rdquo;? Required for safe replay. Token granularity defaults: What is the out-of-the-box default - lightweight or fully checkpointed? Should this be per-activity or per-workflow? XText DSL registry: How are published activity types versioned and resolved? Maven coordinates are the natural answer - confirm whether a separate registry is ever needed or whether Maven search (Central, private repos) is sufficient. Simulation delay modeling: What distribution types are supported out of the box for activity duration simulation? (constant, uniform, normal, log-normal, empirical?) How are distributions specified in the workflow DSL? Final activity granularity: Is finality per-activity or per-transition? A final activity with overridable retry logic may need finer granularity than a blanket final flag. Abstract activity enforcement: When is incompleteness an error vs. a warning? A workflow with abstract activities should be deployable in simulation mode but blocked from production compilation - define the mode-check rules precisely. ServiceLoader contract: What interface do compiled workflows implement for ServiceLoader discovery? This interface is the stable API contract across versions. Reactive operation contract: Should operation implementations declare their natural mode (sync, async, reactive), with the generator wrapping for other modes? Or should operations always be written reactive-first, with sync as a block() wrapper? The latter is more uniform but raises the bar for simple operation authors. Back-pressure propagation across activities: When activity A produces a Flux consumed by activity B, back-pressure flows naturally. But when the token recorder needs to persist each emitted item, the recorder itself becomes a back-pressure participant - define how recording integrates with reactive flow control. Cancellation semantics: In reactive mode, subscribers can cancel. How does cancellation interact with the token log? Is a cancelled workflow rolled back automatically, left in its current state, or marked as cancelled-in-progress? Context mapping - declarative vs. computed: Is the metamodel subset for a map / flatMap declared (the developer lists the reachable EClasses/features) or computed (the compiler infers reachability from the operator&rsquo;s code)? Declarative is more transparent and reviewable; computed is less error-prone but harder to audit. Mapping and inheritance interaction: When a derived workflow overrides an operator with a map, does it inherit the parent&rsquo;s mapping declaration, narrow it further, or replace it? A narrowing-only rule preserves the security property; replacement breaks it. Adapter performance: Adapter chains for deeply nested mappings may have measurable overhead. Is there a threshold at which the compiler should generate a flattened direct implementation instead of a chain of adapters? Copy-on-write commit: For sandbox mappings, when (if ever) is the copy committed back to the parent? Never (pure read-only experiment), on explicit commit, or on successful operator completion? Parallel flatMap design: When the parallel flag is eventually introduced, how does it interact with token ordering (DAG vs. linear sequence), change-recorder concurrency (merge strategy for concurrent writes to the same parent feature), and rollback (partial failure of a parallel batch)? Operator duration classification: Are duration tiers (fast / bounded / unbounded) declared per operator, inferred from operator type, or both? Inference works for known activity types (HTTP, LLM, model operation) but breaks for custom operators. A combined approach - inference with explicit override - is likely needed. Critical section enforcement strictness: Should unbounded operators inside critical sections be a compile-time error, a warning, or runtime-configurable per workflow? Different deployments may want different strictness. Multi-realm critical sections: Can a critical section protect multiple realms at once (e.g., the workflow state and a connection pool)? If so, deadlock avoidance requires a global lock-ordering discipline - either enforced by the runtime via canonical ordering, or declared by the author. Rolled-back token audit policy: When a transaction rolls back, are the discarded changes erased from the token log, marked as rolled-back-but-visible, or written to a separate failure-audit log? Each has different audit and debugging trade-offs. Reactive scheduler granularity: Is there one realm scheduler per editing domain, or per workflow instance? Per-instance gives better isolation but more thread overhead; per-domain is more efficient but shares scheduling across instances. Telemetry-to-token relationship: Is the telemetry model a derived projection of the token log (always regenerable from tokens), the primary record (with tokens as a runtime-only structure), or stored separately at runtime with both retained? Each has trade-offs for storage, regenerability, and runtime overhead. Telemetry granularity at runtime: Is curation applied at span generation time (cheap, but irreversible), at storage time (more expensive, but full fidelity available for downgrade), or both (configurable per deployment)? Replay state reconstruction: Is the state at any point in replay reconstructed by forward-replaying changes from the initial state, or is the state model snapshotted at checkpoints with incremental changes in between? Snapshotting trades storage for replay speed; pure replay trades speed for storage. Diagram modifications during replay - persistence: When a user modifies the diagram during replay (annotations, layout, marks), are the modifications saved back to the diagram artifact, kept as a side-record linked to the telemetry, or both? This is similar to the diagram merge question but specific to the replay workflow. Cross-workflow trace correlation: When a workflow invokes another workflow (in a different module, via service loader), how do their telemetry models relate? Embedded as sub-spans, linked as separate resources, or both with a configurable boundary policy? Sensitive data in telemetry: State changes captured in telemetry may include sensitive values (PII, credentials, business-sensitive data). What is the redaction model? Per-feature annotations on the Ecore model? Runtime-configurable filters? Both? Operator-author access to the telemetry context: Operators should not start or end spans (the engine owns the lifecycle), but they may need to add attributes, events, links, or baggage. What is the minimal API surface exposed on the execution context for this - and how is it kept narrow enough that operators cannot break the span hierarchy by accident? Propagator pluggability: The starter activities described above default to W3C trace context propagation. How are alternative propagators (B3, Jaeger, custom enterprise propagators) registered and selected - globally, per workflow, per starter operator, or all three? Cross-workflow context boundary policy: When a workflow invokes a discovered workflow, is the child&rsquo;s root span always a child of the parent&rsquo;s current span, or is &ldquo;new trace at boundary&rdquo; an option (e.g., for fire-and-forget async invocation where the parent does not wait)? Both models are useful in different scenarios. Function Transition Call target incomingCalls CompositeConsumer Attribute Operator Reference keys opposite Package CompositeFunction Composite Consumer incomingTransitions target faults Supplier Class classes Feature features Predicate exceptionHandlers CompositeSupplier Component starter stopper components source outgoingCalls outgoingTransitions source Nasdanika OpGraph",
+    "timestamp": 1779050767041
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/role/index.html": {
     "path": "Component/Attributes/role",
-    "link-uuid": "8f348664-50d0-44e8-9960-fcf88d7b80e3",
+    "link-uuid": "5b4d2f8c-e0c4-474b-aabf-e62a3e49e00f",
     "title": "role",
     "content": "Type EString Multiplicity 0..1 * Component&rsquo;s role in its container - composite for components, function for calls, &hellip;",
-    "timestamp": 1778055907118
+    "timestamp": 1779050767179
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/volatile/index.html": {
     "path": "Feature/Attributes/volatile",
-    "link-uuid": "57c27d39-0515-49b4-9264-a01ac8fb90bb",
+    "link-uuid": "f1179cbb-ed28-4547-ba52-6f3c9ab58a67",
     "title": "volatile",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907330
+    "timestamp": 1779050767350
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/delegateBodyRef/index.html": {
     "path": "Operator/Attributes/delegateBodyRef",
-    "link-uuid": "0b38f13f-f111-4526-8e20-3df23503cd41",
+    "link-uuid": "2fe612d5-280a-4e20-8b59-3cc21b6ea9c4",
     "title": "delegateBodyRef",
     "content": "Type EString Multiplicity 0..1 * URI of the delegate code body",
-    "timestamp": 1778055907396
+    "timestamp": 1779050767404
   },
   "references/eClassifiers/CompositeSupplier/index.html": {
-    "link-uuid": "1cadb1cd-71db-45da-bfd6-bffc3ee1782f",
+    "link-uuid": "0229f71d-c047-4755-bf39-62e1987e8c8c",
     "title": "CompositeSupplier",
     "content": "Diagram ",
-    "timestamp": 1778055907240
+    "timestamp": 1779050767282
   },
   "references/eClassifiers/Function/inheritance.html": {
     "path": "Function/Inheritance",
-    "link-uuid": "45e6d046-5818-4520-84eb-6142f630af57",
+    "link-uuid": "3f224bbc-d36e-4f5f-8b3d-d09c63e8212a",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907351
+    "timestamp": 1779050767368
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/exceptionHandlers/index.html": {
     "path": "Operator/References/exceptionHandlers",
-    "link-uuid": "b0af8f0c-bf52-41e4-b8d8-4fb44622d67a",
+    "link-uuid": "5ae522cd-38c3-4f3a-82d9-56441db0f5e3",
     "title": "exceptionHandlers",
     "content": "Type Predicate Multiplicity 0..* * Exception handlers are evaluated in the definition order until one of them return true or there are no more handlers. In the latter case the exception bubbles up to the caller.",
-    "timestamp": 1778055907399
+    "timestamp": 1779050767406
   },
   "references/eClassifiers/CompositeFunction/inheritance.html": {
     "path": "CompositeFunction/Inheritance",
-    "link-uuid": "99339587-bad2-49bf-9796-f5955e8e5989",
+    "link-uuid": "e6574da7-e277-44d6-b8cb-fffdb0a86565",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055907212
+    "timestamp": 1779050767260
   },
   "references/eClassifiers/Predicate/index.html": {
-    "link-uuid": "ff8dd2eb-ba1e-466b-9ed3-2fdc723a13d3",
+    "link-uuid": "d0460342-44cb-4555-9bc1-0b279302064e",
     "title": "Predicate",
     "content": "* Marker interface - consumes inputs and produces a boolean result or throws an exception. Extended by transitions Diagram ",
-    "timestamp": 1778055907451
+    "timestamp": 1779050767455
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/containment/index.html": {
     "path": "Reference/Attributes/containment",
-    "link-uuid": "8205b9bc-61fe-411c-9f95-c9efb8b1baa4",
+    "link-uuid": "5df13c80-225c-4894-992f-af0ab12c468a",
     "title": "containment",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907481
+    "timestamp": 1779050767482
   },
   "references/eClassifiers/Component/index.html": {
-    "link-uuid": "aad49db0-2806-4136-adf3-b845fe4bff76",
+    "link-uuid": "175ce88f-27d6-4271-87fb-2355ac7f31b0",
     "title": "Component",
     "content": "* Something that can be started and stopped Diagram ",
-    "timestamp": 1778055907102
+    "timestamp": 1779050767166
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/outputs/index.html": {
     "path": "Supplier/References/outputs",
-    "link-uuid": "e3c51208-bfd0-424d-921b-ac7a3651d82c",
+    "link-uuid": "cfae57c2-d9f2-48e2-b5d9-36fa006fea22",
     "title": "outputs",
     "content": "Type ETypedElement Multiplicity 0..*",
-    "timestamp": 1778055907524
+    "timestamp": 1779050767524
   },
   "references/eClassifiers/Composite/inheritance.html": {
     "path": "Composite/Inheritance",
-    "link-uuid": "39a69851-f7b2-481e-b6f9-a9f19a0c43e6",
+    "link-uuid": "11327c58-c480-4aab-94c8-4244d6aa9340",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907150
+    "timestamp": 1779050767205
   },
   "references/eClassifiers/Attribute/inheritance.html": {
     "path": "Attribute/Inheritance",
-    "link-uuid": "1418ed2c-6ae2-4682-8f6d-e7e82bd0980f",
+    "link-uuid": "5d05c4eb-01f9-412b-ae8f-b7747acece7d",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055906990
+    "timestamp": 1779050767064
   },
   "references/eClassifiers/Consumer/references/eStructuralFeatures/inputs/index.html": {
     "path": "Consumer/References/inputs",
-    "link-uuid": "6dffc5c7-dcc0-42dd-88cd-4920d67d6ca3",
+    "link-uuid": "adfa5c1d-80e4-4904-be1e-e4001f0ce4c7",
     "title": "inputs",
     "content": "Type ETypedElement Multiplicity 0..*",
-    "timestamp": 1778055907286
+    "timestamp": 1779050767317
   },
   "references/eClassifiers/Transition/inheritance.html": {
     "path": "Transition/Inheritance",
-    "link-uuid": "18362a37-40f3-46b3-8607-ac90f8b2acab",
+    "link-uuid": "da50584a-f813-4467-b247-9afb98d75fba",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055907542
+    "timestamp": 1779050767541
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/outputName/index.html": {
     "path": "Supplier/Attributes/outputName",
-    "link-uuid": "de11e096-a331-465e-990b-f85a9a572f54",
+    "link-uuid": "a411317f-ea1c-4e47-ad53-a0fa81f7523a",
     "title": "outputName",
     "content": "Type EString Multiplicity 0..1 * Name of the output type if there is more than one output element",
-    "timestamp": 1778055907521
+    "timestamp": 1779050767522
   },
   "references/eClassifiers/Supplier/inheritance.html": {
     "path": "Supplier/Inheritance",
-    "link-uuid": "3ea8ea3b-62f7-4b30-8d5c-4c4316d4833d",
+    "link-uuid": "5c11703a-64ed-49c9-a37e-0fa4a5cb94ef",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907510
+    "timestamp": 1779050767513
   },
   "references/eClassifiers/Feature/index.html": {
-    "link-uuid": "a0ab34a6-e3ac-4ce2-9e21-a01f343e4b8b",
+    "link-uuid": "30296ca5-f239-4d71-a3b1-b4a240aab0cd",
     "title": "Feature",
     "content": "* Features hold state. It might be immutable configuration, mutable runtime state, or a combination of thereof. Diagram ",
-    "timestamp": 1778055907309
+    "timestamp": 1779050767334
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/classes/index.html": {
     "path": "Package/References/classes",
-    "link-uuid": "35f73a2e-b29f-44a5-9afe-5ecae9c5ecf9",
+    "link-uuid": "d0ce24e1-2e85-4c49-83be-763100a0a45a",
     "title": "classes",
     "content": "Type Class Multiplicity 0..*",
-    "timestamp": 1778055907429
+    "timestamp": 1779050767436
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/opposite/index.html": {
     "path": "Reference/References/opposite",
-    "link-uuid": "fcd8d370-773c-4d55-8d19-98660632d732",
+    "link-uuid": "47f82e7f-fe4d-42f5-9f81-a2af109ec5c9",
     "title": "opposite",
     "content": "Type Reference Multiplicity 0..1",
-    "timestamp": 1778055907484
+    "timestamp": 1779050767486
   },
   "references/eClassifiers/Call/index.html": {
-    "link-uuid": "a20b67ed-f545-4bad-878b-00b96feae116",
+    "link-uuid": "a6bfdef6-46f8-4cb1-a3ec-3034ee8085f5",
     "title": "Call",
     "content": "* Calls the target function. May process (map) inputs and outputs as well as handle exceptions. Calls are functions themselves, so they may have their own calls. Diagram ",
-    "timestamp": 1778055907020
+    "timestamp": 1779050767092
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/body/index.html": {
     "path": "Operator/Attributes/body",
-    "link-uuid": "503fc975-a47e-4bbf-b323-3beb06f3715d",
+    "link-uuid": "c34c657d-a93d-48c8-94b6-c47e3d0ea1c4",
     "title": "body",
     "content": "Type EString Multiplicity 0..1 * Code body",
-    "timestamp": 1778055907387
+    "timestamp": 1779050767398
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/operationName/index.html": {
     "path": "Operator/Attributes/operationName",
-    "link-uuid": "21d58506-1560-47c3-a0d0-b9064b136740",
+    "link-uuid": "dae55fa1-67f1-4aec-badc-693e2273936c",
     "title": "operationName",
     "content": "Type EString Multiplicity 0..1 * Allows to override the default operation name such as apply for functions or accept for consumers",
-    "timestamp": 1778055907406
+    "timestamp": 1779050767413
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/delegateBody/index.html": {
     "path": "Operator/Attributes/delegateBody",
-    "link-uuid": "9326b632-780a-44a3-b98f-460e406177c2",
+    "link-uuid": "4cb8a23b-32f9-48c7-a22c-45fc5c62f495",
     "title": "delegateBody",
     "content": "Type EString Multiplicity 0..1 * Code body for the delegate operation when this operator is contained by a host class and there is an operation in the host delegating to this one",
-    "timestamp": 1778055907393
+    "timestamp": 1779050767401
   },
   "references/eClassifiers/Reference/inheritance.html": {
     "path": "Reference/Inheritance",
-    "link-uuid": "6946f72c-e4f2-4cea-8298-09532471ae23",
+    "link-uuid": "f6fe4d49-5ba1-4df4-81fc-48f0610dc6f6",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1778055907475
+    "timestamp": 1779050767476
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/outgoingTransitions/index.html": {
     "path": "Supplier/References/outgoingTransitions",
-    "link-uuid": "7d918e40-09cc-4dcb-9979-c79f990568c0",
+    "link-uuid": "d11872f5-39b3-46b1-8de1-19b4d0a18a00",
     "title": "outgoingTransitions",
     "content": "Type Transition Multiplicity 0..* * Outputs can be passed to outgoing transitions",
-    "timestamp": 1778055907519
+    "timestamp": 1779050767521
   },
   "references/eClassifiers/Class/references/eStructuralFeatures/features/index.html": {
     "path": "Class/References/features",
-    "link-uuid": "258d43b8-bcba-4185-be89-320088c7778e",
+    "link-uuid": "2b41b932-dfd7-4775-9ef1-686de57c193d",
     "title": "features",
     "content": "Type Feature Multiplicity 0..*",
-    "timestamp": 1778055907076
+    "timestamp": 1779050767141
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/unsettable/index.html": {
     "path": "Feature/Attributes/unsettable",
-    "link-uuid": "258bd9ad-e67e-4d1d-8b1f-1af24db07faf",
+    "link-uuid": "96ff12be-fc62-4dd6-aa7e-b90454338ea9",
     "title": "unsettable",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907327
+    "timestamp": 1779050767348
   },
   "references/eClassifiers/Call/references/eStructuralFeatures/target/index.html": {
     "path": "Call/References/target",
-    "link-uuid": "77cb055f-297c-49d5-8794-faa77eccd8c1",
+    "link-uuid": "54df2efe-3d83-47ec-b51b-75cc4e6a1a1d",
     "title": "target",
     "content": "Type Function Multiplicity 0..1",
-    "timestamp": 1778055907035
+    "timestamp": 1779050767105
   },
   "references/eClassifiers/Class/inheritance.html": {
     "path": "Class/Inheritance",
-    "link-uuid": "e487dc81-729e-4a22-ad12-14cf09dd4d00",
+    "link-uuid": "d8803e34-9556-49be-87f0-ef3d5a426e2a",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907064
+    "timestamp": 1779050767133
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/nsPrefix/index.html": {
     "path": "Package/Attributes/nsPrefix",
-    "link-uuid": "228412ef-9105-476a-b3d9-b7179b01a759",
+    "link-uuid": "edc3e5dd-d607-45c3-8bf3-1e1b8eb50163",
     "title": "nsPrefix",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1778055907431
+    "timestamp": 1779050767438
   },
   "references/eClassifiers/Consumer/inheritance.html": {
     "path": "Consumer/Inheritance",
-    "link-uuid": "f9baaaf8-a631-40c6-acca-d3e4727d24da",
+    "link-uuid": "b5e73b00-fbb4-4f19-9e6e-a3c53a00536a",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907276
+    "timestamp": 1779050767309
   },
   "references/eClassifiers/Transition/index.html": {
-    "link-uuid": "5742a661-d2b5-48e2-9096-a2b0387f039c",
+    "link-uuid": "2b42a858-2a75-4e5d-8070-aca94b50b956",
     "title": "Transition",
     "content": "* Transitions pass data and control from suppliers to consumers Transitions can perform data mapping. Transitions can be conditional and can be activated by thrown exceptions (error transitions) Diagram ",
-    "timestamp": 1778055907540
+    "timestamp": 1779050767539
   },
   "references/eClassifiers/Transition/references/eStructuralFeatures/source/index.html": {
     "path": "Transition/References/source",
-    "link-uuid": "1c645ab6-ea53-4f89-a008-97029a1246fa",
+    "link-uuid": "aa84025d-0874-438a-b015-aa21b6c79030",
     "title": "source",
     "content": "Type Supplier Multiplicity 0..1",
-    "timestamp": 1778055907548
+    "timestamp": 1779050767548
   },
   "references/eClassifiers/CompositeConsumer/index.html": {
-    "link-uuid": "b23f9c93-957d-4c50-a576-327d316a67ce",
+    "link-uuid": "83554e7b-4fae-4777-b3b1-1bc5fb3b15d6",
     "title": "CompositeConsumer",
     "content": "Diagram ",
-    "timestamp": 1778055907180
+    "timestamp": 1779050767233
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/transient/index.html": {
     "path": "Feature/Attributes/transient",
-    "link-uuid": "24bae29d-7074-48db-8952-7f0f12e3a51f",
+    "link-uuid": "44966e3d-60b5-4594-96fd-b7952941105f",
     "title": "transient",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907324
+    "timestamp": 1779050767346
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/defaultValueLiteral/index.html": {
     "path": "Feature/Attributes/defaultValueLiteral",
-    "link-uuid": "e743e2e5-979f-4c3d-8051-b1409a4ebff1",
+    "link-uuid": "59a2f8b1-ae71-4654-b39a-1362265eb36b",
     "title": "defaultValueLiteral",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1778055907319
+    "timestamp": 1779050767341
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/starter/index.html": {
     "path": "Component/References/starter",
-    "link-uuid": "575448b1-5bc1-41a9-ae21-06df03437a66",
+    "link-uuid": "951cfaa0-e04d-4a70-b04c-a8bbd2b62d91",
     "title": "starter",
     "content": "Type Operator Multiplicity 0..1 * Starts the component. For example, establishes connections to external systems.",
-    "timestamp": 1778055907122
+    "timestamp": 1779050767181
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/stopper/index.html": {
     "path": "Component/References/stopper",
-    "link-uuid": "52408bed-a2c4-4e77-b41e-9321fc547e8f",
+    "link-uuid": "906c170f-d018-4f40-88bb-f4e043c0a98d",
     "title": "stopper",
     "content": "Type Operator Multiplicity 0..1 * Stops the component. For example, closes connections to external systems, deletes temporary files.",
-    "timestamp": 1778055907125
+    "timestamp": 1779050767184
   },
   "references/eClassifiers/Component/inheritance.html": {
     "path": "Component/Inheritance",
-    "link-uuid": "a34f7d60-47ce-4a55-97da-d6c1bef7d729",
+    "link-uuid": "22cce511-05eb-436c-9b37-419cc9b81ca8",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907105
+    "timestamp": 1779050767169
   },
   "references/eClassifiers/CompositeFunction/index.html": {
-    "link-uuid": "02422c24-2736-419e-a71a-0ec93dbeb9db",
+    "link-uuid": "fa831da8-c232-4cca-b9dd-05152e6b4a55",
     "title": "CompositeFunction",
     "content": "Diagram ",
-    "timestamp": 1778055907209
+    "timestamp": 1779050767258
   },
   "references/eClassifiers/CompositeSupplier/inheritance.html": {
     "path": "CompositeSupplier/Inheritance",
-    "link-uuid": "20500f4d-f1c9-41d8-9b6a-d6bb52b97775",
+    "link-uuid": "2dbc7b80-5a2c-47d6-90f8-b5d88e9935f6",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907244
+    "timestamp": 1779050767284
   },
   "references/eClassifiers/Class/references/eStructuralFeatures/superTypes/index.html": {
     "path": "Class/References/superTypes",
-    "link-uuid": "1685463d-3574-45af-9196-38fa6dc643d0",
+    "link-uuid": "941259ce-beca-410a-89c3-7afa73a4e5ca",
     "title": "superTypes",
     "content": "Type EClass Multiplicity 0..*",
-    "timestamp": 1778055907079
+    "timestamp": 1779050767144
   },
   "references/eClassifiers/Package/index.html": {
-    "link-uuid": "de32a4e1-33af-4a89-bdbd-1670f7802063",
+    "link-uuid": "e8aa3a35-7f86-428f-b10f-a49d6a165b13",
     "title": "Package",
     "content": "* A collection of related classes Diagram ",
-    "timestamp": 1778055907421
+    "timestamp": 1779050767427
   },
   "references/eClassifiers/Feature/references/eStructuralFeatures/derived/index.html": {
     "path": "Feature/Attributes/derived",
-    "link-uuid": "55c89816-15db-47a5-8cba-b8508bb50938",
+    "link-uuid": "49256488-2b7c-44d2-a2c8-f1e03ce227d6",
     "title": "derived",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907321
+    "timestamp": 1779050767343
   },
   "references/eClassifiers/Feature/inheritance.html": {
     "path": "Feature/Inheritance",
-    "link-uuid": "ce720712-5522-4f95-86fa-c5ca5801d015",
+    "link-uuid": "8df1d4fe-97c0-471b-9293-1897b378eaec",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907312
+    "timestamp": 1779050767335
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/keys/index.html": {
     "path": "Reference/References/keys",
-    "link-uuid": "0b8e9d1d-a3ec-4fce-bdd7-9cf955c0ed00",
+    "link-uuid": "dfac94e7-af30-4dc7-9973-66db2a607686",
     "title": "keys",
     "content": "Type Attribute Multiplicity 0..*",
-    "timestamp": 1778055907482
+    "timestamp": 1779050767484
   },
   "references/eClassifiers/Supplier/references/eStructuralFeatures/faults/index.html": {
     "path": "Supplier/References/faults",
-    "link-uuid": "ca4d3847-045e-4755-bee1-727521c05104",
+    "link-uuid": "cbcf32cb-8c54-41be-960f-17dd7bd16aad",
     "title": "faults",
     "content": "Type EClass Multiplicity 0..* * A fault is an observable, expected business outcome - the operation succeeded in determining that a business condition prevents the happy path (account closed, payment rejected, account not found). The system is working correctly; the business answer is &ldquo;no.&rdquo; A fault is different from an exception - an unexpected technical failure - the operation could not determine anything definitive (database connection lost, malformed input, timeout). The system is not working correctly.",
-    "timestamp": 1778055907517
+    "timestamp": 1779050767519
   },
   "references/eClassifiers/Attribute/references/eStructuralFeatures/id/index.html": {
     "path": "Attribute/Attributes/id",
-    "link-uuid": "f6825132-5f20-48de-ba17-b7641e8d2584",
+    "link-uuid": "df9b08c6-556a-49f8-8742-929c36b5607e",
     "title": "id",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907000
+    "timestamp": 1779050767073
   },
   "references/eClassifiers/Consumer/references/eStructuralFeatures/incomingTransitions/index.html": {
     "path": "Consumer/References/incomingTransitions",
-    "link-uuid": "c73beb32-ff3d-42ae-9a73-c2bb532bcfb6",
+    "link-uuid": "3551af18-f59e-474e-ab37-92626c83f6d2",
     "title": "incomingTransitions",
     "content": "Type Transition Multiplicity 0..* * Inputs can be provided by incoming transitions",
-    "timestamp": 1778055907284
+    "timestamp": 1779050767315
   },
   "references/eClassifiers/Attribute/index.html": {
-    "link-uuid": "346191d9-922b-4349-873e-7471aec5a614",
+    "link-uuid": "d6ab321a-a923-4086-8d40-db1b24d44f23",
     "title": "Attribute",
     "content": "Diagram ",
-    "timestamp": 1778055906986
+    "timestamp": 1779050767061
   },
   "references/eClassifiers/Operator/inheritance.html": {
     "path": "Operator/Inheritance",
-    "link-uuid": "36218357-b44c-417f-b18f-2701f32432a3",
+    "link-uuid": "8adebfef-8f42-453a-9234-562fbbdd9c4b",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907382
+    "timestamp": 1779050767395
   },
   "references/eClassifiers/Composite/references/eStructuralFeatures/components/index.html": {
     "path": "Composite/References/components",
-    "link-uuid": "7c735da5-04df-4d0a-8cdd-2a06e3823eb3",
+    "link-uuid": "a559a4a2-cc5b-4e55-b41f-7b412026ac6b",
     "title": "components",
     "content": "Type Component Multiplicity 0..*",
-    "timestamp": 1778055907157
+    "timestamp": 1779050767213
   },
   "references/eClassifiers/Package/references/eStructuralFeatures/nsURI/index.html": {
     "path": "Package/Attributes/nsURI",
-    "link-uuid": "2195f764-7b2c-4f61-b3d4-86d5623122c9",
+    "link-uuid": "7c8ea46f-00f0-41cc-a3a2-10b51469c8c1",
     "title": "nsURI",
     "content": "Type EString Multiplicity 0..1",
-    "timestamp": 1778055907433
+    "timestamp": 1779050767440
   },
   "references/eClassifiers/Composite/references/eStructuralFeatures/packageName/index.html": {
     "path": "Composite/Attributes/packageName",
-    "link-uuid": "3473f3c4-065e-4725-8828-0065695617c7",
+    "link-uuid": "a4bc9ac2-5603-4c0b-9afc-b808fd40a25a",
     "title": "packageName",
     "content": "Type EString Multiplicity 0..1 * Package name for the composite components",
-    "timestamp": 1778055907160
+    "timestamp": 1779050767215
   },
   "references/eClassifiers/Function/references/eStructuralFeatures/incomingCalls/index.html": {
     "path": "Function/References/incomingCalls",
-    "link-uuid": "41a44e39-d4b0-4f71-b8d2-71c1401624fa",
+    "link-uuid": "fac73718-84d3-498b-8cf2-5be7fbc09d27",
     "title": "incomingCalls",
     "content": "Type Call Multiplicity 0..* * Function can be invoked by calls",
-    "timestamp": 1778055907359
+    "timestamp": 1779050767374
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/exceptions/index.html": {
     "path": "Operator/References/exceptions",
-    "link-uuid": "6ca8838a-0201-4ba8-ac4d-63890dbf21b5",
+    "link-uuid": "ebe63c6a-11af-4795-b2e5-874e390934a9",
     "title": "exceptions",
     "content": "Type EClassifier Multiplicity 0..* * Exceptions which this operator&rsquo;s operation may throw",
-    "timestamp": 1778055907401
+    "timestamp": 1779050767408
   },
   "references/eClassifiers/Reference/index.html": {
-    "link-uuid": "b097bf54-020b-44ff-b7fa-59a985fa204f",
+    "link-uuid": "45bed1da-c54c-46ee-ac57-2c038b10b727",
     "title": "Reference",
     "content": "Diagram ",
-    "timestamp": 1778055907473
+    "timestamp": 1779050767475
   },
   "references/eClassifiers/Reference/references/eStructuralFeatures/resolveProxies/index.html": {
     "path": "Reference/Attributes/resolveProxies",
-    "link-uuid": "ab435b55-7b67-4f14-a9d7-8c766401901d",
+    "link-uuid": "6705f87c-3cb5-4af3-8f4a-706742762a60",
     "title": "resolveProxies",
     "content": "Type EBoolean Multiplicity 0..1",
-    "timestamp": 1778055907486
+    "timestamp": 1779050767488
   },
   "references/eClassifiers/Call/references/eStructuralFeatures/source/index.html": {
     "path": "Call/References/source",
-    "link-uuid": "5e1dedbc-d1b7-4123-9b15-9c61efcc7c54",
+    "link-uuid": "aae8ce8b-39ed-4027-8c95-49cb52ad6c0c",
     "title": "source",
     "content": "Type Component Multiplicity 0..1",
-    "timestamp": 1778055907032
+    "timestamp": 1779050767102
   },
   "references/eClassifiers/Component/references/eStructuralFeatures/outgoingCalls/index.html": {
     "path": "Component/References/outgoingCalls",
-    "link-uuid": "1de17f07-28f3-4f3a-9bde-6ea2f2e41685",
+    "link-uuid": "8d68194b-2358-4a46-9bf6-4881d99311af",
     "title": "outgoingCalls",
     "content": "Type Call Multiplicity 0..* * Component may call functions as part of its startup or overall functionality",
-    "timestamp": 1778055907113
+    "timestamp": 1779050767177
   },
   "references/eClassifiers/CompositeConsumer/inheritance.html": {
     "path": "CompositeConsumer/Inheritance",
-    "link-uuid": "f6a01bb4-8dd1-4d68-aede-9aa0f690e79b",
+    "link-uuid": "874404af-3913-4f15-a0ec-e9ca8526cd5c",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1778055907183
+    "timestamp": 1779050767235
   },
   "references/eClassifiers/Operator/references/eStructuralFeatures/bodyRef/index.html": {
     "path": "Operator/Attributes/bodyRef",
-    "link-uuid": "af0e1eaa-c801-4e3c-aa8c-fde3efac0210",
+    "link-uuid": "7ff0969b-13cf-4af9-9b8d-d9e0ede0b4eb",
     "title": "bodyRef",
     "content": "Type EString Multiplicity 0..1 * URI of the code body",
-    "timestamp": 1778055907390
+    "timestamp": 1779050767400
   },
   "references/eClassifiers/Supplier/index.html": {
-    "link-uuid": "d825ef11-ecf4-42f9-a433-528305d325e8",
+    "link-uuid": "e106286c-1251-45e9-b492-8774cdb9eacd",
     "title": "Supplier",
     "content": "* Produces outputs or throws an exception Diagram ",
-    "timestamp": 1778055907507
+    "timestamp": 1779050767510
   }
 }

@@ -1054,7 +1054,6 @@ public class OpgraphPackageImpl extends EPackageImpl implements OpgraphPackage {
 		  (this,
 		   source,
 		   new String[] {
-			   "documentation", "Xcore model for Nasdanika OpGraph",
 			   "bundleManifest", "false",
 			   "featureDelegation", "Dynamic",
 			   "complianceLevel", "21.0",
