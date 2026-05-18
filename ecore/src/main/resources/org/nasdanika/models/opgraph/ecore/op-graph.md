@@ -99,6 +99,19 @@ providing a human-readable, diffable audit trail.
 Granularity is configurable to avoid
 excessive history in long-running workflows.
 
+### 4. Multiple sources
+
+A logical OpGraph model can be defined in a single resource or multiple resources using
+
+AbtstractXXX - XXX - XXXReference pattern as in the Product Management Model.
+For example:
+
+* `AbstractOperator` - type used in operator references
+* `Operator` - concrete definition
+* `OperatorReference` - references a definition somewhere else using `target` reference. Might follow reference chains.
+
+This approach would allow to assemble graphs from multiple locations including, say, Maven repositories using MavenURIResolver.
+
 ## Compilation Pipeline
 
 OpGraph workflows follow a progressive elaboration path:
@@ -1114,6 +1127,168 @@ handles the strategic dimension.
 | Long-horizon analysis | Limited by retention and vendor lock-in | Native, tool-independent |
 | Format durability | Vendor-specific | Open EMF XMI / JSON |
 
+## Declarative Semantic Mapping
+
+OpGraph operators may declare `map` and `flatMap` functions that adapt the parent
+execution context into a downstream context. The base design assumes these are written
+as Java methods. For non-trivial mappings - especially agent semantic contexts, model
+projections, and reusable operator adapters - Java code is the wrong abstraction:
+
+- It is opaque to inheritance, suppression, diagram generation, and telemetry.
+- It cannot be authored or modified by SMEs through visual tools.
+- It is not amenable to AI generation, review, or modification.
+- It cannot be inspected, transformed, or composed at the model level.
+
+A **declarative mapping model** addresses all of these. 
+The mapping becomes a first-class artifact in the same modeling fabric as the workflow itself.
+
+### Two Forms of `map` / `flatMap`
+
+Operators may declare their context mapping in either form:
+
+- **Java form** - a Java method, as in the base design. Suitable for mappings that need
+  arbitrary computation, complex side effects, or integration with existing Java code.
+- **NSML form** - a reference to an [NSML](https://github.com/Nasdanika-Models/nasdanika-semantic-mapping-language) transformation model. 
+  Suitable for declarative
+  projections, agent context narrowing, persona switching, and any mapping whose
+  semantics are expressible as match-and-transform rules.
+
+The two forms are interchangeable at the operator level - an operator with a Java `map`
+and an operator with an NSML `mapModel` are indistinguishable to the rest of the workflow.
+NSML mappings compile to Java implementations of the same interface, so there is no
+runtime distinction either.
+
+### Why NSML Fits OpGraph's `map` / `flatMap`
+
+NSML's rule shape - match an input element by namespace URI and EClassifier name with
+an expression-language condition, produce an output element with computed feature
+values - is precisely what context mapping needs:
+
+- **`map`** corresponds to one matched rule producing one output context.
+- **`flatMap`** corresponds to one matched rule producing multiple output contexts
+  (NSML rules may produce collections naturally).
+- **Typed subset generation** (described in the base OpGraph design under Context
+  Mapping) is derived from the NSML transformation by static analysis - the EClasses
+  and features the transformation reads and writes define the downstream context's
+  metamodel subset.
+- **Read / write / read-only / copy-on-write modes** are reflected in NSML rule
+  declarations and enforced at compilation.
+
+### Integration Points
+
+#### Operator Declaration
+
+An operator declares its mapping with a reference to an NSML transformation:
+
+```yaml
+operator: ProcessTickets
+map:
+  nsml: classpath:/mappings/ticket-context.nsml
+```
+
+Or inline for simple cases:
+
+```yaml
+operator: FilterHighPriority
+map:
+  nsml: |
+    rules:
+      - match: { uri: "http://issues.example.com", classifier: "Issue" }
+        when: "spel: priority > 5"
+        produce:
+          uri: "http://focused.example.com"
+          classifier: "PriorityIssue"
+          features:
+            id: "spel: id"
+            summary: "spel: summary"
+```
+
+The above samples are YAML pseudo-code - real definitions will be different - NSML will be tightly integrated with
+OpGraph using `mapModel` and `flatMapModel` references.
+
+AbstractXXX - XXX - XXXReference pattern will be used to allow inline mapping definitions and external mapping definitions. 
+
+#### Compile-Time Subset Generation
+
+When the OpGraph compiler encounters an NSML-declared mapping, it:
+
+1. Loads the NSML transformation model.
+2. Statically analyzes the rules to determine the EClasses and features the
+   transformation reads from the parent context and writes to the downstream context.
+3. Generates the downstream context's Ecore subset model.
+4. Generates the adapter implementation that delegates to the parent.
+5. Compiles the NSML transformation to a Java implementation of `Function<Parent,
+   Downstream>` or `Function<Parent, Flux<Downstream>>`.
+
+This is the same Transformer-pattern compilation NSML provides as a standalone
+capability - OpGraph just consumes and wraps the output.
+
+#### Inheritance and Suppression
+
+NSML mappings participate in workflow inheritance. A derived workflow may:
+
+- **Inherit** the parent's mapping unchanged.
+- **Refine** the mapping by adding rules, narrowing match conditions, or overriding
+  feature mappings.
+- **Replace** the mapping entirely with a different NSML model (subject to the
+  narrowing-only rule discussed in the base design's open questions).
+
+This is more powerful than Java-form inheritance, where overriding a `map` method means
+rewriting it. NSML rules can be incrementally specialized.
+
+#### Diagram Generation
+
+NSML transformations have their own Draw.io diagram representation (see NSML design
+document). When OpGraph generates a workflow diagram, mapped operators may be drawn
+with a nested page showing the NSML mapping diagram. Selecting the operator in the
+parent diagram drills into the mapping; selecting an NSML rule highlights the affected
+operator and downstream features.
+
+#### Telemetry Integration
+
+Each NSML rule execution produces a child span under the operator's span, capturing
+which rule matched, which output was produced, and (under detailed telemetry
+configuration) the values that flowed through. This makes mapping behavior debuggable
+at the rule level using the same replay-on-diagram tooling described in the telemetry
+section.
+
+#### AI Elicitation
+
+The NSML elicitor (chat/prompt -> valid NSML model) is reusable for OpGraph: an SME describes
+the mapping in natural language and produces a reviewable NSML model. The generated
+mapping integrates into the workflow without code-generation steps for the SME.
+
+### Composition
+
+NSML mappings can be composed. An operator's `map` may itself reference an NSML
+transformation that imports and reuses other NSML transformations. This composability
+is inherited from the Transformer pattern (an NSML transformation compiles to a
+Transformer target, which composes with other Transformer targets).
+
+For OpGraph, this means common semantic mappings - "narrow to one Jira issue,"
+"narrow to one customer record," "switch to product-manager [persona](https://product-management.models.nasdanika.org/references/eClassifiers/Persona/index.html)" - can be
+published as reusable NSML modules and consumed by many operators across many
+workflows. The reusability dynamic is the same as Maven workflow distribution
+described earlier: NSML modules are Maven artifacts, discoverable, versionable,
+and composable.
+
+### Boundary Between OpGraph and NSML
+
+NSML stands alone. It is useful without OpGraph for:
+
+- Standalone model transformations (Ecore-to-Ecore, Ecore-to-application-model,
+  application-model-to-site).
+- Documentation generation from arbitrary models.
+- Ad-hoc data shaping in CLI pipelines.
+
+OpGraph stands alone. It is useful without NSML for:
+
+- Workflows whose mappings are trivial enough to express in Java.
+- Workflows that don't need mappings at all (operators consume the parent context
+  directly).
+
+The integration is opt-in at the operator level. An OpGraph workflow may use NSML
+mappings for some operators and Java mappings for others, or no mappings at all.
 
 ## Open Design Questions
 
@@ -1183,7 +1358,6 @@ handles the strategic dimension.
 22. **Reactive scheduler granularity:** Is there one realm scheduler per editing domain,
     or per workflow instance? Per-instance gives better isolation but more thread
     overhead; per-domain is more efficient but shares scheduling across instances.
-
 23. **Telemetry-to-token relationship:** Is the telemetry model a derived projection
     of the token log (always regenerable from tokens), the primary record (with tokens
     as a runtime-only structure), or stored separately at runtime with both retained?
@@ -1221,4 +1395,19 @@ handles the strategic dimension.
     workflow, is the child's root span always a child of the parent's current span,
     or is "new trace at boundary" an option (e.g., for fire-and-forget async invocation
     where the parent does not wait)? Both models are useful in different scenarios.
+32. **NSML rule scope analysis precision:** Static analysis of NSML rules to derive
+    the downstream metamodel subset works for straightforward feature reads, but may
+    be imprecise for expressions that traverse deep paths or use dynamic dispatch.
+    Is the analysis conservative (over-includes features, reducing the security
+    benefit) or strict (under-includes, requiring manual override)?
+33. **Mixed-form workflow inheritance:** When a parent workflow has a Java `map`
+    and a derived workflow wants to refine it declaratively with NSML - or vice versa
+    - how is the override expressed? Replacement is always available; structural
+    refinement across forms is harder.
+34. **NSML mapping versioning across workflow versions:** When an NSML mapping module
+    is updated independently of the workflow that uses it, does the workflow recompile
+    against the new mapping, pin to the old one, or detect incompatibility? Standard
+    Maven version range mechanisms apply, but the structural compatibility check (does
+    the downstream context still satisfy what downstream operators expect?) is more
+    subtle.
     
